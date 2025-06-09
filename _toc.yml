@@ -8,6 +8,7 @@ parts:
   numbered: true
   chapters:
   - file: ch/ml/intro
+  - file: ch/ml/models
   - file: ch/ml/sl
   - file: ch/ml/ul
   - file: ch/ml/rl

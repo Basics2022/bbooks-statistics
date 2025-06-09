@@ -227,37 +227,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-statistics/blob/master/ch/ml/intro.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -327,23 +296,6 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/ch/ml/intro.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Scarica il file del taccuino"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
       
       
       
@@ -451,12 +403,12 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference internal" href="sl.html#ml-sl"><span class="std std-ref"><strong>Supervised Learning, SL</strong></span></a>: algorithm learns from labelled data; many applications can be reduced to 2 main tasks: <strong>regression</strong> (or function approximation) and <strong>classification</strong>.</p></li>
 <li><p><a class="reference internal" href="ul.html#ml-ul"><span class="std std-ref"><strong>Unsupervised Learning, UL</strong></span></a>: algorithm learns pattern from un-labelled data; examples of taks in UL are clustering, dimensionality reduction (and recognition of <em>main</em> components in data), compression (retaining only relevant components in data). Some historical algorithms and linear algebra decompositions can be interpreted or generalized as unsupervised learning.</p></li>
-<li><p><a class="reference internal" href="rl.html#ml-rl"><span class="std std-ref"><strong>Reinforcement Learning, RL</strong></span></a></p></li>
+<li><p><a class="reference internal" href="rl.html#ml-rl"><span class="std std-ref"><strong>Reinforcement Learning, RL</strong></span></a>: an algorithm (<strong>agent</strong>) learns a <strong>policy</strong> - i.e. the way to behave - interacting with an <strong>environment</strong>, and maximizing some performance to efficiently perform required tasks. Applications of RL includes <strong>planning</strong> and <strong>control</strong>.</p></li>
 </ul>
-<p><strong>Goals and methodology.</strong> ML is mainly a engineering-oriented and an application-focused discipline, relying on statistical inference (<strong>todo</strong> <em>be more explicit</em>). Learning usually relies on <strong>optimization</strong>: performance of a ML system usually depends on a set of parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>, and a (much) smaller set of hyper-parameters, <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span>. Thus, learning usually results from the optimization of an objective function</p>
+<p><strong>Goals and methodology.</strong> ML is mainly a engineering-oriented and an application-focused discipline, relying on statistical inference (<strong>todo</strong> <em>be more explicit</em>). A <a class="reference internal" href="models.html#ml-models"><span class="std std-ref">ML model</span></a> usually takes an input <span class="math notranslate nohighlight">\(\mathbf{u}\)</span>, and produces an output <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, depending on its own structure and a set of parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> and hyper-parameters <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span>. Learning usually relies on <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/optimization/intro.html"><strong>optimization</strong></a> of an objective function</p>
 <div class="math notranslate nohighlight">
 \[L(\boldsymbol{\theta}; \boldsymbol{\mu}) \ ,\]</div>
-<p>w.r.t. parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>, whose value is learned/adjusted towards an optimal solution <span class="math notranslate nohighlight">\(\boldsymbol{\theta}^*\)</span> that makes <span class="math notranslate nohighlight">\(L(\boldsymbol{\theta}^*; \boldsymbol{\mu})\)</span> extreme. The choice of hyper-parameters <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span> guides the training process and affect model behavior. Optimization usually relies on gradient methods, updating the parameters in the direction of the gradient of the objective function w.r.t. the parameters,</p>
+<p>w.r.t. parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>, whose value is learned/adjusted towards an optimal solution <span class="math notranslate nohighlight">\(\boldsymbol{\theta}^*\)</span> that makes <span class="math notranslate nohighlight">\(L(\boldsymbol{\theta}^*; \boldsymbol{\mu})\)</span> extreme. The choice of hyper-parameters <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span> instead influences the training process and model behavior. Optimization usually relies on gradient methods, updating the parameters in the direction of the gradient of the objective function w.r.t. the parameters,</p>
 <div class="math notranslate nohighlight">
 \[\boldsymbol{\theta} \ \leftarrow \ \boldsymbol{\theta} + \alpha \nabla_{\boldsymbol{\theta}} L(\boldsymbol{\theta}; \boldsymbol{\mu}) \ .\]</div>
 <!--

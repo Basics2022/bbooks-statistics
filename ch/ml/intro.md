@@ -1,15 +1,3 @@
----
-jupytext:
-    formats: md:myst
-    text_representation:
-        extension: .md
-        format_name: myst
-kernelspec:
-    dispaly_name: Python 3(ipykernel)
-    language: python
-    name: python3
----
-
 (ml:intro)=
 # Introduction to Machine Learning
 
@@ -25,14 +13,14 @@ Artificial intelligence can be broadly defined as a field dealing with making ma
 
 - [**Unsupervised Learning, UL**](ml:ul): algorithm learns pattern from un-labelled data; examples of taks in UL are clustering, dimensionality reduction (and recognition of *main* components in data), compression (retaining only relevant components in data). Some historical algorithms and linear algebra decompositions can be interpreted or generalized as unsupervised learning. 
 
-- [**Reinforcement Learning, RL**](ml:rl)
+- [**Reinforcement Learning, RL**](ml:rl): an algorithm (**agent**) learns a **policy** - i.e. the way to behave - interacting with an **environment**, and maximizing some performance to efficiently perform required tasks. Applications of RL includes **planning** and **control**.
 
 
-**Goals and methodology.** ML is mainly a engineering-oriented and an application-focused discipline, relying on statistical inference (**todo** *be more explicit*). Learning usually relies on **optimization**: performance of a ML system usually depends on a set of parameters $\boldsymbol{\theta}$, and a (much) smaller set of hyper-parameters, $\boldsymbol{\mu}$. Thus, learning usually results from the optimization of an objective function
+**Goals and methodology.** ML is mainly a engineering-oriented and an application-focused discipline, relying on statistical inference (**todo** *be more explicit*). A [ML model](ml:models) usually takes an input $\mathbf{u}$, and produces an output $\mathbf{y}$, depending on its own structure and a set of parameters $\boldsymbol{\theta}$ and hyper-parameters $\boldsymbol{\mu}$. Learning usually relies on [**optimization**](https://basics2022.github.io/bbooks-math-miscellanea/ch/optimization/intro.html) of an objective function
 
 $$L(\boldsymbol{\theta}; \boldsymbol{\mu}) \ ,$$
 
-w.r.t. parameters $\boldsymbol{\theta}$, whose value is learned/adjusted towards an optimal solution $\boldsymbol{\theta}^*$ that makes $L(\boldsymbol{\theta}^*; \boldsymbol{\mu})$ extreme. The choice of hyper-parameters $\boldsymbol{\mu}$ guides the training process and affect model behavior. Optimization usually relies on gradient methods, updating the parameters in the direction of the gradient of the objective function w.r.t. the parameters,
+w.r.t. parameters $\boldsymbol{\theta}$, whose value is learned/adjusted towards an optimal solution $\boldsymbol{\theta}^*$ that makes $L(\boldsymbol{\theta}^*; \boldsymbol{\mu})$ extreme. The choice of hyper-parameters $\boldsymbol{\mu}$ instead influences the training process and model behavior. Optimization usually relies on gradient methods, updating the parameters in the direction of the gradient of the objective function w.r.t. the parameters,
 
 $$\boldsymbol{\theta} \ \leftarrow \ \boldsymbol{\theta} + \alpha \nabla_{\boldsymbol{\theta}} L(\boldsymbol{\theta}; \boldsymbol{\mu}) \ .$$
 
