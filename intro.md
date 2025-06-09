@@ -4,11 +4,21 @@
 This material is part of the [**basics-books project**](https://basics2022.github.io/bbooks). 
 
 **Contents.**
-- Introduction to statistics
-- Descriptive statistics
-- Probability theory
-- Inferential statistics
-- Bayesian statistics
+```{dropdown} Introduction to statistics
+:open:
+
+Different approaches to statistics and **descriptive statistics**
+
+```
+```{dropdown} Probability theory
+:open:
+```
+
+```{dropdown} Inferential statistics
+:open:
+
+Inferential and Bayesian statistics
+```
 
 ```{dropdown} [Introduction to Machine Learning: SL, UL, ML](ml:intro)
 :open:

@@ -4,6 +4,19 @@
 format: jb-book
 root: intro
 parts:
+- caption: Introduction to Statistics
+  numbered: true
+  chapters:
+  - file: ch/intro/intro
+- caption: Probability Theory
+  numbered: true
+  chapters:
+  - file: ch/prob/intro
+  - file: ch/prob/processes
+- caption: Statistical Inference
+  numbered: true
+  chapters:
+  - file: ch/infer/intro
 - caption: Introduction to Machine Learning
   numbered: true
   chapters:
