@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8. Unsupervised Learning &#8212; basics blog</title>
+    <title>3. Stochastic processes &#8212; basics blog</title>
   
   
   
@@ -65,12 +65,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/ml/ul';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/prob/processes';</script>
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="9. Reinforcement Learning" href="rl.html" />
-    <link rel="prev" title="7. Supervised Learning" href="sl.html" />
+    <link rel="next" title="4. Introduction to Statistical Inference" href="../infer/intro.html" />
+    <link rel="prev" title="2. Introduction to probability theory" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -178,21 +180,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">1. Introduction to Statistics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability Theory</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../prob/intro.html">2. Introduction to probability theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../prob/processes.html">3. Stochastic processes</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">2. Introduction to probability theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Stochastic processes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Inference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../infer/intro.html">4. Introduction to Statistical Inference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">5. Introduction to Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="models.html">6. Models in Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sl.html">7. Supervised Learning</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Unsupervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rl.html">9. Reinforcement Learning</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ml/intro.html">5. Introduction to Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/models.html">6. Models in Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/sl.html">7. Supervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/ul.html">8. Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/rl.html">9. Reinforcement Learning</a></li>
 </ul>
 
     </div>
@@ -264,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/ml/ul.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/prob/processes.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/ml/ul.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/prob/processes.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -311,7 +313,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/ml/ul.md" target="_blank"
+      <li><a href="../../_sources/ch/prob/processes.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -393,7 +395,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Unsupervised Learning</h1>
+    <h1>Stochastic processes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -407,8 +409,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="unsupervised-learning">
-<span id="ml-ul"></span><h1><span class="section-number">8. </span>Unsupervised Learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="stochastic-processes">
+<span id="prob-processes"></span><h1><span class="section-number">3. </span>Stochastic processes<a class="headerlink" href="#stochastic-processes" title="Permalink to this heading">#</a></h1>
+<p><strong>Definition of stochastic process.</strong></p>
+<p><strong>Examples.</strong></p>
+<ul>
+<li><p>White noise, <span class="math notranslate nohighlight">\(\xi(t)\)</span>, is a zero-mean process with no correlation between its values at different times</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}\left[ \xi(t) \xi(s) \right] = \delta(t-s)\]</div>
+</li>
+<li><p>Wiener process (Brownian motion), <span class="math notranslate nohighlight">\(W(t)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    &amp; W(0) = 0 \\
+    &amp; W(t) \text{ has independent increments} \\
+    &amp; W(t) - W(s) \sim N(0, t-s) \text{ for $t &gt; s$} \\
+    &amp; W(t) \text{ are continuous but nowhere differentiable}
+  \end{aligned}\end{split}\]</div>
+<p>Informal relation between Wiener process and white noise signal</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+   W(t) - W(s) &amp; = \int_{s}^{t} \xi(\tau) \, d \tau \\
+   {}^{''} \dfrac{d W(t)}{d t} &amp; = \xi(t) {}^{``}
+  \end{aligned}\end{split}\]</div>
+<p>where the derivative relation doesn’t hold in the classical sense, as <span class="math notranslate nohighlight">\(W(t)\)</span> is nowhere differentiable</p>
+</li>
+<li><p>time-discrete Markov processes</p></li>
+</ul>
+<p><strong>Applications</strong></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -424,7 +452,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./ch/ml"
+            path: "./ch/prob"
         },
         predefinedOutput: true
     }
@@ -442,20 +470,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="sl.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Supervised Learning</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Introduction to probability theory</p>
       </div>
     </a>
     <a class="right-next"
-       href="rl.html"
+       href="../infer/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Reinforcement Learning</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Introduction to Statistical Inference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Introduction to Machine Learning &#8212; basics blog</title>
+    <title>5. Introduction to Machine Learning &#8212; basics blog</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="2. Supervised Learning" href="sl.html" />
-    <link rel="prev" title="Statistics - basics" href="../../intro.html" />
+    <link rel="next" title="6. Models in Machine Learning" href="models.html" />
+    <link rel="prev" title="4. Introduction to Statistical Inference" href="../infer/intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -175,12 +175,26 @@ const thebe_selector_output = ".output, .cell_output"
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Statistics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">1. Introduction to Statistics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../prob/intro.html">2. Introduction to probability theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prob/processes.html">3. Stochastic processes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Inference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../infer/intro.html">4. Introduction to Statistical Inference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduction to Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sl.html">2. Supervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ul.html">3. Unsupervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rl.html">4. Reinforcement Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Introduction to Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">6. Models in Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sl.html">7. Supervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ul.html">8. Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rl.html">9. Reinforcement Learning</a></li>
 </ul>
 
     </div>
@@ -222,37 +236,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-statistics/blob/master/ch/ml/intro.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -327,23 +310,6 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/ch/ml/intro.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Scarica il file del taccuino"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
       
       
       
@@ -444,19 +410,19 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-machine-learning">
-<span id="ml-intro"></span><h1><span class="section-number">1. </span>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this heading">#</a></h1>
+<span id="ml-intro"></span><h1><span class="section-number">5. </span>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this heading">#</a></h1>
 <p>Artificial intelligence can be broadly defined as a field dealing with making machines perform tasks that require intelligence, when performed by humans, like: reasoning, perception, representation, language processing, planning, learning</p>
 <p><strong>Machine learning</strong> is a branch of AI focused on statistical algoritms that can <strong>learn from data</strong> and <strong>generalize to unseen data</strong> and perform tasks, without explicit instructions.<a class="footnote-reference brackets" href="#ml-optimization" id="id1">1</a></p>
 <p><strong>Three core paradigms.</strong> Algorithms in machine learning can be divided into three paradigms:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="sl.html#ml-sl"><span class="std std-ref"><strong>Supervised Learning, SL</strong></span></a>: algorithm learns from labelled data; many applications can be reduced to 2 main tasks: <strong>regression</strong> (or function approximation) and <strong>classification</strong>.</p></li>
 <li><p><a class="reference internal" href="ul.html#ml-ul"><span class="std std-ref"><strong>Unsupervised Learning, UL</strong></span></a>: algorithm learns pattern from un-labelled data; examples of taks in UL are clustering, dimensionality reduction (and recognition of <em>main</em> components in data), compression (retaining only relevant components in data). Some historical algorithms and linear algebra decompositions can be interpreted or generalized as unsupervised learning.</p></li>
-<li><p><a class="reference internal" href="rl.html#ml-rl"><span class="std std-ref"><strong>Reinforcement Learning, RL</strong></span></a></p></li>
+<li><p><a class="reference internal" href="rl.html#ml-rl"><span class="std std-ref"><strong>Reinforcement Learning, RL</strong></span></a>: an algorithm (<strong>agent</strong>) learns a <strong>policy</strong> - i.e. the way to behave - interacting with an <strong>environment</strong>, and maximizing some performance to efficiently perform required tasks. Applications of RL includes <strong>planning</strong> and <strong>control</strong>.</p></li>
 </ul>
-<p><strong>Goals and methodology.</strong> ML is mainly a engineering-oriented and an application-focused discipline, relying on statistical inference (<strong>todo</strong> <em>be more explicit</em>). Learning usually relies on <strong>optimization</strong>: performance of a ML system usually depends on a set of parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>, and a (much) smaller set of hyper-parameters, <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span>. Thus, learning usually results from the optimization of an objective function</p>
+<p><strong>Goals and methodology.</strong> ML is mainly a engineering-oriented and an application-focused discipline, relying on statistical inference (<strong>todo</strong> <em>be more explicit</em>). A <a class="reference internal" href="models.html#ml-models"><span class="std std-ref">ML model</span></a> usually takes an input <span class="math notranslate nohighlight">\(\mathbf{u}\)</span>, and produces an output <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, depending on its own structure and a set of parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> and hyper-parameters <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span>. Learning usually relies on <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/optimization/intro.html"><strong>optimization</strong></a> of an objective function</p>
 <div class="math notranslate nohighlight">
 \[L(\boldsymbol{\theta}; \boldsymbol{\mu}) \ ,\]</div>
-<p>w.r.t. parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>, whose value is learned/adjusted towards an optimal solution <span class="math notranslate nohighlight">\(\boldsymbol{\theta}^*\)</span> that makes <span class="math notranslate nohighlight">\(L(\boldsymbol{\theta}^*; \boldsymbol{\mu})\)</span> extreme. The choice of hyper-parameters <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span> guides the training process and affect model behavior. Optimization usually relies on gradient methods, updating the parameters in the direction of the gradient of the objective function w.r.t. the parameters,</p>
+<p>w.r.t. parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>, whose value is learned/adjusted towards an optimal solution <span class="math notranslate nohighlight">\(\boldsymbol{\theta}^*\)</span> that makes <span class="math notranslate nohighlight">\(L(\boldsymbol{\theta}^*; \boldsymbol{\mu})\)</span> extreme. The choice of hyper-parameters <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span> instead influences the training process and model behavior. Optimization usually relies on gradient methods, updating the parameters in the direction of the gradient of the objective function w.r.t. the parameters,</p>
 <div class="math notranslate nohighlight">
 \[\boldsymbol{\theta} \ \leftarrow \ \boldsymbol{\theta} + \alpha \nabla_{\boldsymbol{\theta}} L(\boldsymbol{\theta}; \boldsymbol{\mu}) \ .\]</div>
 <!--
@@ -554,20 +520,20 @@ fig.show()
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../intro.html"
+       href="../infer/intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title">Statistics - basics</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Introduction to Statistical Inference</p>
       </div>
     </a>
     <a class="right-next"
-       href="sl.html"
+       href="models.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Supervised Learning</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Models in Machine Learning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
