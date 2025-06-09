@@ -65,6 +65,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/ml/intro';</script>
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Indice" href="../../genindex.html" />
@@ -74,6 +76,15 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9HKRV72TBJ');
+</script>
+
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -216,6 +227,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-statistics/blob/master/ch/ml/intro.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -285,6 +327,23 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/ch/ml/intro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Scarica il file del taccuino"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
       
       
       
@@ -386,9 +445,82 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-machine-learning">
 <span id="ml-intro"></span><h1><span class="section-number">1. </span>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this heading">#</a></h1>
-<p><a class="reference internal" href="sl.html#ml-sl"><span class="std std-ref"><strong>Supervised Learning, SL</strong></span></a></p>
-<p><a class="reference internal" href="ul.html#ml-ul"><span class="std std-ref"><strong>Unsupervised Learning, SL</strong></span></a></p>
-<p><a class="reference internal" href="rl.html#ml-rl"><span class="std std-ref"><strong>Reinforcement Learning, SL</strong></span></a></p>
+<p>Artificial intelligence can be broadly defined as a field dealing with making machines perform tasks that require intelligence, when performed by humans, like: reasoning, perception, representation, language processing, planning, learning</p>
+<p><strong>Machine learning</strong> is a branch of AI focused on statistical algoritms that can <strong>learn from data</strong> and <strong>generalize to unseen data</strong> and perform tasks, without explicit instructions.<a class="footnote-reference brackets" href="#ml-optimization" id="id1">1</a></p>
+<p><strong>Three core paradigms.</strong> Algorithms in machine learning can be divided into three paradigms:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="sl.html#ml-sl"><span class="std std-ref"><strong>Supervised Learning, SL</strong></span></a>: algorithm learns from labelled data; many applications can be reduced to 2 main tasks: <strong>regression</strong> (or function approximation) and <strong>classification</strong>.</p></li>
+<li><p><a class="reference internal" href="ul.html#ml-ul"><span class="std std-ref"><strong>Unsupervised Learning, UL</strong></span></a>: algorithm learns pattern from un-labelled data; examples of taks in UL are clustering, dimensionality reduction (and recognition of <em>main</em> components in data), compression (retaining only relevant components in data). Some historical algorithms and linear algebra decompositions can be interpreted or generalized as unsupervised learning.</p></li>
+<li><p><a class="reference internal" href="rl.html#ml-rl"><span class="std std-ref"><strong>Reinforcement Learning, RL</strong></span></a></p></li>
+</ul>
+<p><strong>Goals and methodology.</strong> ML is mainly a engineering-oriented and an application-focused discipline, relying on statistical inference (<strong>todo</strong> <em>be more explicit</em>). Learning usually relies on <strong>optimization</strong>: performance of a ML system usually depends on a set of parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>, and a (much) smaller set of hyper-parameters, <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span>. Thus, learning usually results from the optimization of an objective function</p>
+<div class="math notranslate nohighlight">
+\[L(\boldsymbol{\theta}; \boldsymbol{\mu}) \ ,\]</div>
+<p>w.r.t. parameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span>, whose value is learned/adjusted towards an optimal solution <span class="math notranslate nohighlight">\(\boldsymbol{\theta}^*\)</span> that makes <span class="math notranslate nohighlight">\(L(\boldsymbol{\theta}^*; \boldsymbol{\mu})\)</span> extreme. The choice of hyper-parameters <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span> guides the training process and affect model behavior. Optimization usually relies on gradient methods, updating the parameters in the direction of the gradient of the objective function w.r.t. the parameters,</p>
+<div class="math notranslate nohighlight">
+\[\boldsymbol{\theta} \ \leftarrow \ \boldsymbol{\theta} + \alpha \nabla_{\boldsymbol{\theta}} L(\boldsymbol{\theta}; \boldsymbol{\mu}) \ .\]</div>
+<!--
+Recent development in hardware made feasible the design, construction and tuning of **large-dimensional** models, as the **multi-layered neural networks** used in **Deep learning**.[^deep-learning]
+-->
+<p>Optimization of model parameters is made fast by the use of <strong>back-propagation</strong> and <strong>automatic differentiation</strong> (AD), which efficiently compute gradients of the cost function with respect to the model’s parameters, and technically feasible for large-dimensional models - as the ones used in multi-layered neural networks, in deep learning<a class="footnote-reference brackets" href="#deep-learning" id="id2">2</a> - by recent hardware improvement. These algorithms are not only feasible but also particularly well-suited (being a major driver for new designs) to modern processing architectures, such as <strong>GPUs</strong> and <strong>TPUs</strong>, that accelerate the large-scale matrix and tensor computations involved in both the forward and backward passes of training.</p>
+<p><strong>todo</strong> <em>Show NVIDIA, TSMC revenues</em></p>
+<!--
+
+| Year | Revenue ($M\$$) |
+| ---- | --------------- |
+| 2013 |  4280           | 
+| 2014 |  4130           |
+| 2015 |  4682           |
+| 2016 |  5010           |
+| 2017 |  6910           |
+| 2018 |  9714           |
+| 2019 | 11716           |
+| 2020 | 10918           |
+| 2021 | 16675           |
+| 2022 | 26914           |
+| 2033 | 26974           |
+| 2024 | 60922           |
+| 2025 |130497           |
+
+-->
+<!--
+```{code-cell} python
+import plotly.graphic_objects as go
+
+year = [ 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 ]
+revs = [
+   4280, 
+   4130,
+   4682,
+   5010,
+   6910,
+   9714,
+  11716,
+  10918,
+  16675,
+  26914,
+  26974,
+  60922,
+ 130497
+]
+
+fig = go.Figure(data=[go.Bar(x=year, y=revs)])
+fig.show()
+
+
+```
+-->
+<hr class="docutils" />
+<p><strong>todo</strong> Add references: Bishop,…</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="ml-optimization"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>«Without explicit instructions» means that a systems has no user-coded behavior, but learns it usually via <strong>optimization</strong>, usually either involving minimization of an error function or maximization of an objective function or energy/information content.</p>
+</dd>
+<dt class="label" id="deep-learning"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Deep learning can be roughly defined as that branch of machine learning using multi-layered neural networks, indeed.</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
