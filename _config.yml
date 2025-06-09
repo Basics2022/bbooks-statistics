@@ -1,17 +1,19 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: basics book template
+title: basics blog
 author: basics
 logo: logo.svg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: off   # force
 
 # Define the name of the latex output file for PDF builds
 latex:
+  latex_engine: xelatex
+  uset_jupyterbook_latex: true
   latex_documents:
     targetname: book.tex
 
@@ -21,9 +23,9 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/Basics2022/bbooks-template  # Online location of your book
-  path_to_book: docs                                  # Optional path to your book, relative to the repository root
-  branch: master                                      # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/Basics2022/bbooks-statistics            # Online location of your book
+  path_to_book: docs                                              # Optional path to your book, relative to the repository root
+  branch: master                                                  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -38,16 +40,22 @@ sphinx:
   config:
     language: it
     html_theme_options:
-      # repository_url:: https://github.com/Basics2022/bbooks-physics-hs  # Online location of your book
-      # use_repository_button: True
-      # use_edit_page_button: True
       logo:
         image_light: logo.svg
         image_dark: logo-dark.svg
-    html_favicon: favicon.svg
+      repository_url: https://github.com/Basics2022/bbooks-statistics  # Online location of your book
+      repository_branch: master
+      use_repository_button: True
+      use_edit_page_button: True
+      use_issues_button: True
+      launch_buttons:
+        colab_url: "https://colab.research.google.com"    # colab
+    html_favicon: favicon-sugar.svg
+    bibtex_bibfiles: [ "bibliography.bib" ]
   extra_extensions:
     - sphinx_proof
     - sphinx_exercise
-    # - sphinx_togglebutton   # to be installed
+    - sphinxcontrib.bibtex
+    - sphinx.ext.autodoc  # keep existing extensions
 
 

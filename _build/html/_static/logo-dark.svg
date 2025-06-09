@@ -46,9 +46,9 @@
      inkscape:window-height="1016"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="2.830583"
-     inkscape:cx="249.2272"
-     inkscape:cy="44.834633"
+     inkscape:zoom="11.322332"
+     inkscape:cx="221.94133"
+     inkscape:cy="45.011275"
      inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -66,8 +66,7 @@
      inkscape:snap-bbox-midpoints="true"
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:bbox-nodes="true"
-     inkscape:bbox-paths="true"
-     showguides="false" />
+     inkscape:bbox-paths="true" />
   <flowRoot
      xml:space="preserve"
      id="flowRoot817"
@@ -103,5 +102,5 @@
        id="tspan815-5"
        x="172.41846"
        y="20.510426"
-       style="font-size:26.66667747px;fill:#ffffff;stroke:#ffffff;stroke-width:0.5">blog</tspan></text>
+       style="font-size:26.66667747px;fill:#ffffff;stroke:#ffffff;stroke-width:0.5">physics-hs</tspan></text>
 </svg>
