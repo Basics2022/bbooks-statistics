@@ -9,8 +9,12 @@ This material is part of the [**basics-books project**](https://basics2022.githu
 - Probability theory
 - Inferential statistics
 - Bayesian statistics
-- [Introduction to Machine Learning: SL, UL, ML](ml:intro)
 
+```{dropdown} [Introduction to Machine Learning: SL, UL, ML](ml:intro)
+:open:
+
+Machine learning (ML) is a branch of artificial intelligence (AI) focused on designing systems that can learn from data to improve their performance on a task. ML frameworks include supervised learning (e.g., regression and classification), unsupervised learning (e.g., clustering, compression, principal component analysis), and reinforcement learning (e.g., planning and control). ML emphasizes practical problem-solving, grounded in statistical methods, numerical optimization, and enabled by advances in computing hardware.
+```
 
 <!--
 It is also available as a [.pdf document](_build/latex/book.pdf).
