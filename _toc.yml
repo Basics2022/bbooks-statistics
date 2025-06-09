@@ -3,8 +3,11 @@
 
 format: jb-book
 root: intro
-# parts:
-# - caption: 
-#   numbered: true
-#   chapters:
-#   - file: intro
+parts:
+- caption: Introduction to Machine Learning
+  numbered: true
+  chapters:
+  - file: ch/ml/intro
+  - file: ch/ml/sl
+  - file: ch/ml/ul
+  - file: ch/ml/rl
