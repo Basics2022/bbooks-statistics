@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Stochastic processes &#8212; basics blog</title>
+    <title>2.4. Multi-dimensional stochastic variables &#8212; basics blog</title>
   
   
   
@@ -66,12 +66,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/prob/processes';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/prob/rv-multi-dimensional';</script>
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.1. Wiener process - Brownian motion" href="wiener.html" />
-    <link rel="prev" title="2.5. Convergence in statistics" href="convergence.html" />
+    <link rel="next" title="2.5. Convergence in statistics" href="convergence.html" />
+    <link rel="prev" title="2.3. Continuous stochastic variables" href="rv-continuous.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,15 +180,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability Theory</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">2. Introduction to probability theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">2. Introduction to probability theory</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="rv-def.html">2.1. Definition of stochastic variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rv-discrete.html">2.2. Discrete stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rv-continuous.html">2.3. Continuous stochastic variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Multi-dimensional stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="convergence.html">2.5. Convergence in statistics</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. Stochastic processes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="processes.html">3. Stochastic processes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="wiener.html">3.1. Wiener process - Brownian motion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="white-noise.html">3.2. White noise</a></li>
 </ul>
@@ -276,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/prob/processes.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/prob/rv-multi-dimensional.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/prob/processes.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/prob/rv-multi-dimensional.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/prob/processes.md" target="_blank"
+      <li><a href="../../_sources/ch/prob/rv-multi-dimensional.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +394,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -405,11 +407,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Stochastic processes</h1>
+    <h1>Multi-dimensional stochastic variables</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moments">2.4.1. Moments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem">2.4.2. Bayes’ theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence">2.4.3. Statistical independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independence-implies-no-correlation">2.4.3.1. Independence implies no correlation</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -419,49 +434,130 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="stochastic-processes">
-<span id="prob-processes"></span><h1><span class="section-number">3. </span>Stochastic processes<a class="headerlink" href="#stochastic-processes" title="Permalink to this heading">#</a></h1>
-<p><strong>Definition of stochastic process.</strong></p>
-<p><strong>Examples.</strong></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="multi-dimensional-stochastic-variables">
+<span id="prob-multidim"></span><h1><span class="section-number">2.4. </span>Multi-dimensional stochastic variables<a class="headerlink" href="#multi-dimensional-stochastic-variables" title="Permalink to this heading">#</a></h1>
 <ul>
-<li><p>White noise, <span class="math notranslate nohighlight">\(\xi(t)\)</span>, is a zero-mean process with no correlation between its values at different times</p>
+<li><p>joint distribution</p>
 <div class="math notranslate nohighlight">
-\[\mathbb{E}\left[ \xi(t) \, \xi(s) \right] = \delta(t-s)\]</div>
+\[p_{XY}(x,y) \]</div>
 </li>
-<li><p>Wiener process (Brownian motion), <span class="math notranslate nohighlight">\(W(t)\)</span></p>
+<li><p>marginal distribution</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-    &amp; W(0) = 0 \\
-    &amp; W(t) \text{ has independent increments} \\
-    &amp; W(t) - W(s) \sim N(0, t-s) \text{ for $t &gt; s$} \\
-    &amp; W(t) \text{ are continuous but nowhere differentiable}
-  \end{aligned}\end{split}\]</div>
-<p>Informal relation between Wiener process and white noise signal</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-   W(t) - W(s) &amp; = \int_{s}^{t} \xi(\tau) \, d \tau \\
-   {}^{''} \dfrac{d W(t)}{d t} &amp; = \xi(t) {}^{``}
-  \end{aligned}\end{split}\]</div>
-<p>where the derivative relation doesn’t hold in the classical sense, as <span class="math notranslate nohighlight">\(W(t)\)</span> is nowhere differentiable</p>
+\[p_X(x) := \int_{y} p_{XY}(x,y) \, dy\]</div>
 </li>
-<li><p>time-discrete Markov processes</p></li>
-</ul>
-<p><strong>Applications</strong></p>
-<ul>
-<li><p>LTI</p></li>
-<li><p>Stochastic differential equations…</p>
+<li><p>conditional distribution, <span class="math notranslate nohighlight">\(p_{X|Y}(x|y)\)</span>. The following holds</p>
 <div class="math notranslate nohighlight">
-\[d X(t) = \mu(t) \, dt + \sigma(t) \, dW(t)\]</div>
+\[p_{XY} = p_{X|Y} \, p_Y = p_{Y|X} p_X\]</div>
 </li>
 </ul>
-<p><strong>Assumptions.</strong></p>
+<p>Integrating over <span class="math notranslate nohighlight">\(x\)</span> the relation <span class="math notranslate nohighlight">\(p(x,y) = p(x|y) p(y)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  \int_{x} p(x,y) d x = \int_{x} p(x|y) \, p(y) \, dx = p(y) \underbrace{\int_{x} p(x|y) \, dx}_{= 1} = p(y) \ ,
+\end{aligned}\]</div>
+<p>as the normalization condition holds for conditional distribution <span class="math notranslate nohighlight">\(p(x|y)\)</span>.</p>
+<div class="section" id="moments">
+<span id="prb-multidim-moments"></span><h2><span class="section-number">2.4.1. </span>Moments<a class="headerlink" href="#moments" title="Permalink to this heading">#</a></h2>
+<ul>
+<li><p>expected value</p>
+<div class="math notranslate nohighlight">
+\[\boldsymbol{\mu}_{\mathbf{X}} := \mathbf{E}\left[ \mathbf{X} \right] = \int_{\mathbf{x}} p(\mathbf{x}) \, \mathbf{x} \,  d \mathbf{x}\]</div>
+</li>
+<li><p>covariance</p>
+<div class="math notranslate nohighlight">
+\[\boldsymbol{\sigma}^2_{\mathbf{X}} := \mathbf{E} \left[ \Delta \mathbf{X} \, \Delta \mathbf{X}^T \right] = \int_{\mathbf{x}} p(\mathbf{x}) \, \Delta \mathbf{x} \Delta \mathbf{x}^T \, d \mathbf{x} \ ,\]</div>
+<p>with <span class="math notranslate nohighlight">\(\Delta \mathbf{X} := \mathbf{X} - \boldsymbol{\mu}_{\mathbf{X}} \)</span>, and <span class="math notranslate nohighlight">\(\Delta \mathbf{x} = \mathbf{x} - \boldsymbol{\mu}_{\mathbf{X}}\)</span>.</p>
+<p>Taking a pair of components <span class="math notranslate nohighlight">\(X_i\)</span>, <span class="math notranslate nohighlight">\(X_j\)</span> of the random vector <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>, their covariance is the <span class="math notranslate nohighlight">\(ij\)</span> component of the array <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}^2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2_{ij} := \mathbb{E}\left[ \Delta X_i \, \Delta X_j \right] =: \rho_{ij} \sigma_i \sigma_j \ ,\]</div>
+<p>having introduced <strong>(Pearson) correlation</strong>, <span class="math notranslate nohighlight">\(\rho_{ij}\)</span>, between random variable <span class="math notranslate nohighlight">\(X_i\)</span> and <span class="math notranslate nohighlight">\(X_j\)</span>, and being <span class="math notranslate nohighlight">\(\sigma_i\)</span> the standard deviation of variable <span class="math notranslate nohighlight">\(X_i\)</span>, square root of its variance <span class="math notranslate nohighlight">\(\sigma^2_i\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \sigma^2_i 
+    &amp; = \mathbb{E}\left[ \left( X_i - \mu_i \right)^2  \right] = \\
+    &amp; = \int_{\mathbf{x}} (x_i - \mu_i)^2 p_{\mathbf{X}}(\mathbf{x}) d \mathbf{x} = \\
+    &amp; = \int_{x_i} (x_i - \mu_i)^2 p_i (x_i) \, d x_i 
+  \end{aligned}\end{split}\]</div>
+<p>Here the integrals read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \mu_i 
+    &amp; = \int_{\mathbf{x}} x_i \, p_{\mathbf{X}}(\mathbf{x}) x_i \, d \mathbf{x} = \\
+    &amp; = \int_{\mathbf{x}} x_i \, p(x_1, x_2, \dots, x_i, \dots, x_n) d x_1 d x_2 \dots d x_i \dots d x_n = \\
+    &amp; = \int_{\mathbf{x}} x_i \, p(x_i) p(x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_n | x_i) d x_1 d x_2 \dots d x_i \dots d x_n = \\
+    &amp; = \int_{x_i} x_i \, p(x_i) \underbrace{\int_{x_1} \dots \int_{x_n} p(x_1, x_2, \dots, x_{i-1}, x_{i+1}, \dots, x_n | x_i) d x_1 \dots d x_{i-1} d x_{i+1} \dots d x_n}_{= 1 \text{ $\forall x_i$}} d x_i = \\
+    &amp; = \int_{x_i} x_i \, p(x_i) \, d x_i \ .
+  \end{aligned}\end{split}\]</div>
+</li>
+</ul>
+<p><strong>Property of correlation.</strong> <span class="math notranslate nohighlight">\(|\rho_{XY}| \le 1\)</span>. Proof with Cauchy-Schwartz inequality <strong>todo</strong></p>
+<div class="tip admonition">
+<p class="admonition-title">Notation</p>
+<p>Here, covariance is indicated as <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}^2\)</span>. This is not a power <span class="math notranslate nohighlight">\(2\)</span>, but just a symbol, at most recalling that covariance matrix is <strong>semi-definite positive</strong>.</p>
+</div>
+<p><strong>Properties of covariance.</strong></p>
 <ul class="simple">
-<li><p>Stationariety</p></li>
-<li><p>Ergodicity</p></li>
+<li><p>symmetric</p></li>
+<li><p>semi-definite positive</p></li>
+<li><p>spectrum…</p></li>
 </ul>
+</div>
+<div class="section" id="bayes-theorem">
+<span id="prob-multidim-bayes"></span><h2><span class="section-number">2.4.2. </span>Bayes’ theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this heading">#</a></h2>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 2.1 </span> (Bayes’ theorem)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Where <span class="math notranslate nohighlight">\(p_Y(y) \ne 0\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[k_{xy}(\tau) := \mathbb{E}[x(t) y(t-\tau)] = \lim_{T\rightarrow +\infty} \left\{ \frac{1}{2T} \int_{t = -T}^{T} x(t) \, y(t-\tau) \, d t \right\}\]</div>
-<div class="toctree-wrapper compound">
+\[p_{X|Y}(x|y) = \dfrac{p_{XY}(x,y)}{p_Y(y)}\]</div>
+</div>
+</div></div>
+<div class="section" id="statistical-independence">
+<span id="prob-multidim-independence"></span><h2><span class="section-number">2.4.3. </span>Statistical independence<a class="headerlink" href="#statistical-independence" title="Permalink to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Independent random variables)</p>
+<div class="definition-content section" id="proof-content">
+<p>Given two random variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> with joint distribution, the random variable <span class="math notranslate nohighlight">\(X\)</span> is independent from <span class="math notranslate nohighlight">\(Y\)</span> if its conditional probability equals its marginal probability,</p>
+<div class="math notranslate nohighlight">
+\[p_{X|Y} = p_X \ ,\]</div>
+<p>i.e. the probability of <span class="math notranslate nohighlight">\(X\)</span> doesn’t depend on <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+</div>
+</div><div class="section" id="independence-implies-no-correlation">
+<span id="prob-multidim-independence-no-correlation"></span><h3><span class="section-number">2.4.3.1. </span>Independence implies no correlation<a class="headerlink" href="#independence-implies-no-correlation" title="Permalink to this heading">#</a></h3>
+<p>Given two random variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> are independent if $<span class="math notranslate nohighlight">\(p(x|y) = p(x)\)</span><span class="math notranslate nohighlight">\( and thus \)</span>p(x,y) = p(x) p(y)$. Covariance of two random variable reads</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2_{xy} = \mathbb{E} \left[ (X - \mu_X) (Y - \mu_Y)  \right] \ ,\]</div>
+<p>and if they’re independent, it immediately follows that their covariance <span class="math notranslate nohighlight">\(\sigma^2_{XY}\)</span> is zero (and so their correlation <span class="math notranslate nohighlight">\(\rho_{XY}\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2_{xy} = \underbrace{\mathbb{E} \left[ X - \mu_X \right]}_{=0} \underbrace{\mathbb{E} \left[ Y - \mu_Y \right]}_{=0} = 0 \ ,\]</div>
+<p>as the expected value of the deviation from the expected value is zero, <span class="math notranslate nohighlight">\(\mathbb{E} \left[ X - \mathbb{E}[X] \right] = 0\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Proof for continuous r.v.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \sigma^2_{xy}
+  &amp; = \mathbb{E} \left[ (X - \mu_X) (Y - \mu_Y)  \right] = \\
+  &amp; = \int_{x,y} ( x - \mu_X) ( y - \mu_Y) p(x,y) \, dx dy = &amp;&amp; (1) \\
+  &amp; = \int_{x,y} ( x - \mu_X) ( y - \mu_Y) p(x) p(y) \, dx dy = \\
+  &amp; = \int_{x} ( x - \mu_X) p(x) dx \, \int_{y} ( y - \mu_Y) p(y) dy = &amp;&amp; (2) \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">having used here the common notation abuse <span class="math notranslate nohighlight">\(p_X(x) = p(x)\)</span> and <span class="math notranslate nohighlight">\((1)\)</span> statistical independence, <span class="math notranslate nohighlight">\(p(x,y) = p(x) p(y)\)</span>, and <span class="math notranslate nohighlight">\((2)\)</span> <span class="math notranslate nohighlight">\(\mathbb{E}\left[ X - \mathbb{E}[X] \right] = 0\)</span>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Proof for discrete r.v.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Repeat the proof for continuous r.v. using summations instead of integrals.</p>
+</div>
+</details></div>
 </div>
 </div>
 
@@ -496,20 +592,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="convergence.html"
+       href="rv-continuous.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Convergence in statistics</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Continuous stochastic variables</p>
       </div>
     </a>
     <a class="right-next"
-       href="wiener.html"
+       href="convergence.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>Wiener process - Brownian motion</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Convergence in statistics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -519,6 +615,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moments">2.4.1. Moments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem">2.4.2. Bayes’ theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence">2.4.3. Statistical independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independence-implies-no-correlation">2.4.3.1. Independence implies no correlation</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

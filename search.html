@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="it" data-content_root="" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Cerca - basics blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - basics blog</title>
   
   
   
@@ -55,7 +55,6 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -69,10 +68,10 @@ const thebe_selector_output = ".output, .cell_output"
   <script src="_static/language_data.js"></script>
   <script src="searchindex.js"></script>
     <link rel="shortcut icon" href="_static/favicon-sugar.svg"/>
-    <link rel="index" title="Indice" href="genindex.html" />
-    <link rel="search" title="Cerca" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="#" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="it"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
@@ -179,8 +178,19 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability Theory</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ch/prob/intro.html">2. Introduction to probability theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch/prob/processes.html">3. Stochastic processes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch/prob/intro.html">2. Introduction to probability theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-def.html">2.1. Definition of stochastic variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-discrete.html">2.2. Discrete stochastic variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-continuous.html">2.3. Continuous stochastic variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/convergence.html">2.5. Convergence in statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch/prob/processes.html">3. Stochastic processes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/wiener.html">3.1. Wiener process - Brownian motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/white-noise.html">3.2. White noise</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Inference</span></p>
 <ul class="nav bd-sidenav">
@@ -249,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Basics2022/bbooks-statistics" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Repository di origine"
+   title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -266,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Apri un problema"
+   title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -286,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Modalità schermo intero"
+  title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -312,7 +322,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -327,10 +337,10 @@ document.write(`
               
               
   <div class="bd-search-container">
-    <h1>Cerca</h1>
+    <h1>Search</h1>
     <noscript>
       <div class="admonition error">
-        <p class="admonition-title">Errore</p>
+        <p class="admonition-title">Error</p>
         <p>Please activate JavaScript to enable the search functionality.</p>
       </div>
     </noscript>
@@ -386,7 +396,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-Di basics
+By basics
 </p>
 
   </div>
