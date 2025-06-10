@@ -78,6 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   </head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9HKRV72TBJ');
+</script>
+
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -179,7 +188,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-discrete.html">2.2. Discrete stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-continuous.html">2.3. Continuous stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch/prob/convergence.html">2.5. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/transformations.html">2.5. Transformations of probability functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/convergence.html">2.6. Convergence in statistics</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="ch/prob/processes.html">3. Stochastic processes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -352,9 +362,12 @@ document.write(`
    <h1>Proof Index</h1>
 
    <div class="modindex-jumpbox">
-   <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
+   <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
+   <a href="#cap-property-0"><strong>property-0</strong></a> | 
    <a href="#cap-property-1"><strong>property-1</strong></a> | 
-   <a href="#cap-theorem-0"><strong>theorem-0</strong></a> | 
+   <a href="#cap-property-2"><strong>property-2</strong></a> | 
+   <a href="#cap-property-3"><strong>property-3</strong></a> | 
+   <a href="#cap-theorem-1"><strong>theorem-1</strong></a> | 
    <a href="#cap-wiener:def"><strong>wiener:def</strong></a> | 
    <a href="#cap-wn:def:derivative"><strong>wn:def:derivative</strong></a> | 
    <a href="#cap-wn:def:properties"><strong>wn:def:properties</strong></a>
@@ -362,13 +375,21 @@ document.write(`
 
    <table class="indextable modindextable">
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-1"><td></td><td>
-       <strong>definition-1</strong></td><td></td></tr>
+     <tr class="cap" id="cap-definition-2"><td></td><td>
+       <strong>definition-2</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ch/prob/rv-multi-dimensional.html#definition-1"><code class="xref">definition-1</code></a> <em>(ch/prob/rv-multi-dimensional)</em></td><td>
+       <a href="ch/prob/rv-multi-dimensional.html#definition-2"><code class="xref">definition-2</code></a> <em>(ch/prob/rv-multi-dimensional)</em></td><td>
        <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-property-0"><td></td><td>
+       <strong>property-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ch/prob/rv-multi-dimensional.html#property-0"><code class="xref">property-0</code></a> <em>(ch/prob/rv-multi-dimensional)</em></td><td>
+       <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-1"><td></td><td>
        <strong>property-1</strong></td><td></td></tr>
@@ -378,12 +399,28 @@ document.write(`
        <a href="ch/prob/wiener.html#property-1"><code class="xref">property-1</code></a> <em>(ch/prob/wiener)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-0"><td></td><td>
-       <strong>theorem-0</strong></td><td></td></tr>
+     <tr class="cap" id="cap-property-2"><td></td><td>
+       <strong>property-2</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="ch/prob/rv-multi-dimensional.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(ch/prob/rv-multi-dimensional)</em></td><td>
+       <a href="ch/prob/wiener.html#property-2"><code class="xref">property-2</code></a> <em>(ch/prob/wiener)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-property-3"><td></td><td>
+       <strong>property-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ch/prob/wiener.html#property-3"><code class="xref">property-3</code></a> <em>(ch/prob/wiener)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-1"><td></td><td>
+       <strong>theorem-1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ch/prob/rv-multi-dimensional.html#theorem-1"><code class="xref">theorem-1</code></a> <em>(ch/prob/rv-multi-dimensional)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-wiener:def"><td></td><td>
