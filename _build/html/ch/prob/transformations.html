@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Stochastic processes &#8212; basics blog</title>
+    <title>2.5. Transformations of probability functions &#8212; basics blog</title>
   
   
   
@@ -64,14 +64,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/prob/processes';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/prob/transformations';</script>
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.1. Wiener process - Brownian motion" href="wiener.html" />
-    <link rel="prev" title="2.6. Convergence in statistics" href="convergence.html" />
+    <link rel="next" title="2.6. Convergence in statistics" href="convergence.html" />
+    <link rel="prev" title="2.4. Multi-dimensional stochastic variables" href="rv-multi-dimensional.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,16 +178,16 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability Theory</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">2. Introduction to probability theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">2. Introduction to probability theory</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="rv-def.html">2.1. Definition of stochastic variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rv-discrete.html">2.2. Discrete stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rv-continuous.html">2.3. Continuous stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transformations.html">2.5. Transformations of probability functions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Transformations of probability functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="convergence.html">2.6. Convergence in statistics</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. Stochastic processes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="processes.html">3. Stochastic processes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="wiener.html">3.1. Wiener process - Brownian motion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="white-noise.html">3.2. White noise</a></li>
 </ul>
@@ -277,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/prob/processes.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/prob/transformations.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/prob/processes.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/prob/transformations.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/prob/processes.md" target="_blank"
+      <li><a href="../../_sources/ch/prob/transformations.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -406,7 +404,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Stochastic processes</h1>
+    <h1>Transformations of probability functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -420,50 +418,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="stochastic-processes">
-<span id="prob-processes"></span><h1><span class="section-number">3. </span>Stochastic processes<a class="headerlink" href="#stochastic-processes" title="Permalink to this heading">#</a></h1>
-<p><strong>Definition of stochastic process.</strong></p>
-<p><strong>Examples.</strong></p>
-<ul>
-<li><p>White noise, <span class="math notranslate nohighlight">\(\xi(t)\)</span>, is a zero-mean process with no correlation between its values at different times</p>
-<div class="math notranslate nohighlight">
-\[\mathbb{E}\left[ \xi(t) \, \xi(s) \right] = \delta(t-s)\]</div>
-</li>
-<li><p>Wiener process (Brownian motion), <span class="math notranslate nohighlight">\(W(t)\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-    &amp; W(0) = 0 \\
-    &amp; W(t) \text{ has independent increments} \\
-    &amp; W(t) - W(s) \sim N(0, t-s) \text{ for $t &gt; s$} \\
-    &amp; W(t) \text{ are continuous but nowhere differentiable}
-  \end{aligned}\end{split}\]</div>
-<p>Informal relation between Wiener process and white noise signal</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-   W(t) - W(s) &amp; = \int_{s}^{t} \xi(\tau) \, d \tau \\
-   {}^{''} \dfrac{d W(t)}{d t} &amp; = \xi(t) {}^{``}
-  \end{aligned}\end{split}\]</div>
-<p>where the derivative relation doesn’t hold in the classical sense, as <span class="math notranslate nohighlight">\(W(t)\)</span> is nowhere differentiable</p>
-</li>
-<li><p>time-discrete Markov processes</p></li>
-</ul>
-<p><strong>Applications</strong></p>
-<ul>
-<li><p>LTI</p></li>
-<li><p>Stochastic differential equations…</p>
-<div class="math notranslate nohighlight">
-\[d X(t) = \mu(t) \, dt + \sigma(t) \, dW(t)\]</div>
-</li>
-</ul>
-<p><strong>Assumptions.</strong></p>
-<ul class="simple">
-<li><p>Stationariety</p></li>
-<li><p>Ergodicity</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[k_{xy}(\tau) := \mathbb{E}[x(t) y(t-\tau)] = \lim_{T\rightarrow +\infty} \left\{ \frac{1}{2T} \int_{t = -T}^{T} x(t) \, y(t-\tau) \, d t \right\}\]</div>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="transformations-of-probability-functions">
+<span id="prob-transformations"></span><h1><span class="section-number">2.5. </span>Transformations of probability functions<a class="headerlink" href="#transformations-of-probability-functions" title="Permalink to this heading">#</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -497,20 +453,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="convergence.html"
+       href="rv-multi-dimensional.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.6. </span>Convergence in statistics</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>Multi-dimensional stochastic variables</p>
       </div>
     </a>
     <a class="right-next"
-       href="wiener.html"
+       href="convergence.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>Wiener process - Brownian motion</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span>Convergence in statistics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

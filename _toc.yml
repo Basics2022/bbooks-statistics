@@ -17,6 +17,7 @@ parts:
     - file: ch/prob/rv-discrete
     - file: ch/prob/rv-continuous
     - file: ch/prob/rv-multi-dimensional
+    - file: ch/prob/transformations
     - file: ch/prob/convergence
   - file: ch/prob/processes
     sections:

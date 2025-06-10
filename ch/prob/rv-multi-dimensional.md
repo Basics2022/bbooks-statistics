@@ -5,15 +5,19 @@
 
   $$p_{XY}(x,y) $$
 
-- marginal distribution
+- marginal distribution. For continuous variables
 
   $$p_X(x) := \int_{y} p_{XY}(x,y) \, dy$$
+
+  while for discrete variables
+  
+  $$p_X(x_i) = \sum_j p_{XY}(x_i,y_j)$$
 
 - conditional distribution, $p_{X|Y}(x|y)$. The following holds
 
   $$p_{XY} = p_{X|Y} \, p_Y = p_{Y|X} p_X$$
 
-Integrating over $x$ the relation $p(x,y) = p(x|y) p(y)$
+For continuous r.v., integrating over $x$ the relation $p(x,y) = p(x|y) p(y)$
 
 $$\begin{aligned}
   \int_{x} p(x,y) d x = \int_{x} p(x|y) \, p(y) \, dx = p(y) \underbrace{\int_{x} p(x|y) \, dx}_{= 1} = p(y) \ ,
@@ -21,16 +25,28 @@ $$\begin{aligned}
 
 as the normalization condition holds for conditional distribution $p(x|y)$.
 
+```{prf:property}
+
+$$\begin{aligned}
+  p(i,j) = p(i|j) p(j)
+\end{aligned}$$
+
+$$\sum_i p(i,j) = \underbrace{\sum_i p(i|j)}_{=1} p(j) = p(j)$$
+
+
+```
+
+
 (prb:multidim:moments)=
 ## Moments
 
 - expected value
 
-  $$\boldsymbol{\mu}_{\mathbf{X}} := \mathbf{E}\left[ \mathbf{X} \right] = \int_{\mathbf{x}} p(\mathbf{x}) \, \mathbf{x} \,  d \mathbf{x}$$
+  $$\boldsymbol{\mu}_{\mathbf{X}} := \mathbb{E}\left[ \mathbf{X} \right] = \int_{\mathbf{x}} p(\mathbf{x}) \, \mathbf{x} \,  d \mathbf{x}$$
 
 - covariance
 
-  $$\boldsymbol{\sigma}^2_{\mathbf{X}} := \mathbf{E} \left[ \Delta \mathbf{X} \, \Delta \mathbf{X}^T \right] = \int_{\mathbf{x}} p(\mathbf{x}) \, \Delta \mathbf{x} \Delta \mathbf{x}^T \, d \mathbf{x} \ ,$$
+  $$\boldsymbol{\sigma}^2_{\mathbf{X}} := \mathbb{E} \left[ \Delta \mathbf{X} \, \Delta \mathbf{X}^T \right] = \int_{\mathbf{x}} p(\mathbf{x}) \, \Delta \mathbf{x} \Delta \mathbf{x}^T \, d \mathbf{x} \ ,$$
 
   with $\Delta \mathbf{X} := \mathbf{X} - \boldsymbol{\mu}_{\mathbf{X}} $, and $\Delta \mathbf{x} = \mathbf{x} - \boldsymbol{\mu}_{\mathbf{X}}$.
 
@@ -101,7 +117,7 @@ i.e. the probability of $X$ doesn't depend on $Y$.
 (prob:multidim:independence:no-correlation)=
 ### Independence implies no correlation
 
-Given two random variables $X$, $Y$ are independent if $$p(x|y) = p(x)$$ and thus $p(x,y) = p(x) p(y)$. Covariance of two random variable reads
+Given two random variables $X$, $Y$ are independent if $p(x|y) = p(x)$ and thus $p(x,y) = p(x) p(y)$. Covariance of two random variable reads
 
 $$\sigma^2_{xy} = \mathbb{E} \left[ (X - \mu_X) (Y - \mu_Y)  \right] \ ,$$
 

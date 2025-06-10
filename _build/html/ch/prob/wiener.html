@@ -185,7 +185,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="rv-discrete.html">2.2. Discrete stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rv-continuous.html">2.3. Continuous stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="convergence.html">2.5. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html">2.5. Transformations of probability functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="convergence.html">2.6. Convergence in statistics</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="processes.html">3. Stochastic processes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -417,7 +418,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">3.1.1. Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">3.1.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">3.1.2. Properties</a></li>
 </ul>
             </nav>
         </div>
@@ -431,6 +433,13 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="wiener-process-brownian-motion">
 <span id="prob-processes-wiener"></span><h1><span class="section-number">3.1. </span>Wiener process - Brownian motion<a class="headerlink" href="#wiener-process-brownian-motion" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Introduction: history and relation with other problems (diffusion?)</p></li>
+<li><p>Definition and some theory</p></li>
+<li><p>Simulation of Wiener process, demonstration of properties shown in theory section</p></li>
+</ul>
+<div class="section" id="definition">
+<span id="prob-processes-wiener-def"></span><h2><span class="section-number">3.1.1. </span>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
 <div class="proof definition admonition" id="wiener:def">
 <p class="admonition-title"><span class="caption-number">Definition 3.1 </span> (Wiener process - Brownian motion)</p>
 <div class="definition-content section" id="proof-content">
@@ -441,7 +450,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[W(0) = 0\]</div>
 <ol class="arabic simple" start="2">
-<li><p>stationary and normally distributed increments,</p></li>
+<li><p>increments with zero-mean <a class="reference internal" href="rv-continuous.html#prob-rv-continuous-ex-normal"><span class="std std-ref">normal distribution</span></a></p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[W(t) - W(s) \sim \mathscr{N}(0,|t-s|)\]</div>
@@ -459,28 +468,26 @@ document.write(`
 :class: tip
 ```
 -->
+</div>
 <div class="section" id="properties">
-<h2><span class="section-number">3.1.1. </span>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.1.2. </span>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h2>
 <div class="proof property admonition" id="property-1">
 <p class="admonition-title"><span class="caption-number">Property 3.1 </span> (Covariance of increments)</p>
 <div class="property-content section" id="proof-content">
-<p>By definition of covariance of an increment, and definition of <a class="reference internal" href="rv-continuous.html#prob-rv-continuous-ex-normal"><span class="std std-ref">normal distribution</span></a> reads</p>
-<div class="math notranslate nohighlight">
-\[\mathbb{E}\left[ \left( W(t) - W(s) \right)^2  \right] = \mathbb{E}\left[ \mathscr{N}(0, |t-s|) \right] =  |t - s| \ .\]</div>
-<p>Covariance of independent increments is zero, as <a class="reference internal" href="rv-multi-dimensional.html#prob-multidim-independence-no-correlation"><span class="std std-ref">independence implies no correlation</span></a>, i.e. zero covariance. Thus, if <span class="math notranslate nohighlight">\(a \le b \le c \le d\)</span>, <span class="math notranslate nohighlight">\(W(b)-W(a)\)</span> and <span class="math notranslate nohighlight">\(W(d)-W(c)\)</span> are independent by defintion of Wiener process, and their correlation is zero,</p>
-<div class="math notranslate nohighlight">
-\[\mathbb{E}\left[ ( W(b) - W(a) ) ( W(d) - W(c) )  \right] = 0\]</div>
-<p>Co</p>
+<p>Covariance of an increment follows the definition of Wiener process and the definition of <a class="reference internal" href="rv-continuous.html#prob-rv-continuous-ex-normal"><span class="std std-ref">normal distribution</span></a>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-wiener-cov-1">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-wiener-cov-1" title="Permalink to this equation">#</a></span>\[\mathbb{E}\left[ \left( W(t) - W(s) \right)^2  \right] = \mathbb{E}\left[ \mathscr{N}(0, |t-s|) \right] =  |t - s| \ .\]</div>
+<p>Covariance of independent increments - on non-overlapping ranges - is zero, as <a class="reference internal" href="rv-multi-dimensional.html#prob-multidim-independence-no-correlation"><span class="std std-ref">independence implies no correlation</span></a>, i.e. zero covariance. Thus, if <span class="math notranslate nohighlight">\(a \le b \le c \le d\)</span>, <span class="math notranslate nohighlight">\(W(b)-W(a)\)</span> and <span class="math notranslate nohighlight">\(W(d)-W(c)\)</span> are independent by property <span class="math notranslate nohighlight">\((3)\)</span> in <a class="reference internal" href="#wiener:def">Definition 3.1</a> of Wiener process, and thus their covariance - and correlation - is zero,</p>
+<div class="math notranslate nohighlight" id="equation-eq-wiener-cov-2">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-eq-wiener-cov-2" title="Permalink to this equation">#</a></span>\[\mathbb{E}\left[ ( W(b) - W(a) ) ( W(d) - W(c) )  \right] = 0\]</div>
+<p>Covariance of two generic increments reads</p>
+<div class="math notranslate nohighlight" id="equation-eq-wiener-cov-3">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-eq-wiener-cov-3" title="Permalink to this equation">#</a></span>\[\mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] = \big| [s_1, t_1] \cap [s_2, t_2]\big|\]</div>
+<p>as it’s proved below.</p>
 </div>
-</div><div class="proof property admonition" id="property-2">
-<p class="admonition-title"><span class="caption-number">Property 3.2 </span> (Covariance of increments)</p>
-<div class="property-content section" id="proof-content">
-<div class="math notranslate nohighlight">
-\[\mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] = \big| [s_1, t_1] \cap [s_2, t_2]\big|\]</div>
-</div>
-</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Proof<div class="sd-summary-down docutils">
+Proof of the covariance of two generic increments <div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -488,12 +495,128 @@ Proof<div class="sd-summary-down docutils">
 <p class="sd-card-text">If <span class="math notranslate nohighlight">\(s_1 \le s_2 \le t_2 \le t_1\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  \mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] 
-  &amp; = \mathbb{E}\left[ W(t_1) W(t_2) \right] - \mathbb{E}\left[ W(t_1) W(s_2) \right] + \\
-  &amp; - \mathbb{E}\left[ W(s_1) W(t_2) \right] + \mathbb{E}\left[ W(s_1) W(s_2) \right] = \\
-  &amp; = (t_1 - t_2) - (t_1 - s_2) - (t_2 - s_1) + (s_2 - s_1) = \\
-  &amp; =
+  &amp; \mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] = \\
+  &amp; \quad = \mathbb{E}\left[ \left( W(t_1) - W(t_2) + W(t_2) - W(s_2) + W(s_2) - W(s_1) \right) \left( W(t_2) - W(s_2) \right) \right] = \\
+  &amp; \quad = \underbrace{\mathbb{E}\left[ \left( W(t_1) - W(t_2) \right) (W(t_2) - W(s_2) ) \right]}_{=0} 
+          + \underbrace{\mathbb{E}\left[ \left( W(t_2) - W(s_2) \right) (W(t_2) - W(s_2) ) \right]}_{=|t_2 - s_2|} + \\
+  &amp; \quad + \underbrace{\mathbb{E}\left[ \left( W(s_2) - W(s_1) \right) (W(t_2) - W(s_2) ) \right]}_{= 0} = \\
+  &amp; \quad  = 0 + |t_2 - s_2| + 0 = \big| [s_1, t_1] \cap [s_2, t_2] \big| \ . 
 \end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Similarly, if <span class="math notranslate nohighlight">\(s_1 \le s_2 \le t_1 \le t_2 \)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] = \\
+  &amp; \quad = \mathbb{E}\left[ \left( W(t_1) - W(s_2) + W(s_2) - W(s_1) \right) \left( W(t_2) - W(t_1) + W(t_1) - W(s_2) \right) \right] = \\
+  &amp; \quad = \underbrace{\mathbb{E}\left[ \left( W(t_1) - W(s_2) \right) (W(t_2) - W(t_1) ) \right]}_{=0} 
+          + \underbrace{\mathbb{E}\left[ \left( W(t_1) - W(s_2) \right) (W(t_1) - W(s_2) ) \right]}_{=|t_1 - s_2|} + \\
+  &amp; \quad + \underbrace{\mathbb{E}\left[ \left( W(s_2) - W(s_1) \right) (W(t_2) - W(t_1) ) \right]}_{= 0}  
+          + \underbrace{\mathbb{E}\left[ \left( W(s_2) - W(s_1) \right) (W(t_1) - W(s_2) ) \right]}_{= 0} = \\
+  &amp; \quad  = 0 + |t_1 - s_2| + 0 = \big| [s_1, t_1] \cap [s_2, t_2] \big| \ . 
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">All the other situations can be proved in the same way.</p>
+</div>
+</details><div class="proof property admonition" id="property-2">
+<p class="admonition-title"><span class="caption-number">Property 3.2 </span> (Statistics of maximum)</p>
+<div class="property-content section" id="proof-content">
+<div class="math notranslate nohighlight">
+\[P\left( M(t) \ge a  \right) = 2 P \left( W(t) \ge a \right) = 2 - 2 \, \phi\left( \frac{a}{\sqrt{t}} \right) \ ,\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[M(t) = \max_{0 \le \tau \le t} W(\tau)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\phi(x) = \int_{y = -\infty}^{x} p_{\mathscr{N}(0,1)}(x) \, dx\]</div>
+<p>is the cumulative probability function of a normal distribution <span class="math notranslate nohighlight">\(\mathscr{N}(0,1)\)</span>.</p>
+</div>
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Proof.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>The second inequality</strong> immediately follows from the very definition of Wiener process with initial conditions <span class="math notranslate nohighlight">\(W(0)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  P \left( W(t) - W(0) \ge a \right) 
+  &amp; = P \left( \mathscr{N}(0,t) \ge a \right) = &amp;&amp; (1) \\
+  &amp; = P \left( \mathscr{N}\left(0, 1 \right) &gt; \frac{a}{\sqrt{t}} \right) = \\
+  &amp; = \int_{x=\frac{a}{\sqrt{t}}}^{+\infty} p(y) \, dy = &amp;&amp; (2) \\
+  &amp; = 1 - \int_{x=-\infty}^{\frac{a}{\sqrt{t}}} p(y) \, dy = 1 - \phi \left( \frac{a}{\sqrt{t}}  \right)
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">having used <span class="math notranslate nohighlight">\((1)\)</span> scaling rule for <a class="reference internal" href="transformations.html#prob-transformations"><span class="std std-ref">transformation of probability functions</span></a>… <strong>todo</strong>, and <span class="math notranslate nohighlight">\((2)\)</span> the normalization condition of the probability density <span class="math notranslate nohighlight">\(1 = \int_{x = -\infty}^{+\infty} p(x) \, dx\)</span>, and the definition of cumulative probability function.</p>
+<p class="sd-card-text"><strong>First inequality.</strong> In order to prove the first inequality, it could be useful to introduce the definition of <strong>stepping time</strong>, <span class="math notranslate nohighlight">\(\tau_a\)</span>, as the random variable defined as</p>
+<div class="math notranslate nohighlight">
+\[\tau_a = \min_s \left\{ s: W(s) = a \right\} \ .\]</div>
+<p class="sd-card-text">Using <em>reflection principle</em>, it follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ P( M(t) \ge a ) 
+ &amp; = &amp;&amp; (1) \\
+ &amp; = P( M(t) \ge a, W(t) \ge a) + P( M(t) \ge a,  W(t) &lt; a) = &amp;&amp; (2) \\
+ &amp; = P( W(t) \ge a ) + P( M(t) \ge a,  W(t) - W(\tau_a) &lt; 0) = &amp;&amp; (3) \\
+ &amp; = P( W(t) \ge a ) + P( M(t) \ge a,  W'(t - \tau_a) &lt; 0) = &amp;&amp; (4) \\
+ &amp; = P( W(t) \ge a ) + P( M(t) \ge a ) P (  W'(t - \tau_a) &lt; 0) = &amp;&amp; (5) \\
+ &amp; = P( W(t) \ge a ) + \dfrac{1}{2} P( M(t) \ge a ) \ .
+ \end{aligned}\end{split}\]</div>
+<p class="sd-card-text">haing <span class="math notranslate nohighlight">\((1)\)</span> used “marginalization” to write <span class="math notranslate nohighlight">\(P(A) = P(A,B) + P(A, \overline{B})\)</span>, <span class="math notranslate nohighlight">\((2)\)</span> recognized that if <span class="math notranslate nohighlight">\(B: \, W(t) \ge a\)</span> then <span class="math notranslate nohighlight">\(A: \, M(t) \ge a\)</span> or <span class="math notranslate nohighlight">\(B \subseteq A\)</span>, and thus <span class="math notranslate nohighlight">\(P(A,B) = P(B)\)</span>, and that <span class="math notranslate nohighlight">\(a = W(\tau_a)\)</span>, <span class="math notranslate nohighlight">\((3)\)</span> defined the Wiener process <span class="math notranslate nohighlight">\(W'(t - \tau_a) := W(t) - W(\tau_a)\)</span>, independent from <span class="math notranslate nohighlight">\(W(s)\)</span>, <span class="math notranslate nohighlight">\(0 \le s \le \tau_a\)</span>, <span class="math notranslate nohighlight">\((4)\)</span> exploited the independence of the two conditions (<strong>todo</strong> <em>be more explicit, proof needed?</em>), <span class="math notranslate nohighlight">\((5)\)</span> and the symmetry of Wiener process to get <span class="math notranslate nohighlight">\(P(W'(t-\tau_a) &lt; 0) = \frac{1}{2}\)</span>.</p>
+<p class="sd-card-text">Thus, it follows the requied relation</p>
+<div class="math notranslate nohighlight">
+\[P(M(t) \ge a) = 2 P(W(t) \ge a) \ .\]</div>
+<!--
+From the very nature of a Wiener process it follows that
+- $P\left( W(t) - W(s) > 0 \right) = P\left( W(t) - W(s) < 0 \right)$
+- $P\left( W(t) - W(\tau_a) > 0 | t > \tau_a \right) = P\left( W(t) - W(\tau_a) < 0 | t > \tau_a \right)$ or equivalently, as $W(\tau_a) = a$,
+
+  $$P\left( W(t) - a > 0 | t > \tau_a \right) = P\left( W(t) - a < 0 | t > \tau_a \right)$$
+
+As the two conditions $M(t) \ge a$ and $t \ge \tau_a$ are equivalent,
+
+$$\begin{aligned}
+  P(M(t) \ge a) 
+  & = P(t \ge \tau_a) = && (1) \\
+  & = P(W(t) \ge a, t \ge \tau) + P(W(t) \le a, t \ge \tau) = && (2) \\
+  & = 2 P(W(t) \ge a, t \ge \tau) = && (3) \\
+  & = 2 P(W(t) \ge a) \ .
+\end{aligned}$$
+
+having $(1)$ written probability as sum of probability of a set of 2 simple disjoint events, $(2)$ used symmetry property, $(3)$ removed the second condition from joint probability
+-->
+</div>
+</details><div class="proof property admonition" id="property-3">
+<p class="admonition-title"><span class="caption-number">Property 3.3 </span> (<span class="math notranslate nohighlight">\(W(t)\)</span> is almost surely not differentiable)</p>
+<div class="property-content section" id="proof-content">
+<p>For all time <span class="math notranslate nohighlight">\(t\)</span>, a Wiener process is almost surely not differentiable, i.e. …<strong>todo</strong></p>
+</div>
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Proof.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>todo</strong> <em>check details</em></p>
+<p class="sd-card-text">Wiener process is differentiable in <span class="math notranslate nohighlight">\(t\)</span> if the limit</p>
+<div class="math notranslate nohighlight">
+\[\lim_{h \rightarrow 0} \dfrac{W(t+h) - W(t)}{h} = \ell\]</div>
+<p class="sd-card-text">exists finite. Definition of limit reads,</p>
+<div class="math notranslate nohighlight">
+\[\forall \varepsilon &gt; 0 \quad \exists U_{0,\delta} \quad \text{s.t.} \quad \left| \, \frac{W(t+h) - W(t)}{h} - \ell \, \right| &lt; \varepsilon \qquad \forall h \in U_{0,\delta} \backslash \{ 0 \}\]</div>
+<p class="sd-card-text"><strong>todo</strong> <em>how to go from this definition to the following one?</em></p>
+<hr class="docutils" />
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(E_{\varepsilon, A, t_0}\)</span> be the event s.t. for a given <span class="math notranslate nohighlight">\(t_0\)</span>, <span class="math notranslate nohighlight">\(W(t)\)</span> is differentiable in <span class="math notranslate nohighlight">\(t_0\)</span>, i.e. <span class="math notranslate nohighlight">\(\exists\)</span> <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_0\)</span> const.  s.t. <span class="math notranslate nohighlight">\(\forall \varepsilon\)</span> s.t. <span class="math notranslate nohighlight">\(0 &lt; \varepsilon &lt; \varepsilon_0\)</span>, <span class="math notranslate nohighlight">\(W(t) - W(t_0) \le A \varepsilon\)</span> holds for <span class="math notranslate nohighlight">\(\forall \varepsilon\)</span>, <span class="math notranslate nohighlight">\(0 &lt; t - t_0 \le \varepsilon\)</span>.</p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(E_{A, t_0} = \cap_{\varepsilon} E_{\varepsilon, A, t_0}\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  P\left( E_{\varepsilon, A, t_0} \right) 
+  &amp; = P \left( |W(t) - W(t_0)| \le A \varepsilon \text{ for } \forall t-t_0 \text{ s.t. } 0 &lt; t - t_0 \le \varepsilon \right) =  &amp;&amp; (1) \\
+  &amp; = P \left( M(t - t_0)| \le A \varepsilon \right) = &amp;&amp; (2) \\
+  &amp; = 1 - P \left( M(t - t_0)| \ge A \varepsilon \right) = &amp;&amp; (3) \\
+  &amp; = 1 - \left[ 2 - 2 \phi \left( \dfrac{A \varepsilon}{\sqrt{\Delta t}} \right) \right] = \\
+  &amp; = - 1 + 2 \phi \left( \dfrac{A \varepsilon}{\sqrt{\Delta t}} \right)  \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">having used <span class="math notranslate nohighlight">\((1)\)</span>…, <span class="math notranslate nohighlight">\((2)\)</span>…, <span class="math notranslate nohighlight">\((3)\)</span>…</p>
+<p class="sd-card-text">Now, being <span class="math notranslate nohighlight">\(\varepsilon \le \Delta t\)</span>, it follows that <span class="math notranslate nohighlight">\(\frac{\varepsilon}{\sqrt{\Delta t}} \le \sqrt{\Delta t}\)</span>. As <span class="math notranslate nohighlight">\(\varepsilon \rightarrow 0\)</span>, then <span class="math notranslate nohighlight">\(\frac{\varepsilon}{\sqrt{\Delta t}} \rightarrow 0\)</span>, and <span class="math notranslate nohighlight">\(\phi\left( \frac{A \varepsilon}{\sqrt{\Delta t}} \right) \rightarrow \frac{1}{2}\)</span>, and <span class="math notranslate nohighlight">\(P(E_{\varepsilon,A,t_0}) \rightarrow 0\)</span></p>
 </div>
 </details></div>
 </div>
@@ -561,7 +684,8 @@ Proof<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">3.1.1. Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">3.1.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">3.1.2. Properties</a></li>
 </ul>
   </nav></div>
 
