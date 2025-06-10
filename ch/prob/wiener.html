@@ -75,15 +75,6 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-9HKRV72TBJ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -464,28 +455,19 @@ document.write(`
 <div class="proof property admonition" id="property-1">
 <p class="admonition-title"><span class="caption-number">Property 3.1 </span> (Covariance of increments)</p>
 <div class="property-content section" id="proof-content">
-<p>By definition of covariance of an increment, and definition of <a class="reference internal" href="rv-continuous.html#prob-rv-continuous-ex-normal"><span class="std std-ref">normal distribution</span></a> reads</p>
-<div class="math notranslate nohighlight">
-\[\mathbb{E}\left[ \left( W(t) - W(s) \right)^2  \right] = \mathbb{E}\left[ \mathscr{N}(0, |t-s|) \right] =  |t - s| \ .\]</div>
+<p>Covariance of an increment follows the definition of Wiener process and the definition of <a class="reference internal" href="rv-continuous.html#prob-rv-continuous-ex-normal"><span class="std std-ref">normal distribution</span></a>,</p>
+<div class="math notranslate nohighlight" id="equation-eq-wiener-cov-1">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-wiener-cov-1" title="Permalink to this equation">#</a></span>\[\mathbb{E}\left[ \left( W(t) - W(s) \right)^2  \right] = \mathbb{E}\left[ \mathscr{N}(0, |t-s|) \right] =  |t - s| \ .\]</div>
 <p>Covariance of independent increments is zero, as <a class="reference internal" href="rv-multi-dimensional.html#prob-multidim-independence-no-correlation"><span class="std std-ref">independence implies no correlation</span></a>, i.e. zero covariance. Thus, if <span class="math notranslate nohighlight">\(a \le b \le c \le d\)</span>, <span class="math notranslate nohighlight">\(W(b)-W(a)\)</span> and <span class="math notranslate nohighlight">\(W(d)-W(c)\)</span> are independent by defintion of Wiener process, and their correlation is zero,</p>
-<div class="math notranslate nohighlight">
-\[\mathbb{E}\left[ ( W(b) - W(a) ) ( W(d) - W(c) )  \right] = 0\]</div>
-<p>Co</p>
+<div class="math notranslate nohighlight" id="equation-eq-wiener-cov-2">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-eq-wiener-cov-2" title="Permalink to this equation">#</a></span>\[\mathbb{E}\left[ ( W(b) - W(a) ) ( W(d) - W(c) )  \right] = 0\]</div>
+<p>Covariance of two generic increments reads</p>
+<div class="math notranslate nohighlight" id="equation-eq-wiener-cov-3">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-eq-wiener-cov-3" title="Permalink to this equation">#</a></span>\[\mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] = \big| [s_1, t_1] \cap [s_2, t_2]\big|\]</div>
 </div>
-</div><div class="proof property admonition" id="property-2">
-<p class="admonition-title"><span class="caption-number">Property 3.2 </span> (Covariance of increments)</p>
-<div class="property-content section" id="proof-content">
-<div class="math notranslate nohighlight">
-\[\mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] = \big| [s_1, t_1] \cap [s_2, t_2]\big|\]</div>
-</div>
-</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
-<summary class="sd-summary-title sd-card-header">
-Proof<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">If <span class="math notranslate nohighlight">\(s_1 \le s_2 \le t_2 \le t_1\)</span>,</p>
+</div><p>```{dropdown} Proof of the covariance <a class="reference internal" href="#equation-eq-wiener-cov-1">(3.1)</a> of two generic increments
+:open:</p>
+<p>If <span class="math notranslate nohighlight">\(s_1 \le s_2 \le t_2 \le t_1\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] 
@@ -494,8 +476,12 @@ Proof<div class="sd-summary-down docutils">
   &amp; = (t_1 - t_2) - (t_1 - s_2) - (t_2 - s_1) + (s_2 - s_1) = \\
   &amp; =
 \end{aligned}\end{split}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+
+</pre></div>
 </div>
-</details></div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

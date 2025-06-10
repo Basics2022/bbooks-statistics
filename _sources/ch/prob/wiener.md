@@ -36,26 +36,22 @@ A Wiener process is a random process $W(t)$ with
 
 ```{prf:property} Covariance of increments
 
-By definition of covariance of an increment, and definition of [normal distribution](prob:rv-continuous:ex:normal) reads
+Covariance of an increment follows the definition of Wiener process and the definition of [normal distribution](prob:rv-continuous:ex:normal),
 
-  $$\mathbb{E}\left[ \left( W(t) - W(s) \right)^2  \right] = \mathbb{E}\left[ \mathscr{N}(0, |t-s|) \right] =  |t - s| \ .$$
+  $$\mathbb{E}\left[ \left( W(t) - W(s) \right)^2  \right] = \mathbb{E}\left[ \mathscr{N}(0, |t-s|) \right] =  |t - s| \ .$$ (eq:wiener:cov:1)
 
 Covariance of independent increments is zero, as [independence implies no correlation](prob:multidim:independence:no-correlation), i.e. zero covariance. Thus, if $a \le b \le c \le d$, $W(b)-W(a)$ and $W(d)-W(c)$ are independent by defintion of Wiener process, and their correlation is zero,
 
-  $$\mathbb{E}\left[ ( W(b) - W(a) ) ( W(d) - W(c) )  \right] = 0$$
+  $$\mathbb{E}\left[ ( W(b) - W(a) ) ( W(d) - W(c) )  \right] = 0$$ (eq:wiener:cov:2)
 
-Co
+Covariance of two generic increments reads
 
+$$\mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] = \big| [s_1, t_1] \cap [s_2, t_2]\big|$$ (eq:wiener:cov:3)
 
-```
-
-
-```{prf:property} Covariance of increments
-
-$$\mathbb{E}\left[ \left( W(t_1) - W(s_1) \right)  \left( W(t_2) - W(s_2) \right) \right] = \big| [s_1, t_1] \cap [s_2, t_2]\big|$$
 
 ```
-```{dropdown} Proof
+
+```{dropdown} Proof of the covariance {eq}`eq:wiener:cov:1` of two generic increments
 :open:
 
 If $s_1 \le s_2 \le t_2 \le t_1$,
