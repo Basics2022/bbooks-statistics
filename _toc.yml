@@ -12,7 +12,16 @@ parts:
   numbered: true
   chapters:
   - file: ch/prob/intro
+    sections:
+    - file: ch/prob/rv-def
+    - file: ch/prob/rv-discrete
+    - file: ch/prob/rv-continuous
+    - file: ch/prob/rv-multi-dimensional
+    - file: ch/prob/convergence
   - file: ch/prob/processes
+    sections:
+    - file: ch/prob/wiener
+    - file: ch/prob/white-noise
 - caption: Statistical Inference
   numbered: true
   chapters:

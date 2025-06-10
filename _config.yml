@@ -38,7 +38,7 @@ html:
 # sphinx extensions
 sphinx:
   config:
-    language: it
+    language: en
     html_theme_options:
       logo:
         image_light: logo.svg

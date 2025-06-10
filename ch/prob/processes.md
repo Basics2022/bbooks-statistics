@@ -6,7 +6,7 @@
 **Examples.**
 - White noise, $\xi(t)$, is a zero-mean process with no correlation between its values at different times
 
-  $$\mathbb{E}\left[ \xi(t) \xi(s) \right] = \delta(t-s)$$
+  $$\mathbb{E}\left[ \xi(t) \, \xi(s) \right] = \delta(t-s)$$
 
 - Wiener process (Brownian motion), $W(t)$
 
@@ -29,3 +29,17 @@
 - time-discrete Markov processes
 
 **Applications**
+- LTI
+- Stochastic differential equations...
+
+  $$d X(t) = \mu(t) \, dt + \sigma(t) \, dW(t)$$
+
+**Assumptions.**
+- Stationariety
+- Ergodicity
+
+$$k_{xy}(\tau) := \mathbb{E}[x(t) y(t-\tau)] = \lim_{T\rightarrow +\infty} \left\{ \frac{1}{2T} \int_{t = -T}^{T} x(t) \, y(t-\tau) \, d t \right\}$$
+
+
+
+
