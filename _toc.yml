@@ -23,6 +23,7 @@ parts:
     sections:
     - file: ch/prob/wiener
     - file: ch/prob/white-noise
+    - file: ch/prob/processes-calculus
 - caption: Statistical Inference
   numbered: true
   chapters:

@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.2. White noise &#8212; basics blog</title>
+    <title>3.3. Stochastic calculus &#8212; basics blog</title>
   
   
   
@@ -66,12 +66,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/prob/white-noise';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/prob/processes-calculus';</script>
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.3. Stochastic calculus" href="processes-calculus.html" />
-    <link rel="prev" title="3.1. Wiener process - Brownian motion" href="wiener.html" />
+    <link rel="next" title="4. Introduction to Statistical Inference" href="../infer/intro.html" />
+    <link rel="prev" title="3.2. White noise" href="white-noise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,8 +191,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="processes.html">3. Stochastic processes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="wiener.html">3.1. Wiener process - Brownian motion</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. White noise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="processes-calculus.html">3.3. Stochastic calculus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="white-noise.html">3.2. White noise</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Stochastic calculus</a></li>
 </ul>
 </li>
 </ul>
@@ -278,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/prob/white-noise.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/prob/processes-calculus.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/prob/white-noise.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/prob/processes-calculus.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/prob/white-noise.md" target="_blank"
+      <li><a href="../../_sources/ch/prob/processes-calculus.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -396,7 +396,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -407,11 +409,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>White noise</h1>
+    <h1>Stochastic calculus</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-lemma">3.3.1. Ito’s lemma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-calculus">3.3.2. Ito’s calculus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-processes">3.3.3. Ito processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-drift-diffusion-process">3.3.3.1. Ito drift-diffusion process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-brownian-motion">3.3.3.2. Geometric Brownian Motion</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -421,29 +437,131 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="white-noise">
-<span id="prob-processes-wn"></span><h1><span class="section-number">3.2. </span>White noise<a class="headerlink" href="#white-noise" title="Permalink to this heading">#</a></h1>
-<div class="proof definition admonition" id="wn:def:properties">
-<p class="admonition-title"><span class="caption-number">Definition 3.2 </span> (White noise - properties)</p>
-<div class="definition-content section" id="proof-content">
-<p>A white noise is a random process with</p>
-<ul>
-<li><p>zero expected value</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="stochastic-calculus">
+<span id="prob-processes-calculus"></span><h1><span class="section-number">3.3. </span>Stochastic calculus<a class="headerlink" href="#stochastic-calculus" title="Permalink to this heading">#</a></h1>
+<div class="section" id="ito-s-lemma">
+<span id="prob-processes-calculus-ito-lemma"></span><h2><span class="section-number">3.3.1. </span>Ito’s lemma<a class="headerlink" href="#ito-s-lemma" title="Permalink to this heading">#</a></h2>
+<p>It allows to find the differential of a time-dependent function of a stochastic process. Let <span class="math notranslate nohighlight">\(f(t,x)\)</span> be a twice-differentiable scalar function. Its Taylor series gives</p>
 <div class="math notranslate nohighlight">
-\[\mathbb{E}[ \xi(t) ] = 0\]</div>
-</li>
-<li><p>Dirac delta correlation</p>
+\[
+\Delta f = \dfrac{\partial f}{\partial t} \Delta t + \dfrac{\partial f}{\partial x} \Delta x 
+  + \dfrac{1}{2}\dfrac{\partial^2 f}{\partial t^2} \Delta t^2  
+  +             \dfrac{\partial^2 f}{\partial t \partial x} \Delta t \, \Delta x  
+  + \dfrac{1}{2}\dfrac{\partial^2 f}{\partial x^2} \Delta x^2 
+\]</div>
+<p>If the argument <span class="math notranslate nohighlight">\(x\)</span> of the function <span class="math notranslate nohighlight">\(f\)</span> is chosen to be a random process <span class="math notranslate nohighlight">\(X_t\)</span> satisfying <a class="reference internal" href="#prob-processes-calculus-ito-process-drift-diffusion"><span class="std std-ref">Ito drift-diffusion process</span></a>,</p>
 <div class="math notranslate nohighlight">
-\[\mathbb{E}[ \xi(t) \xi(s) ] = \delta(t-s)\]</div>
-</li>
-</ul>
+\[d X_t = \mu_t \, dt + \sigma_t \, dW_t \ ,\]</div>
+<p>the differential of function <span class="math notranslate nohighlight">\(f(t,X_t)\)</span> results from the limit of Taylor series</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  df
+  &amp; = \lim_{dt \rightarrow 0, dW_t \rightarrow 0} \left\{ \Delta f \right\} = \\
+  &amp; = \lim_{dt \rightarrow 0, dW_t \rightarrow 0} \left\{ \partial_t f dt + \partial_x f d X_t + \dfrac{1}{2} \left[ \partial_{tt} f \, dt^2 + 2 \partial_{xt} \, dt dX_t + \partial_{xx} f dX_t^2 \right] \right\} = \\
+  &amp; = \lim_{dt \rightarrow 0, dW_t \rightarrow 0} \left\{ \partial_t f dt + \partial_x f \left( \mu_t dt + \sigma_t dW_t \right) + \dfrac{1}{2} \left[ \partial_{tt} f \, dt^2 + 2 \partial_{xt} \, dt \left( \mu_t dt + \sigma_t dW_t \right) + \partial_{xx} f \left( \mu_t dt + \sigma_t dW_t \right)^2 \right] \right\} = \\
+\end{aligned}\end{split}\]</div>
+<p>For <span class="math notranslate nohighlight">\(dt \rightarrow 0\)</span>, <span class="math notranslate nohighlight">\(\left(d W_t\right)^2 = O(dt)\)</span>; keeping only terms of order lower than or equal to <span class="math notranslate nohighlight">\(O(dt)\)</span>, the differential becomes,</p>
+<div class="math notranslate nohighlight">
+\[df = \left( \partial_t f + \mu_t \partial_x f  \right) dt + \sigma_t \partial_x f \, d W_t + \dfrac{\sigma_t^2}{2} \partial_{xx} f \, dW_t^2 \ .\]</div>
+<p>Replacing <span class="math notranslate nohighlight">\(dW_t^2\)</span> with <span class="math notranslate nohighlight">\(d t\)</span> <strong>todo</strong> <em>why?</em>, and recalling the SDE of the Ito drift-diffusion process,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  df
+  &amp; = \left( \partial_t f + \mu_t \partial_x f + \dfrac{\sigma_t^2}{2} \partial_{xx} f \right) dt + \sigma_t \partial_x f \, d W_t = \\
+  &amp; = \left( \partial_t f +  \dfrac{\sigma_t^2}{2} \partial_{xx} f \right) dt + \partial_x f \left( \mu \, dt + \sigma_t \, d W_t \right) = \\
+  &amp; = \left( \partial_t f +  \dfrac{\sigma_t^2}{2} \partial_{xx} f \right) dt + \partial_x f \, dX_t \ .
+\end{aligned}\end{split}\]</div>
 </div>
-</div><p><strong>todo</strong> <em>link to math:functional-analysis:distributions</em></p>
-<div class="proof definition admonition" id="wn:def:derivative">
-<p class="admonition-title"><span class="caption-number">Definition 3.3 </span> (White noise - time derivative of <a class="reference internal" href="wiener.html#prob-processes-wiener"><span class="std std-ref">Wiener process</span></a> <span class="math notranslate nohighlight">\(W(t)\)</span> in the sense of distributions)</p>
-<div class="definition-content section" id="proof-content">
+<div class="section" id="ito-s-calculus">
+<span id="prob-processes-calculus-ito-calculus"></span><h2><span class="section-number">3.3.2. </span>Ito’s calculus<a class="headerlink" href="#ito-s-calculus" title="Permalink to this heading">#</a></h2>
+<p>Integegration w.r.t. Browinan motion produces a random variable that can be defined as</p>
+<div class="math notranslate nohighlight">
+\[\int_{0}^{t} F \, dW := \lim_{n \rightarrow +\infty} \sum_{[t_{i-1},t_i] \in \pi_n} F_{t_{i-1}} \left( W_{t_i} - W_{t_{i-1}} \right) \ ,\]</div>
+<p>being <span class="math notranslate nohighlight">\(\pi_n\)</span> a partition of interval <span class="math notranslate nohighlight">\([0,t]\)</span>, and <span class="math notranslate nohighlight">\(H\)</span> a random proces <strong>todo</strong> <em>with some characteristics…</em></p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 3.1 </span> (Integral of a Brownian motion w.r.t. itself)</p>
+<div class="example-content section" id="proof-content">
+<div class="math notranslate nohighlight">
+\[Y(t) = \int_{s=0}^t W_s \, dW_s = \dfrac{1}{2} W_t^2 - \dfrac{t}{2} \ .\]</div>
+<p>The expected value for each <span class="math notranslate nohighlight">\(t\)</span> of the random process <span class="math notranslate nohighlight">\(Y_t\)</span> is zero for all <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(\mathbb{E}\left[ W_t^2 \right]= 0\)</span>, as the expected value of <span class="math notranslate nohighlight">\(W_t^2\)</span> is the variance of <span class="math notranslate nohighlight">\(W_t\)</span>, and thus <span class="math notranslate nohighlight">\(t\)</span> by definition of the Wiener process.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Evaluation of the integral<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(f(t,x) = x^2\)</span>. Let’s find the differential <span class="math notranslate nohighlight">\(df\)</span> evaluated for <span class="math notranslate nohighlight">\(x = W_t\)</span> using <a class="reference internal" href="#prob-processes-calculus-ito-lemma"><span class="std std-ref">Ito’s lemma</span></a>, retaining only terms with order up to <span class="math notranslate nohighlight">\(O(dt)\)</span>. Since <span class="math notranslate nohighlight">\(\partial_t f \equiv 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  df &amp; = \partial_x f|_{x=W_t} dW_t + \dfrac{1}{2} \partial_{xx} f|_{x=W_t} dW_t^2 
+\end{aligned}\]</div>
+<p class="sd-card-text">and thus, replacing <span class="math notranslate nohighlight">\(dW_t^2 = dt\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  d W_t^2 &amp; =  2 W_t \, dW_t + dt \ .
+\end{aligned}\]</div>
+<p class="sd-card-text">or</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  W_t \, d W_t &amp; = d \left( \dfrac{W_t^2}{2} \right) - \dfrac{dt}{2} \ .
+\end{aligned}\]</div>
+<p class="sd-card-text">Thus (<strong>todo</strong> <em>add details if needed. A bit too much freedom in using differentials over stochastic processes here</em>),</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  Y(t)
+  &amp; = \int_{s=0}^t W_s \, dW_s \, ds = \\
+  &amp; = \int_{s=0}^t \left( \dfrac{W_s}{2} \right) \, ds - \int_{s=0}^t \dfrac{1}{2} \, ds = \\
+  &amp; = \dfrac{1}{2} \left( W_t^2 - W_0^2 \right) - \dfrac{t}{2} \ .
+\end{aligned}\end{split}\]</div>
 </div>
+</details></div>
 </div></div>
+<div class="section" id="ito-processes">
+<span id="prob-processes-calculus-ito-process"></span><h2><span class="section-number">3.3.3. </span>Ito processes<a class="headerlink" href="#ito-processes" title="Permalink to this heading">#</a></h2>
+<div class="section" id="ito-drift-diffusion-process">
+<span id="prob-processes-calculus-ito-process-drift-diffusion"></span><h3><span class="section-number">3.3.3.1. </span>Ito drift-diffusion process<a class="headerlink" href="#ito-drift-diffusion-process" title="Permalink to this heading">#</a></h3>
+<p>An Ito drift-diffusion process is a stochastic process satisfying the stochastic differential equation (SDE)</p>
+<div class="math notranslate nohighlight" id="equation-eq-ito-drift-diff">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-eq-ito-drift-diff" title="Permalink to this equation">#</a></span>\[dX_t = \mu_t \, dt + \sigma^2_t \, dW_t \ ,\]</div>
+<p>with <span class="math notranslate nohighlight">\(W_t\)</span> a Wiener process. If <span class="math notranslate nohighlight">\(\mu_t = \mu\)</span>, <span class="math notranslate nohighlight">\(\sigma_t = \sigma\)</span> are constant a closed-form solution can be found using <a class="reference internal" href="#prob-processes-calculus-ito-lemma"><span class="std std-ref">Ito’s lemma</span></a>, for <span class="math notranslate nohighlight">\(f(t,x) = x\)</span>, or by direct (stochastic) integration of the SDE <a class="reference internal" href="#equation-eq-ito-drift-diff">(3.4)</a>, as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \int_{s=0}^t dX_s &amp; = \int_{s=0}^t \mu \, ds + \int_{s=0}^t \sigma \, dW_s \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  X_t - X_0 &amp; = \mu t + \sigma \left( W_t - W_0 \right) \ ,
+\end{aligned}\]</div>
+<p>so that <span class="math notranslate nohighlight">\(X_t - X_0 \sim \mathscr{N}\left( \mu t, \sigma^2 t \right)\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Scaling of a Wiener process</p>
+<p>Term <span class="math notranslate nohighlight">\(\sigma W_t\)</span> represents a scaling of a Wiener process <span class="math notranslate nohighlight">\(W_t \sim \mathscr{N}(0, t)\)</span> with zero expected value and variance <span class="math notranslate nohighlight">\(t\)</span>. Multiplication by factor <span class="math notranslate nohighlight">\(\sigma\)</span> results in a multiplication of the expected value by <span class="math notranslate nohighlight">\(\sigma\)</span> and variance by <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>
+</div>
+</div>
+<div class="section" id="geometric-brownian-motion">
+<h3><span class="section-number">3.3.3.2. </span>Geometric Brownian Motion<a class="headerlink" href="#geometric-brownian-motion" title="Permalink to this heading">#</a></h3>
+<p>A geometric Brownian motion is a stochastic process satisfying the SDE</p>
+<div class="math notranslate nohighlight">
+\[d X_t = \mu X_t \, dt + \sigma X_t \, dW_t \ .\]</div>
+<p>Let <span class="math notranslate nohighlight">\(f(x) = \ln x\)</span> be evaluated for <span class="math notranslate nohighlight">\(x = X_t\)</span>. Ito’s lemma, with <span class="math notranslate nohighlight">\(\partial_t f \equiv 0\)</span>, provides the expression of the differential</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  d f
+  &amp; = \partial_x f|_{X_t} d X_t + \dfrac{1}{2} \partial_{xx} f|_{X_t} d X_t^2 = \\
+  &amp; = \partial_x f|_{X_t} \left( \mu X_t \, dt + \sigma X_t \, dW_t \right) + \dfrac{1}{2} \partial_{xx} f|_{X_t}  \left( \mu X_t \, dt + \sigma X_t \, dW_t \right)^2 = \\
+  &amp; = \dfrac{1}{X_t} \left( \mu X_t \, dt + \sigma X_t \, dW_t \right) - \dfrac{1}{2} \dfrac{1}{X_t^2} \sigma^2 X^2_t \, dW^2_t = \\
+  d \left( \ln X_t \right) &amp; = \left( \mu - \dfrac{\sigma^2}{2} \right) \, dt + \sigma \, dW_t \ ,
+\end{aligned}\end{split}\]</div>
+<p>whose solution after integration reads</p>
+<div class="math notranslate nohighlight">
+\[\ln X_t = \ln X_0 + \left( \mu - \dfrac{\sigma^2}{2} \right) \, t + \sigma \, W_t \ ,\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[X_t = X_0 \, e^{\left( \mu - \frac{\sigma^2}{2} \right) \, t + \sigma W_t} \ .\]</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -476,20 +594,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="wiener.html"
+       href="white-noise.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>Wiener process - Brownian motion</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>White noise</p>
       </div>
     </a>
     <a class="right-next"
-       href="processes-calculus.html"
+       href="../infer/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Stochastic calculus</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Introduction to Statistical Inference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -499,6 +617,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-lemma">3.3.1. Ito’s lemma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-calculus">3.3.2. Ito’s calculus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-processes">3.3.3. Ito processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-drift-diffusion-process">3.3.3.1. Ito drift-diffusion process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-brownian-motion">3.3.3.2. Geometric Brownian Motion</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
