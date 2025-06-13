@@ -32,7 +32,11 @@ parts:
   numbered: true
   chapters:
   - file: ch/ml/intro
-  - file: ch/ml/models
+    sections:
+    - file: ch/ml/models
+    - file: ch/ml/good-practice
   - file: ch/ml/sl
+    sections:
+    - file: ch/ml/sl-theory
   - file: ch/ml/ul
   - file: ch/ml/rl

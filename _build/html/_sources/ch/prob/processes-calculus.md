@@ -94,7 +94,7 @@ $$\begin{aligned}
 
 An Ito drift-diffusion process is a stochastic process satisfying the stochastic differential equation (SDE)
 
-$$dX_t = \mu_t \, dt + \sigma^2_t \, dW_t \ ,$$ (eq:ito:drift-diff)
+$$dX_t = \mu_t \, dt + \sigma_t \, dW_t \ ,$$ (eq:ito:drift-diff)
 
 with $W_t$ a Wiener process. If $\mu_t = \mu$, $\sigma_t = \sigma$ are constant a closed-form solution can be found using [Ito's lemma](prob:processes:calculus:ito-lemma), for $f(t,x) = x$, or by direct (stochastic) integration of the SDE {eq}`eq:ito:drift-diff`, as
 
