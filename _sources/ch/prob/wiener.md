@@ -90,6 +90,8 @@ All the other situations can be proved in the same way.
 
 ```{prf:property} Statistics of maximum
 
+For $a \ge 0$,
+
 $$P\left( M(t) \ge a  \right) = 2 P \left( W(t) \ge a \right) = 2 - 2 \, \phi\left( \frac{a}{\sqrt{t}} \right) \ ,$$
 
 with 
