@@ -18,7 +18,10 @@ parts:
     - file: ch/prob/rv-continuous
     - file: ch/prob/rv-multi-dimensional
     - file: ch/prob/transformations
+    - file: ch/prob/characteristic-fun
     - file: ch/prob/convergence
+    - file: ch/prob/iid
+    - file: ch/prob/heavy-tailed
   - file: ch/prob/processes
     sections:
     - file: ch/prob/wiener

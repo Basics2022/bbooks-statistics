@@ -189,7 +189,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-continuous.html">2.3. Continuous stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch/prob/transformations.html">2.5. Transformations of probability functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch/prob/convergence.html">2.6. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/characteristic-fun.html">2.6. Characteristic functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/convergence.html">2.7. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/iid.html">2.8. Independent identically distributed random variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/heavy-tailed.html">2.9. Heavy-tailed distributions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="ch/prob/processes.html">3. Stochastic processes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -369,19 +372,33 @@ document.write(`
    <h1>Proof Index</h1>
 
    <div class="modindex-jumpbox">
+   <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
    <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
+   <a href="#cap-ex:char-fun:independent"><strong>ex:char-fun:independent</strong></a> | 
+   <a href="#cap-ex:char-fun:multidimensional"><strong>ex:char-fun:multidimensional</strong></a> | 
+   <a href="#cap-ex:char-fun:normal"><strong>ex:char-fun:normal</strong></a> | 
+   <a href="#cap-ex:char-fun:taylor"><strong>ex:char-fun:taylor</strong></a> | 
    <a href="#cap-example-0"><strong>example-0</strong></a> | 
    <a href="#cap-property-0"><strong>property-0</strong></a> | 
    <a href="#cap-property-1"><strong>property-1</strong></a> | 
    <a href="#cap-property-2"><strong>property-2</strong></a> | 
    <a href="#cap-property-3"><strong>property-3</strong></a> | 
    <a href="#cap-theorem-1"><strong>theorem-1</strong></a> | 
+   <a href="#cap-thm:clt"><strong>thm:clt</strong></a> | 
    <a href="#cap-wiener:def"><strong>wiener:def</strong></a> | 
    <a href="#cap-wn:def:derivative"><strong>wn:def:derivative</strong></a> | 
    <a href="#cap-wn:def:properties"><strong>wn:def:properties</strong></a>
    </div>
 
    <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-0"><td></td><td>
+       <strong>definition-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ch/prob/iid.html#definition-0"><code class="xref">definition-0</code></a> <em>(ch/prob/iid)</em></td><td>
+       <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-2"><td></td><td>
        <strong>definition-2</strong></td><td></td></tr>
@@ -390,6 +407,38 @@ document.write(`
        <td>
        <a href="ch/prob/rv-multi-dimensional.html#definition-2"><code class="xref">definition-2</code></a> <em>(ch/prob/rv-multi-dimensional)</em></td><td>
        <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex:char-fun:independent"><td></td><td>
+       <strong>ex:char-fun:independent</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ch/prob/characteristic-fun.html#ex:char-fun:independent"><code class="xref">ex:char-fun:independent</code></a> <em>(ch/prob/characteristic-fun)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex:char-fun:multidimensional"><td></td><td>
+       <strong>ex:char-fun:multidimensional</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ch/prob/characteristic-fun.html#ex:char-fun:multidimensional"><code class="xref">ex:char-fun:multidimensional</code></a> <em>(ch/prob/characteristic-fun)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex:char-fun:normal"><td></td><td>
+       <strong>ex:char-fun:normal</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ch/prob/characteristic-fun.html#ex:char-fun:normal"><code class="xref">ex:char-fun:normal</code></a> <em>(ch/prob/characteristic-fun)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ex:char-fun:taylor"><td></td><td>
+       <strong>ex:char-fun:taylor</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ch/prob/characteristic-fun.html#ex:char-fun:taylor"><code class="xref">ex:char-fun:taylor</code></a> <em>(ch/prob/characteristic-fun)</em></td><td>
+       <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-0"><td></td><td>
        <strong>example-0</strong></td><td></td></tr>
@@ -437,6 +486,14 @@ document.write(`
        <td></td>
        <td>
        <a href="ch/prob/rv-multi-dimensional.html#theorem-1"><code class="xref">theorem-1</code></a> <em>(ch/prob/rv-multi-dimensional)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-thm:clt"><td></td><td>
+       <strong>thm:clt</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="ch/prob/iid.html#thm:clt"><code class="xref">thm:clt</code></a> <em>(ch/prob/iid)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-wiener:def"><td></td><td>

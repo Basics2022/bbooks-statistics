@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.7. Convergence in statistics &#8212; basics blog</title>
+    <title>2.8. Independent identically distributed random variables &#8212; basics blog</title>
   
   
   
@@ -66,12 +66,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/prob/convergence';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/prob/iid';</script>
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.8. Independent identically distributed random variables" href="iid.html" />
-    <link rel="prev" title="2.6. Characteristic functions" href="characteristic-fun.html" />
+    <link rel="next" title="2.9. Heavy-tailed distributions" href="heavy-tailed.html" />
+    <link rel="prev" title="2.7. Convergence in statistics" href="convergence.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,8 +187,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transformations.html">2.5. Transformations of probability functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="characteristic-fun.html">2.6. Characteristic functions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.7. Convergence in statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iid.html">2.8. Independent identically distributed random variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="convergence.html">2.7. Convergence in statistics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.8. Independent identically distributed random variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="heavy-tailed.html">2.9. Heavy-tailed distributions</a></li>
 </ul>
 </li>
@@ -287,7 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/prob/convergence.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/ch/prob/iid.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/prob/convergence.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fch/prob/iid.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +334,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/prob/convergence.md" target="_blank"
+      <li><a href="../../_sources/ch/prob/iid.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,7 +418,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Convergence in statistics</h1>
+    <h1>Independent identically distributed random variables</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -428,11 +428,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-distribution-weak-convergence">2.7.1. Convergence in distribution - weak convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-probability">2.7.2. Convergence in probability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-sure-convergence-strong-convergence">2.7.3. Almost sure convergence - strong convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sure-convergence-pointwise-convergence">2.7.4. Sure convergence - pointwise convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-absolute-moments-mean">2.7.5. Convergence in absolute moments: mean,…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-the-large-numbers">2.8.1. Law of the large numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weak-form">2.8.1.1. Weak form</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-form">2.8.1.2. Strong form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-limit-theorem">2.8.2. Central Limit Theorem</a></li>
 </ul>
             </nav>
         </div>
@@ -444,48 +445,68 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="convergence-in-statistics">
-<span id="prob-convergence"></span><h1><span class="section-number">2.7. </span>Convergence in statistics<a class="headerlink" href="#convergence-in-statistics" title="Permalink to this heading">#</a></h1>
-<div class="section" id="convergence-in-distribution-weak-convergence">
-<span id="prob-convergence-weak"></span><h2><span class="section-number">2.7.1. </span>Convergence in distribution - weak convergence<a class="headerlink" href="#convergence-in-distribution-weak-convergence" title="Permalink to this heading">#</a></h2>
-<p>A sequence of <span class="math notranslate nohighlight">\(X_i\)</span> of real-valued random variables, cumulative distribution functions <span class="math notranslate nohighlight">\(F_i\)</span>, converges in distribution to a random variable <span class="math notranslate nohighlight">\(X\)</span> with cumulative distribution <span class="math notranslate nohighlight">\(F\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[\lim_{n \rightarrow +\infty} F_n(x) = F(x) \ ,\]</div>
-<p>for <span class="math notranslate nohighlight">\(\forall x \in \mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(F(x)\)</span> is continuous.</p>
-<p>For multi-valued random variables, the condition reads</p>
-<div class="math notranslate nohighlight">
-\[\lim_{n \rightarrow +\infty} P( X_n \in A) = P( X \in A) \ ,\]</div>
-<p>for every <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^n\)</span> …<strong>todo</strong></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="independent-identically-distributed-random-variables">
+<span id="prob-iid"></span><h1><span class="section-number">2.8. </span>Independent identically distributed random variables<a class="headerlink" href="#independent-identically-distributed-random-variables" title="Permalink to this heading">#</a></h1>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Independent identically distributed (iid) random variables)</p>
+<div class="definition-content section" id="proof-content">
 </div>
-<div class="section" id="convergence-in-probability">
-<span id="prob-convergence-probability"></span><h2><span class="section-number">2.7.2. </span>Convergence in probability<a class="headerlink" href="#convergence-in-probability" title="Permalink to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[\lim_{n \rightarrow + \infty} P \left(\left| X_n - X \right| &gt; \varepsilon  \right) = 0\]</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Convergence in probability and convergence in distribution</p>
-<p>Convergence in probability <span class="math notranslate nohighlight">\( \rightarrow \)</span> convergence in distribution, but not viceversa.</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Convergence_of_random_variables#Counterexamples">Example taken from wikipedia</a></p>
+</div><div class="section" id="law-of-the-large-numbers">
+<span id="prob-iid-large-numbers"></span><h2><span class="section-number">2.8.1. </span>Law of the large numbers<a class="headerlink" href="#law-of-the-large-numbers" title="Permalink to this heading">#</a></h2>
+<div class="section" id="weak-form">
+<span id="prob-iid-large-numbers-weak"></span><h3><span class="section-number">2.8.1.1. </span>Weak form<a class="headerlink" href="#weak-form" title="Permalink to this heading">#</a></h3>
+<p><strong>todo</strong></p>
+</div>
+<div class="section" id="strong-form">
+<span id="prob-iid-large-numbers-strong"></span><h3><span class="section-number">2.8.1.2. </span>Strong form<a class="headerlink" href="#strong-form" title="Permalink to this heading">#</a></h3>
+<p><strong>todo</strong></p>
 </div>
 </div>
-<div class="section" id="almost-sure-convergence-strong-convergence">
-<span id="prob-convergence-strong"></span><h2><span class="section-number">2.7.3. </span>Almost sure convergence - strong convergence<a class="headerlink" href="#almost-sure-convergence-strong-convergence" title="Permalink to this heading">#</a></h2>
+<div class="section" id="central-limit-theorem">
+<span id="prob-iid-clt"></span><h2><span class="section-number">2.8.2. </span>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this heading">#</a></h2>
+<div class="proof theorem admonition" id="thm:clt">
+<p class="admonition-title"><span class="caption-number">Theorem 2.2 </span> (CLT)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\{ X_k \}_{k=1:n}\)</span> a sequence of iid random variables with average value <span class="math notranslate nohighlight">\(\mathbb{E}[X_k] = \mu\)</span> and <strong>finite</strong><a class="footnote-reference brackets" href="#clt-heavy-tails" id="id1">1</a> variance <span class="math notranslate nohighlight">\(\mathbb{E}[(X_k-\mu)^2] = \sigma^2 &lt; \infty\)</span>, then the <strong>sample average</strong></p>
 <div class="math notranslate nohighlight">
-\[P\left( \lim_{n \rightarrow +\infty} X_n = X \right) = 1\]</div>
-<p>i.e. events for which <span class="math notranslate nohighlight">\(X_n\)</span> doesn’t converge to <span class="math notranslate nohighlight">\(X\)</span> has probability <span class="math notranslate nohighlight">\(0\)</span>,</p>
+\[\overline{X}_n := \dfrac{1}{n} \sum_{k=1}^n X_k \ ,\]</div>
+<p><a class="reference internal" href="convergence.html#prob-convergence-weak"><span class="std std-ref">converges in distribution</span></a> - or weakly converges - to the normal distribution <span class="math notranslate nohighlight">\(\mathscr{N}\left(\mu, \frac{\sigma^2}{n} \right)\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[P\left( \omega \in \Omega: \ \lim_{n \rightarrow + \infty} X_n(\omega) = X(\omega) \right) = 1\]</div>
+\[\overline{X}_n \quad \rightarrow^d \quad \mathscr{N}\left(\mu, \frac{\sigma^2}{n} \right) \ .\]</div>
 </div>
-<div class="section" id="sure-convergence-pointwise-convergence">
-<span id="prob-convergence-point"></span><h2><span class="section-number">2.7.4. </span>Sure convergence - pointwise convergence<a class="headerlink" href="#sure-convergence-pointwise-convergence" title="Permalink to this heading">#</a></h2>
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Proof of CLT<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(\{ X_k \}_{k=1:n}\)</span> the sequence of iid random variables. Thus, <span class="math notranslate nohighlight">\(\sum_{k=1}^n X_k\)</span> has expected value <span class="math notranslate nohighlight">\(n \mu\)</span> and variance <span class="math notranslate nohighlight">\(n \sigma^2\)</span>. Let</p>
 <div class="math notranslate nohighlight">
-\[\left\{ \omega \in \Omega: \ \lim_{n \rightarrow + \infty} X_n(\omega) = X(\omega) \right\} = \Omega \ .\]</div>
-<p>The same definition of almost sure convergence, without allowing the existance of sets with zero probability where convergence is not satisfied. Thus, it’s likely there is no point in using sure converence instead of almost sure convergence in proability theory.</p>
+\[Z_n := \dfrac{\sum_{k=1}^n X_k - n \mu}{\sqrt{n \sigma^2}} = \sum_{k=1}^{n} \dfrac{X_k - \mu}{\sqrt{n \sigma^2}} =: \sum_{k=1}^n \dfrac{Y_k}{\sqrt{n}} \ .\]</div>
+<p class="sd-card-text">Expeceted value and variance of variables <span class="math notranslate nohighlight">\(Y_k\)</span> are respectively <span class="math notranslate nohighlight">\(\mathbb{E}[Y_k] = 0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{E}[Y_k^2] = 1\)</span>.
+The <a class="reference internal" href="characteristic-fun.html#prob-characteristic-fun"><span class="std std-ref">characteristic function</span></a> of <span class="math notranslate nohighlight">\(Z_n\)</span>, see <a class="reference internal" href="characteristic-fun.html#ex:char-fun:independent">Example 2.2</a> for the linear combination of independent variables, reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \varphi_{Z_n}(t) 
+  &amp; = \varphi_{Y_1} \left( \dfrac{t}{\sqrt{n}} \right) \dots \varphi_{Y_n} \left( \dfrac{t}{\sqrt{n}} \right) = &amp;&amp;  (1) \\
+  &amp; = \left[ \varphi_{Y_1} \left( \dfrac{t}{\sqrt{n}} \right) \right]^n \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">as <span class="math notranslate nohighlight">\((1)\)</span> the variables are not only independent but identically distributed: as they have the same pdf, they also have the same characteristic function. Expanding in Taylor series, see example <a class="reference internal" href="characteristic-fun.html#ex:char-fun:taylor">Example 2.3</a> for <span class="math notranslate nohighlight">\(\frac{t}{\sqrt{n}} \rightarrow 0\)</span>, the approximation of the characteristic function reads (remembering that <span class="math notranslate nohighlight">\(Y_n\)</span> have zero expected value and unit variance),</p>
+<div class="math notranslate nohighlight">
+\[\varphi_{Y_1}\left( \dfrac{t}{\sqrt{n}} \right) \sim 1 - \dfrac{t^2}{2 n} \ ,\]</div>
+<p class="sd-card-text">while</p>
+<div class="math notranslate nohighlight">
+\[\varphi_{Z_n}(t) = \left[ \varphi_{Y_1} \left( \dfrac{t}{\sqrt{n}} \right) \right]^n \sim \left[  1 - \dfrac{t^2}{2 n}  \right]^n \sim e^{- \frac{t^2}{2}} \ ,\]</div>
+<p class="sd-card-text">i.e. it converges to the characteristic function of a normal distribution <span class="math notranslate nohighlight">\(\mathscr{N}(0,1)\)</span>, see <a class="reference internal" href="characteristic-fun.html#ex:char-fun:normal">Example 2.4</a>.</p>
+<p class="sd-card-text"><strong>Levy’s continuity theorem</strong> completes the proof. <strong>todo</strong></p>
 </div>
-<div class="section" id="convergence-in-absolute-moments-mean">
-<span id="prob-convergence-mean"></span><h2><span class="section-number">2.7.5. </span>Convergence in absolute moments: mean,…<a class="headerlink" href="#convergence-in-absolute-moments-mean" title="Permalink to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[\lim_{n \rightarrow +\infty} \mathbb{E}\left( \left| X_n - X \right|^r \right) = 0\]</div>
+</details><hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="clt-heavy-tails"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Does the CLT hold for <a class="reference internal" href="heavy-tailed.html#prob-heavy-tailed"><span class="std std-ref"><strong>heavy-tailed</strong> distributions</span></a>?</p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -520,20 +541,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="characteristic-fun.html"
+       href="convergence.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.6. </span>Characteristic functions</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Convergence in statistics</p>
       </div>
     </a>
     <a class="right-next"
-       href="iid.html"
+       href="heavy-tailed.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.8. </span>Independent identically distributed random variables</p>
+        <p class="prev-next-title"><span class="section-number">2.9. </span>Heavy-tailed distributions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -552,11 +573,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-distribution-weak-convergence">2.7.1. Convergence in distribution - weak convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-probability">2.7.2. Convergence in probability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-sure-convergence-strong-convergence">2.7.3. Almost sure convergence - strong convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sure-convergence-pointwise-convergence">2.7.4. Sure convergence - pointwise convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-absolute-moments-mean">2.7.5. Convergence in absolute moments: mean,…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-the-large-numbers">2.8.1. Law of the large numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weak-form">2.8.1.1. Weak form</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strong-form">2.8.1.2. Strong form</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-limit-theorem">2.8.2. Central Limit Theorem</a></li>
 </ul>
   </nav></div>
 
