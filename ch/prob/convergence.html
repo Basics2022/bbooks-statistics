@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.6. Convergence in statistics &#8212; basics blog</title>
+    <title>2.7. Convergence in statistics &#8212; basics blog</title>
   
   
   
@@ -70,20 +70,11 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Stochastic processes" href="processes.html" />
-    <link rel="prev" title="2.5. Transformations of probability functions" href="transformations.html" />
+    <link rel="next" title="2.8. Independent identically distributed random variables" href="iid.html" />
+    <link rel="prev" title="2.6. Characteristic functions" href="characteristic-fun.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-9HKRV72TBJ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -186,7 +177,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="rv-continuous.html">2.3. Continuous stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transformations.html">2.5. Transformations of probability functions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.6. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="characteristic-fun.html">2.6. Characteristic functions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.7. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iid.html">2.8. Independent identically distributed random variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heavy-tailed.html">2.9. Heavy-tailed distributions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="processes.html">3. Stochastic processes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -202,11 +196,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ml/intro.html">5. Introduction to Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/models.html">6. Models in Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/sl.html">7. Supervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/ul.html">8. Unsupervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/rl.html">9. Reinforcement Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/intro.html">5. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ml/models.html">5.1. Models in Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml/good-practice.html">5.2. Good Practices in Machine Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/sl.html">6. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ml/sl-theory.html">6.1. SL: theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/ul.html">7. Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/rl.html">8. Reinforcement Learning</a></li>
 </ul>
 
     </div>
@@ -419,11 +419,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-distribution-weak-convergence">2.6.1. Convergence in distribution - weak convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-probability">2.6.2. Convergence in probability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-sure-convergence-strong-convergence">2.6.3. Almost sure convergence - strong convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sure-convergence-pointwise-convergence">2.6.4. Sure convergence - pointwise convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-absolute-moments-mean">2.6.5. Convergence in absolute moments: mean,…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-distribution-weak-convergence">2.7.1. Convergence in distribution - weak convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-probability">2.7.2. Convergence in probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-sure-convergence-strong-convergence">2.7.3. Almost sure convergence - strong convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sure-convergence-pointwise-convergence">2.7.4. Sure convergence - pointwise convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-absolute-moments-mean">2.7.5. Convergence in absolute moments: mean,…</a></li>
 </ul>
             </nav>
         </div>
@@ -436,9 +436,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="convergence-in-statistics">
-<span id="prob-convergence"></span><h1><span class="section-number">2.6. </span>Convergence in statistics<a class="headerlink" href="#convergence-in-statistics" title="Permalink to this heading">#</a></h1>
+<span id="prob-convergence"></span><h1><span class="section-number">2.7. </span>Convergence in statistics<a class="headerlink" href="#convergence-in-statistics" title="Permalink to this heading">#</a></h1>
 <div class="section" id="convergence-in-distribution-weak-convergence">
-<span id="prob-convergence-weak"></span><h2><span class="section-number">2.6.1. </span>Convergence in distribution - weak convergence<a class="headerlink" href="#convergence-in-distribution-weak-convergence" title="Permalink to this heading">#</a></h2>
+<span id="prob-convergence-weak"></span><h2><span class="section-number">2.7.1. </span>Convergence in distribution - weak convergence<a class="headerlink" href="#convergence-in-distribution-weak-convergence" title="Permalink to this heading">#</a></h2>
 <p>A sequence of <span class="math notranslate nohighlight">\(X_i\)</span> of real-valued random variables, cumulative distribution functions <span class="math notranslate nohighlight">\(F_i\)</span>, converges in distribution to a random variable <span class="math notranslate nohighlight">\(X\)</span> with cumulative distribution <span class="math notranslate nohighlight">\(F\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[\lim_{n \rightarrow +\infty} F_n(x) = F(x) \ ,\]</div>
@@ -449,7 +449,7 @@ document.write(`
 <p>for every <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^n\)</span> …<strong>todo</strong></p>
 </div>
 <div class="section" id="convergence-in-probability">
-<span id="prob-convergence-probability"></span><h2><span class="section-number">2.6.2. </span>Convergence in probability<a class="headerlink" href="#convergence-in-probability" title="Permalink to this heading">#</a></h2>
+<span id="prob-convergence-probability"></span><h2><span class="section-number">2.7.2. </span>Convergence in probability<a class="headerlink" href="#convergence-in-probability" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\lim_{n \rightarrow + \infty} P \left(\left| X_n - X \right| &gt; \varepsilon  \right) = 0\]</div>
 <div class="admonition warning">
@@ -460,7 +460,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="almost-sure-convergence-strong-convergence">
-<span id="prob-convergence-strong"></span><h2><span class="section-number">2.6.3. </span>Almost sure convergence - strong convergence<a class="headerlink" href="#almost-sure-convergence-strong-convergence" title="Permalink to this heading">#</a></h2>
+<span id="prob-convergence-strong"></span><h2><span class="section-number">2.7.3. </span>Almost sure convergence - strong convergence<a class="headerlink" href="#almost-sure-convergence-strong-convergence" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[P\left( \lim_{n \rightarrow +\infty} X_n = X \right) = 1\]</div>
 <p>i.e. events for which <span class="math notranslate nohighlight">\(X_n\)</span> doesn’t converge to <span class="math notranslate nohighlight">\(X\)</span> has probability <span class="math notranslate nohighlight">\(0\)</span>,</p>
@@ -468,13 +468,13 @@ document.write(`
 \[P\left( \omega \in \Omega: \ \lim_{n \rightarrow + \infty} X_n(\omega) = X(\omega) \right) = 1\]</div>
 </div>
 <div class="section" id="sure-convergence-pointwise-convergence">
-<span id="prob-convergence-point"></span><h2><span class="section-number">2.6.4. </span>Sure convergence - pointwise convergence<a class="headerlink" href="#sure-convergence-pointwise-convergence" title="Permalink to this heading">#</a></h2>
+<span id="prob-convergence-point"></span><h2><span class="section-number">2.7.4. </span>Sure convergence - pointwise convergence<a class="headerlink" href="#sure-convergence-pointwise-convergence" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\left\{ \omega \in \Omega: \ \lim_{n \rightarrow + \infty} X_n(\omega) = X(\omega) \right\} = \Omega \ .\]</div>
 <p>The same definition of almost sure convergence, without allowing the existance of sets with zero probability where convergence is not satisfied. Thus, it’s likely there is no point in using sure converence instead of almost sure convergence in proability theory.</p>
 </div>
 <div class="section" id="convergence-in-absolute-moments-mean">
-<span id="prob-convergence-mean"></span><h2><span class="section-number">2.6.5. </span>Convergence in absolute moments: mean,…<a class="headerlink" href="#convergence-in-absolute-moments-mean" title="Permalink to this heading">#</a></h2>
+<span id="prob-convergence-mean"></span><h2><span class="section-number">2.7.5. </span>Convergence in absolute moments: mean,…<a class="headerlink" href="#convergence-in-absolute-moments-mean" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\lim_{n \rightarrow +\infty} \mathbb{E}\left( \left| X_n - X \right|^r \right) = 0\]</div>
 </div>
@@ -511,20 +511,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="transformations.html"
+       href="characteristic-fun.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Transformations of probability functions</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span>Characteristic functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="processes.html"
+       href="iid.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Stochastic processes</p>
+        <p class="prev-next-title"><span class="section-number">2.8. </span>Independent identically distributed random variables</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -543,11 +543,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-distribution-weak-convergence">2.6.1. Convergence in distribution - weak convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-probability">2.6.2. Convergence in probability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-sure-convergence-strong-convergence">2.6.3. Almost sure convergence - strong convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sure-convergence-pointwise-convergence">2.6.4. Sure convergence - pointwise convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-absolute-moments-mean">2.6.5. Convergence in absolute moments: mean,…</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-distribution-weak-convergence">2.7.1. Convergence in distribution - weak convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-probability">2.7.2. Convergence in probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almost-sure-convergence-strong-convergence">2.7.3. Almost sure convergence - strong convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sure-convergence-pointwise-convergence">2.7.4. Sure convergence - pointwise convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-absolute-moments-mean">2.7.5. Convergence in absolute moments: mean,…</a></li>
 </ul>
   </nav></div>
 

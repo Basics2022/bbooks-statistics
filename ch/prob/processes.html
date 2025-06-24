@@ -71,19 +71,10 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3.1. Wiener process - Brownian motion" href="wiener.html" />
-    <link rel="prev" title="2.6. Convergence in statistics" href="convergence.html" />
+    <link rel="prev" title="2.9. Heavy-tailed distributions" href="heavy-tailed.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-9HKRV72TBJ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -186,7 +177,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="rv-continuous.html">2.3. Continuous stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transformations.html">2.5. Transformations of probability functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="convergence.html">2.6. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="characteristic-fun.html">2.6. Characteristic functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="convergence.html">2.7. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iid.html">2.8. Independent identically distributed random variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heavy-tailed.html">2.9. Heavy-tailed distributions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. Stochastic processes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -202,11 +196,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ml/intro.html">5. Introduction to Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/models.html">6. Models in Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/sl.html">7. Supervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/ul.html">8. Unsupervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/rl.html">9. Reinforcement Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/intro.html">5. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ml/models.html">5.1. Models in Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml/good-practice.html">5.2. Good Practices in Machine Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/sl.html">6. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ml/sl-theory.html">6.1. SL: theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/ul.html">7. Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/rl.html">8. Reinforcement Learning</a></li>
 </ul>
 
     </div>
@@ -498,12 +498,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="convergence.html"
+       href="heavy-tailed.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.6. </span>Convergence in statistics</p>
+        <p class="prev-next-title"><span class="section-number">2.9. </span>Heavy-tailed distributions</p>
       </div>
     </a>
     <a class="right-next"

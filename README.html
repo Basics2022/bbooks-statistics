@@ -71,15 +71,6 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-9HKRV72TBJ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -182,7 +173,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-continuous.html">2.3. Continuous stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch/prob/rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ch/prob/transformations.html">2.5. Transformations of probability functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ch/prob/convergence.html">2.6. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/characteristic-fun.html">2.6. Characteristic functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/convergence.html">2.7. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/iid.html">2.8. Independent identically distributed random variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/prob/heavy-tailed.html">2.9. Heavy-tailed distributions</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="ch/prob/processes.html">3. Stochastic processes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -198,11 +192,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ch/ml/intro.html">5. Introduction to Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch/ml/models.html">6. Models in Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch/ml/sl.html">7. Supervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch/ml/ul.html">8. Unsupervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch/ml/rl.html">9. Reinforcement Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch/ml/intro.html">5. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch/ml/models.html">5.1. Models in Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ch/ml/good-practice.html">5.2. Good Practices in Machine Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch/ml/sl.html">6. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch/ml/sl-theory.html">6.1. SL: theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ch/ml/ul.html">7. Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch/ml/rl.html">8. Reinforcement Learning</a></li>
 </ul>
 
     </div>
