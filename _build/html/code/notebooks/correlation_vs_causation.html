@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>“Correlation is Not Causation” &#8212; basics blog</title>
+    <title>5. “Correlation is Not Causation” &#8212; basics blog</title>
   
   
   
@@ -70,6 +70,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6. Introduction to Statistical Inference" href="../../ch/infer/intro.html" />
+    <link rel="prev" title="4.3. Stochastic calculus" href="../../ch/prob/processes-calculus.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../ch/intro/descriptive.html">2. Descriptive Statistics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability Theory</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../ch/prob/intro.html">3. Introduction to probability theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../ch/prob/rv-def.html">3.1. Definition of stochastic variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ch/prob/rv-discrete.html">3.2. Discrete stochastic variables</a></li>
@@ -197,24 +199,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../ch/prob/processes-calculus.html">4.3. Stochastic calculus</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. “Correlation is Not Causation”</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Inference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../ch/infer/intro.html">5. Introduction to Statistical Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/infer/intro.html">6. Introduction to Statistical Inference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../ch/ml/intro.html">6. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../ch/ml/models.html">6.1. Models in Machine Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../ch/ml/good-practice.html">6.2. Good Practices in Machine Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ch/ml/intro.html">7. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/ml/models.html">7.1. Models in Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/ml/good-practice.html">7.2. Good Practices in Machine Learning</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../ch/ml/sl.html">7. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../ch/ml/sl-theory.html">7.1. SL: theory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ch/ml/sl.html">8. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/ml/sl-theory.html">8.1. SL: theory</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../ch/ml/ul.html">8. Unsupervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ch/ml/rl.html">9. Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/ml/ul.html">9. Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/ml/rl.html">10. Reinforcement Learning</a></li>
 </ul>
 
     </div>
@@ -458,29 +461,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence">Statistical independence</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence-implies-no-correlation">Statistical independence implies no correlation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-samples-drawn-from-independent-random-variables">Correlation of samples drawn from independent random variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">5.1. Definitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">5.1.1. Correlation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence">5.1.2. Statistical independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence-implies-no-correlation">5.1.2.1. Statistical independence implies no correlation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-samples-drawn-from-independent-random-variables">5.1.2.2. Correlation of samples drawn from independent random variables</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causality">Causality</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-sufficient-and-contributory-causes">Necessary, sufficient and contributory causes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causality">5.1.3. Causality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-sufficient-and-contributory-causes">5.1.3.1. Necessary, sufficient and contributory causes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearl-s-work-causal-inference-in-statistics-a-primer">Pearl’s work, <em>Causal Inference in Statistics: A Primer</em></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ladder-of-causation">Ladder of causation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#associations">Associations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interventions">Interventions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactuals">Counterfactuals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearl-s-work-causal-inference-in-statistics-a-primer">5.2. Pearl’s work, <em>Causal Inference in Statistics: A Primer</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ladder-of-causation">5.2.1. Ladder of causation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model">5.2.2. Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#associations">5.2.3. Associations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interventions">5.2.4. Interventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactuals">5.2.5. Counterfactuals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-explore-causation">Your Turn: Explore Causation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">5.3. Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-explore-causation">5.4. Your Turn: Explore Causation</a></li>
 </ul>
             </nav>
         </div>
@@ -493,13 +496,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="correlation-is-not-causation">
-<h1>“Correlation is Not Causation”<a class="headerlink" href="#correlation-is-not-causation" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>“Correlation is Not Causation”<a class="headerlink" href="#correlation-is-not-causation" title="Permalink to this heading">#</a></h1>
 <p>In this article, some details about one of the most common sentence in statistics are given. Starting from the sentence “Correlation is not causation”, the definitions of <strong>correlation</strong>, <strong>independence</strong>, and <strong>causation</strong> are discussed.</p>
 <!--
 Understanding these concepts is essential for data analysis, scientific research, and informed decision-making.
 -->
 <div class="section" id="definitions">
-<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
 <!--
 **Correlation** measures the statistical association between two variables. A high correlation indicates that the variables move together, but not necessarily that one causes the other.
 
@@ -509,7 +512,7 @@ Understanding these concepts is essential for data analysis, scientific research
 
 We will explore these using data, visualizations, and tests.
 --><div class="section" id="correlation">
-<h3>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.1. </span>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h3>
 <p>Correlation measures any statistical relationship between two random variables, wheter it is statistically dependent or not, causal or not.</p>
 <p>The most common measure of correlation is <strong>Pearson correlation</strong>. Pearson correlation between two random variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> is defined as the ratio</p>
 <div class="math notranslate nohighlight">
@@ -517,7 +520,7 @@ We will explore these using data, visualizations, and tests.
 <p>of the covariance <span class="math notranslate nohighlight">\(\text{cov}(X,Y) = \mathbb{E}\left[ (X-\mu_X) (Y-\mu_Y) \right]\)</span>, being <span class="math notranslate nohighlight">\(\mu_Z\)</span> the expected value of variable <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(\mu_Z = \mathbb{E}\left[ Z \right]\)</span>, and <span class="math notranslate nohighlight">\(\sigma_{Z}\)</span> its standard deviation, <span class="math notranslate nohighlight">\(\sigma_{Z} = \sqrt{\mathbb{E}\left[ \left( Z - \mu_Z \right)^2 \right]}\)</span>.</p>
 </div>
 <div class="section" id="statistical-independence">
-<h3>Statistical independence<a class="headerlink" href="#statistical-independence" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.2. </span>Statistical independence<a class="headerlink" href="#statistical-independence" title="Permalink to this heading">#</a></h3>
 <p>Two random variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> are <strong>statistically independent</strong> if the conditional probability <span class="math notranslate nohighlight">\(p(X|Y)\)</span> is equal to the unconditional probability <span class="math notranslate nohighlight">\(p(X)\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[p(X|Y) = p(X)\]</div>
@@ -527,7 +530,7 @@ We will explore these using data, visualizations, and tests.
 <p>i.e. joint probability is the product of unconditional probabilities of independent random variables.</p>
 <p>As <span class="math notranslate nohighlight">\(p(X,Y) = p(Y|X) p(X)\)</span>, it also follows that <span class="math notranslate nohighlight">\(p(Y|X) = p(Y)\)</span>.</p>
 <div class="section" id="statistical-independence-implies-no-correlation">
-<h4>Statistical independence implies no correlation<a class="headerlink" href="#statistical-independence-implies-no-correlation" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">5.1.2.1. </span>Statistical independence implies no correlation<a class="headerlink" href="#statistical-independence-implies-no-correlation" title="Permalink to this heading">#</a></h4>
 <p>As statistical independence  of variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> implies <span class="math notranslate nohighlight">\(p(X,Y) = p(X) p(Y)\)</span>, direct computation of the covariance <span class="math notranslate nohighlight">\(\text{cov}(X,Y)\)</span> reads</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -537,7 +540,7 @@ We will explore these using data, visualizations, and tests.
 \end{aligned}\end{split}\]</div>
 </div>
 <div class="section" id="correlation-of-samples-drawn-from-independent-random-variables">
-<h4>Correlation of samples drawn from independent random variables<a class="headerlink" href="#correlation-of-samples-drawn-from-independent-random-variables" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">5.1.2.2. </span>Correlation of samples drawn from independent random variables<a class="headerlink" href="#correlation-of-samples-drawn-from-independent-random-variables" title="Permalink to this heading">#</a></h4>
 <p>Sample covariance <span class="math notranslate nohighlight">\(\hat{S}_N\)</span> of <span class="math notranslate nohighlight">\(N\)</span> samples <span class="math notranslate nohighlight">\(\{ (X_n, Y_n) \}_{n=1:N}\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\hat{S}_N := \dfrac{1}{N-1} \sum_{n=1}^{N} \left(X_n - \overline{X}_N \right) \left(Y_n - \overline{Y}_N \right) \ ,\]</div>
@@ -546,12 +549,12 @@ We will explore these using data, visualizations, and tests.
 </div>
 </div>
 <div class="section" id="causality">
-<h3>Causality<a class="headerlink" href="#causality" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.3. </span>Causality<a class="headerlink" href="#causality" title="Permalink to this heading">#</a></h3>
 <p>Causality is the relation between two events, in which one (the <strong>cause</strong>) is - at least partly - responsible for the other event (the <strong>effect</strong>), and the effect is - at least partly - dependent on the cause.</p>
 <p>Principle of causality relation implies that the cause comes before the effect.</p>
 <p>In general, an event may have multiple causes (that lie in its past) or have multiple effects.</p>
 <div class="section" id="necessary-sufficient-and-contributory-causes">
-<h4>Necessary, sufficient and contributory causes<a class="headerlink" href="#necessary-sufficient-and-contributory-causes" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">5.1.3.1. </span>Necessary, sufficient and contributory causes<a class="headerlink" href="#necessary-sufficient-and-contributory-causes" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(x\)</span> is necessary for <span class="math notranslate nohighlight">\(y\)</span> is the occurence of <span class="math notranslate nohighlight">\(y\)</span> implies a prior occurrence of <span class="math notranslate nohighlight">\(x\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x\)</span> is sufficient for <span class="math notranslate nohighlight">\(y\)</span> if the occurrence of <span class="math notranslate nohighlight">\(x\)</span> implies the subsequent occurrence of <span class="math notranslate nohighlight">\(y\)</span></p></li>
@@ -561,9 +564,9 @@ We will explore these using data, visualizations, and tests.
 </div>
 </div>
 <div class="section" id="pearl-s-work-causal-inference-in-statistics-a-primer">
-<h2>Pearl’s work, <em>Causal Inference in Statistics: A Primer</em><a class="headerlink" href="#pearl-s-work-causal-inference-in-statistics-a-primer" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>Pearl’s work, <em>Causal Inference in Statistics: A Primer</em><a class="headerlink" href="#pearl-s-work-causal-inference-in-statistics-a-primer" title="Permalink to this heading">#</a></h2>
 <div class="section" id="ladder-of-causation">
-<h3>Ladder of causation<a class="headerlink" href="#ladder-of-causation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.1. </span>Ladder of causation<a class="headerlink" href="#ladder-of-causation" title="Permalink to this heading">#</a></h3>
 <p>Three levels of causation:</p>
 <ul>
 <li><p><strong>Association</strong> is defined as the conditional probability,</p>
@@ -583,7 +586,7 @@ We will explore these using data, visualizations, and tests.
 </ul>
 </div>
 <div class="section" id="model">
-<h3>Model<a class="headerlink" href="#model" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.2. </span>Model<a class="headerlink" href="#model" title="Permalink to this heading">#</a></h3>
 <p><strong>Causal diagram</strong>: directed graph showing causal relationship, built with nodes (set of variables) connected with arrows representing causal influence.</p>
 <p><strong>Elements.</strong></p>
 <ul class="simple">
@@ -605,17 +608,17 @@ We will explore these using data, visualizations, and tests.
 </ul>
 </div>
 <div class="section" id="associations">
-<h3>Associations<a class="headerlink" href="#associations" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.3. </span>Associations<a class="headerlink" href="#associations" title="Permalink to this heading">#</a></h3>
 </div>
 <div class="section" id="interventions">
-<h3>Interventions<a class="headerlink" href="#interventions" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.4. </span>Interventions<a class="headerlink" href="#interventions" title="Permalink to this heading">#</a></h3>
 </div>
 <div class="section" id="counterfactuals">
-<h3>Counterfactuals<a class="headerlink" href="#counterfactuals" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.5. </span>Counterfactuals<a class="headerlink" href="#counterfactuals" title="Permalink to this heading">#</a></h3>
 </div>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
@@ -690,7 +693,7 @@ print(f&quot;Correlation between x and y: {corr:.2f} (spurious)&quot;)
 </div>
 </div>
 <div class="section" id="your-turn-explore-causation">
-<h2>Your Turn: Explore Causation<a class="headerlink" href="#your-turn-explore-causation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>Your Turn: Explore Causation<a class="headerlink" href="#your-turn-explore-causation" title="Permalink to this heading">#</a></h2>
 <p>Try changing the relationships between variables and test for correlation. Does correlation imply causation? Try creating a scenario where there is causation but low correlation.</p>
 </div>
 </div>
@@ -725,6 +728,24 @@ print(f&quot;Correlation between x and y: {corr:.2f} (spurious)&quot;)
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../../ch/prob/processes-calculus.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Stochastic calculus</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../ch/infer/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Introduction to Statistical Inference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -740,29 +761,29 @@ print(f&quot;Correlation between x and y: {corr:.2f} (spurious)&quot;)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence">Statistical independence</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence-implies-no-correlation">Statistical independence implies no correlation</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-samples-drawn-from-independent-random-variables">Correlation of samples drawn from independent random variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">5.1. Definitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">5.1.1. Correlation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence">5.1.2. Statistical independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence-implies-no-correlation">5.1.2.1. Statistical independence implies no correlation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-samples-drawn-from-independent-random-variables">5.1.2.2. Correlation of samples drawn from independent random variables</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causality">Causality</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-sufficient-and-contributory-causes">Necessary, sufficient and contributory causes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causality">5.1.3. Causality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-sufficient-and-contributory-causes">5.1.3.1. Necessary, sufficient and contributory causes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearl-s-work-causal-inference-in-statistics-a-primer">Pearl’s work, <em>Causal Inference in Statistics: A Primer</em></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ladder-of-causation">Ladder of causation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#associations">Associations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interventions">Interventions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactuals">Counterfactuals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearl-s-work-causal-inference-in-statistics-a-primer">5.2. Pearl’s work, <em>Causal Inference in Statistics: A Primer</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ladder-of-causation">5.2.1. Ladder of causation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model">5.2.2. Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#associations">5.2.3. Associations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interventions">5.2.4. Interventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactuals">5.2.5. Counterfactuals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-explore-causation">Your Turn: Explore Causation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">5.3. Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-explore-causation">5.4. Your Turn: Explore Causation</a></li>
 </ul>
   </nav></div>
 
