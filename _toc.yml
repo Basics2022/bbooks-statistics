@@ -28,6 +28,7 @@ parts:
     - file: ch/prob/wiener
     - file: ch/prob/white-noise
     - file: ch/prob/processes-calculus
+  - file: ch/code/notebooks/correlation_vs_causation
 - caption: Statistical Inference
   numbered: true
   chapters:
