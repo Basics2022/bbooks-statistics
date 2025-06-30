@@ -114,11 +114,20 @@ Term $\sigma W_t$ represents a scaling of a Wiener process $W_t \sim \mathscr{N}
 
 ```
 
-### Geometric Brownian Motion
+
+(prob:processes:calculus:ito-process:gbm)=
+### Geometric Brownian Motion, GBM
 
 A geometric Brownian motion is a stochastic process satisfying the SDE
 
 $$d X_t = \mu X_t \, dt + \sigma X_t \, dW_t \ .$$
+
+```{prf:example} GBM in Finance
+:label: example:gbm:finance
+
+GBM can be used as a model of the price of an asset with constant expected return and variance of returns with normal distribution.
+
+```
 
 Let $f(x) = \ln x$ be evaluated for $x = X_t$. Ito's lemma, with $\partial_t f \equiv 0$, provides the expression of the differential
 
@@ -137,3 +146,106 @@ $$\ln X_t = \ln X_0 + \left( \mu - \dfrac{\sigma^2}{2} \right) \, t + \sigma \, 
 or
 
 $$X_t = X_0 \, e^{\left( \mu - \frac{\sigma^2}{2} \right) \, t + \sigma W_t} \ .$$
+
+
+(prob:processes:calculus:ito-process:gbm-drift)=
+### Geometric Brownian Motion with drift
+
+A geometric Brownian motion is a stochastic process satisfying the SDE
+
+$$d X_t = \mu X_t \, dt - C \, dt + \sigma X_t \, dW_t \ .$$
+
+```{prf:example} GBM with constant withdrawal in finance
+:label: example:gbm-drift:finance
+
+GBM with drift can be used in finance as a model to represent DCA strategy and pension withdrawal, and to show and discuss **sequence risk**.
+
+```
+
+The solution reads
+
+$$X_t = X_0 e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-t_0) + \sigma ( W_t - W_0)} + \int_{s=0}^{t} C e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-s) + \sigma ( W_t - W_s)} \, ds \ .$$
+
+```{dropdown} Integration factor method for linear SDEs
+:open:
+
+Integration factor method for linear SDEs
+
+$$d X_t = a \, dt + b \, dW_t \ ,$$
+
+with $a(X_t, t, W_t)$, $b(X_t, t, W_t)$
+
+aims at finding an exponential factor $e^{\alpha t + \beta W_t}$ that allows to get an integrable expression of the differential
+
+$$d \left( e^{\alpha t + \beta W_t} X_t \right) = d \, f\left( t, W_t, X_t \right) \ .$$
+
+Taylor expansion of this expression up to terms of order $dt \sim dW_t^2$ reads
+
+$$\begin{aligned}
+  d \, f(t,W_t,X_t)
+  & = \partial_t f \, dt + \partial_w f \, d W_t + \partial_x f \, \underbrace{dX_t}_{a dt + b dW_t} + \\
+  & + \dfrac{1}{2} \left( \underbrace{\partial_{tt} f \, dt^2}_{o(dt)} + \partial_{ww} f \, \underbrace{dW_t^2}_{dt} + \partial_{xx}  f\, \underbrace{dX_t^2}_{b^2 \, dW_t^2 = b^2 \, dt} + \underbrace{2 \partial_{tw} f \, dt \, dW_t + 2 \partial_{tx} f \, dt \, dX_t}_{o(dt)} + 2 \partial_{xw} f \, \underbrace{dW_t \, dX_t}_{b dW_t^2 = b dt}  \right) = \\
+  & = dt \left[ \partial_t f + a \partial_x f + \dfrac{1}{2} \partial_{ww} f + \dfrac{1}{2} b^2 \partial_{xx} f + 2 b \partial_{xw} f \right] + d W_t \left[ \partial_w f + b \partial_x f \right] \\
+\end{aligned}$$
+
+```
+
+```{dropdown} Proof (with integration factor method, for linear SDEs)
+:open:
+
+GBM motion with drift and constant coefficients is governed by SDE
+
+$$d X_t = \mu X_t \, dt - C \, dt + \sigma X_t \, dW_t \ .$$
+
+Referring to the general expression of SDEs, coefficients $a$, $b$ of the GBM with drift read
+
+$$\begin{aligned}
+  a & = \mu \, X_t + C \\
+  b & = \sigma \, X_t \ .
+\end{aligned}$$
+
+
+Partial derivatives of function $f = e^{\alpha t + \beta w} \, x$ appearing in the solution of SDEs through integration factor method read
+
+$$\begin{aligned}
+  \partial_t    f & = e^{\alpha t + \beta w} \, x \, \alpha   \\
+  \partial_w    f & = e^{\alpha t + \beta w} \, x \, \beta    \\
+  \partial_x    f & = e^{\alpha t + \beta w}                  \\
+  \partial_{xx} f & = 0                                       \\
+  \partial_{wx} f & = e^{\alpha t + \beta w}      \, \beta    \\
+  \partial_{ww} f & = e^{\alpha t + \beta w} \, x \, \beta^2  \\
+\end{aligned}$$
+
+It's now possible to simplify the RHS of the the expression of the differential $df$. Namely, it's possible to choose values of $\alpha$, $\beta$ in order to get simpler expressions of the factors of the differentials $dt$  and $d W_t$ 
+
+$$\begin{aligned}
+  dW_t: \quad  \partial_{W_t} f 
+  & = \left.\left( \partial_w f + b \partial_x f \right)\right|_{t,W_t,X_t} = \\
+  & = e^{\alpha t + \beta W_t} \, \left( X_t \beta + b \right) = \\
+  & = e^{\alpha t + \beta W_t} \, X_t \left( \beta + \sigma \right) \\
+  dt  : \quad  \partial_{  t} f  \quad 
+  & = \left.\left[ \partial_t f + a \partial_x f + \dfrac{1}{2} \partial_{ww} f + \dfrac{1}{2} b^2 \partial_{xx} f + b \partial_{xw} f \right]\right|_{t,W_t,X_t} \\
+  & = e^{\alpha t + \beta W_t} \left[ X_t \alpha + a + \dfrac{1}{2} X_t \beta^2 + 0 + b \beta \right] = \\
+  & = e^{\alpha t + \beta W_t} \left[ X_t \alpha + \mu X_t + C + \dfrac{1}{2} X_t \beta^2 + \sigma X_t \beta \right] = \\
+  & = e^{\alpha t + \beta W_t} \left[ X_t \left( \alpha + \mu + \dfrac{1}{2} \beta^2 + \sigma \beta \right) + C \right] \ .
+\end{aligned}$$
+
+Setting 
+
+$$\begin{aligned}
+  \beta  & = - \sigma \\ 
+  \alpha & = - \mu - \dfrac{1}{2} \beta^2 - \sigma \beta = - \mu + \dfrac{\sigma^2}{2} \ , 
+\end{aligned}$$
+
+the differential $d f$ becomes
+
+
+$$d\left( e^{\left( -\mu + \frac{\sigma^2}{2} \right) t - \sigma W_t} \, X_t \right) = C e^{\left( -\mu + \frac{\sigma^2}{2} \right) t - \sigma W_t}$$
+
+and integration gives
+
+$$X_t = X_0 e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-t_0) + \sigma ( W_t - W_0)} + \int_{s=0}^{t} C e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-s) + \sigma ( W_t - W_s)} \, ds \ .$$
+
+
+```
+

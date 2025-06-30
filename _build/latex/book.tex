@@ -85,7 +85,7 @@
         
 
 \title{basics blog}
-\date{Jun 25, 2025}
+\date{Jun 30, 2025}
 \release{}
 \author{basics}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -133,7 +133,12 @@ Machine learning (ML) is a branch of artificial intelligence (AI) focused on des
 
 
 \chapter{Introduction to Statistics}
-\label{\detokenize{ch/intro/intro:introduction-to-statistics}}\label{\detokenize{ch/intro/intro:intro}}\label{\detokenize{ch/intro/intro::doc}}
+\label{\detokenize{ch/intro/intro:introduction-to-statistics}}\label{\detokenize{ch/intro/intro:intro-intro}}\label{\detokenize{ch/intro/intro::doc}}
+\sphinxstepscope
+
+
+\chapter{Descriptive Statistics}
+\label{\detokenize{ch/intro/descriptive:descriptive-statistics}}\label{\detokenize{ch/intro/descriptive:intro-descriptive}}\label{\detokenize{ch/intro/descriptive::doc}}
 \sphinxstepscope
 
 
@@ -143,7 +148,7 @@ Machine learning (ML) is a branch of artificial intelligence (AI) focused on des
 
 
 \chapter{Introduction to probability theory}
-\label{\detokenize{ch/prob/intro:introduction-to-probability-theory}}\label{\detokenize{ch/prob/intro:prob}}\label{\detokenize{ch/prob/intro::doc}}
+\label{\detokenize{ch/prob/intro:introduction-to-probability-theory}}\label{\detokenize{ch/prob/intro:prob-intro}}\label{\detokenize{ch/prob/intro::doc}}
 \sphinxAtStartPar
 Probability theory is an axiomatic approach to probability, assigning
 \subsubsection*{Stochastic variables}
@@ -267,6 +272,72 @@ response of LTI to random input
 
 \section{Definition of stochastic variable}
 \label{\detokenize{ch/prob/rv-def:definition-of-stochastic-variable}}\label{\detokenize{ch/prob/rv-def:prob-rv-def}}\label{\detokenize{ch/prob/rv-def::doc}}
+\sphinxAtStartPar
+In this section, first a formal definition of a stochastic (or random) variable is provided and then discussed. While the definition may initially appear abstract or esoteric, but their nothing more than an extension of set theory. Understanding concepts such as \sphinxstyleemphasis{probability space}, \sphinxstyleemphasis{\(\sigma\)\sphinxhyphen{}algebra}, \sphinxstyleemphasis{measure}, opens the path to a rigorous approach to probability theory.
+\label{ch/prob/rv-def:def:rv}
+\begin{sphinxadmonition}{note}{Definition 3.1.1 (Random variable)}
+
+
+
+\sphinxAtStartPar
+Given a \sphinxstylestrong{probability space} \((\Omega, \mathcal{F}, \nu)\) and a \sphinxstylestrong{measurable space} \((E, \mathcal{E})\), a \sphinxstylestrong{random variable} is a measurable function, \(X: \Omega \ \rightarrow \ E\).
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+Here, the set \(\Omega\) is usually defined as the \sphinxstylestrong{event set}, \(\mathcal{F}\) is a \sphinxstylestrong{\(\sigma\)\sphinxhyphen{}algebra} on \(\Omega\), \(\nu\) is a \sphinxstylestrong{probability measure}; the set \(E\) is usually defined as the \sphinxstylestrong{set of possible outcomes}, and \(\mathcal{E}\) is a \sphinxstylestrong{\(\sigma\)\sphinxhyphen{}algebra} on it.
+
+\sphinxAtStartPar
+Ok, let’s explain now every concept appearing in the definition of a random variable.
+\label{ch/prob/rv-def:def:sigma-algebra}
+\begin{sphinxadmonition}{note}{Definition 3.1.2 (\protect\(\sigma\protect\)\sphinxhyphen{}algebra)}
+
+
+
+\sphinxAtStartPar
+A \(\sigma\)\sphinxhyphen{}algebra \(\mathcal{F}\) on a set \(\Omega\), a \(\sigma\)\sphinxhyphen{}algebra is a family of subsets of \(\Omega\) that satisfies some properties:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+\(\Omega\) is in the \(\sigma\)\sphinxhyphen{}algebra
+
+\item {} 
+\sphinxAtStartPar
+closure under complementation. Taking any subset of \(\Omega\) that belongs to the \(\sigma\)\sphinxhyphen{}algebra, its complent belongs to the \(\sigma\)\sphinxhyphen{}algebra as well
+
+\item {} 
+\sphinxAtStartPar
+closure under countable union. A countable (that can be indexed by integer numbers) union of elements in the \(\sigma\)\sphinxhyphen{}algebra defines an element that belongs to the \(\sigma\)\sphinxhyphen{}algebra
+
+\end{enumerate}
+\end{sphinxadmonition}
+\label{ch/prob/rv-def:def:measurable-space}
+\begin{sphinxadmonition}{note}{Definition 3.1.3 (Measurable space \protect\( (\Omega, \mathcal{F})\protect\))}
+
+
+\end{sphinxadmonition}
+\label{ch/prob/rv-def:def:prob-measure}
+\begin{sphinxadmonition}{note}{Definition 3.1.4 (Probability measure \protect\(\nu\protect\))}
+
+
+\end{sphinxadmonition}
+\label{ch/prob/rv-def:def:prob-space}
+\begin{sphinxadmonition}{note}{Definition 3.1.5 (Probability space \protect\( (\Omega, \mathcal{F}, \nu)\protect\))}
+
+
+
+\sphinxAtStartPar
+If \((\Omega, \mathcal{F})\) is a measureble space and \(\nu\) is a probability measure, then the triplet \((\Omega, \mathcal{F}, \nu)\) is a probability space.
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{warning}{Warning:}
+\sphinxAtStartPar
+Event space not coinciding with the power set of events
+
+\sphinxAtStartPar
+If event space \(\Omega\) doesn’t coincide with the power set but it’s a subset of it, then it’s not guaranteed that such an event space can be used to define a \(\sigma\)\sphinxhyphen{}algebra.
+\end{sphinxadmonition}
+
 \sphinxstepscope
 
 
@@ -406,7 +477,7 @@ For continuous r.v., integrating over \(x\) the relation \(p(x,y) = p(x|y) p(y)\
 \sphinxAtStartPar
 as the normalization condition holds for conditional distribution \(p(x|y)\).
 \label{ch/prob/rv-multi-dimensional:property-0}
-\begin{sphinxadmonition}{note}{Property 2.4.1}
+\begin{sphinxadmonition}{note}{Property 3.4.1}
 
 
 \begin{equation*}
@@ -493,7 +564,7 @@ spectrum…
 
 \subsection{Bayes’ theorem}
 \label{\detokenize{ch/prob/rv-multi-dimensional:bayes-theorem}}\label{\detokenize{ch/prob/rv-multi-dimensional:prob-multidim-bayes}}\label{ch/prob/rv-multi-dimensional:theorem-1}
-\begin{sphinxadmonition}{note}{Theorem 2.4.1 (Bayes’ theorem)}
+\begin{sphinxadmonition}{note}{Theorem 3.4.1 (Bayes’ theorem)}
 
 
 
@@ -506,7 +577,7 @@ Where \(p_Y(y) \ne 0\),
 
 \subsection{Statistical independence}
 \label{\detokenize{ch/prob/rv-multi-dimensional:statistical-independence}}\label{\detokenize{ch/prob/rv-multi-dimensional:prob-multidim-independence}}\label{ch/prob/rv-multi-dimensional:definition-2}
-\begin{sphinxadmonition}{note}{Definition 2.4.1 (Independent random variables)}
+\begin{sphinxadmonition}{note}{Definition 3.4.1 (Independent random variables)}
 
 
 
@@ -574,7 +645,7 @@ Characteristic function of a continuous random variable with proabibility densit
 \sphinxAtStartPar
 i.e. its the \sphinxhref{https://basics2022.github.io/bbooks-math-miscellanea/ch/complex/fourier-transform.html\#fourier-transform}{\sphinxstylestrong{Fourier transform}} of its pdf.
 \label{ch/prob/characteristic-fun:ex:char-fun:multidimensional}
-\begin{sphinxadmonition}{note}{Example 2.6.1 (Characteristic function of a multi\sphinxhyphen{}dimensional variable)}
+\begin{sphinxadmonition}{note}{Example 3.6.1 (Characteristic function of a multi\sphinxhyphen{}dimensional variable)}
 
 
 \begin{equation*}
@@ -583,7 +654,7 @@ i.e. its the \sphinxhref{https://basics2022.github.io/bbooks-math-miscellanea/ch
 \begin{split}\varphi_{Z(\mathbf{Y})} := \mathbb{E}\left[ e^{i t Z(\mathbf{Y})} \right] = \int_{\mathbf{y}} e^{i t Z(\mathbf{y})} f(\mathbf{y}) \, d \mathbf{y}\end{split}
 \end{equation*}\end{sphinxadmonition}
 \label{ch/prob/characteristic-fun:ex:char-fun:independent}
-\begin{sphinxadmonition}{note}{Example 2.6.2 (Characteristic function of a linear combination of independent variables)}
+\begin{sphinxadmonition}{note}{Example 3.6.2 (Characteristic function of a linear combination of independent variables)}
 
 
 \begin{equation*}
@@ -603,7 +674,7 @@ with
 \end{aligned}\end{split}
 \end{equation*}\end{sphinxadmonition}
 \label{ch/prob/characteristic-fun:ex:char-fun:taylor}
-\begin{sphinxadmonition}{note}{Example 2.6.3 (Taylor expansion of characteristic function)}
+\begin{sphinxadmonition}{note}{Example 3.6.3 (Taylor expansion of characteristic function)}
 
 
 
@@ -620,7 +691,7 @@ For “small” values of \(t\), an approximation of the characteristic function
 as \((1)\) \(\sigma^2 = \mathbb{E}[(y - \mu)^2] = \mathbb{E}[y^2] - \mu^2\)
 \end{sphinxadmonition}
 \label{ch/prob/characteristic-fun:ex:char-fun:normal}
-\begin{sphinxadmonition}{note}{Example 2.6.4 (Characteristic function of a normal distribution \protect\(\mathscr{N}(0,1)\protect\))}
+\begin{sphinxadmonition}{note}{Example 3.6.4 (Characteristic function of a normal distribution \protect\(\mathscr{N}(0,1)\protect\))}
 
 
 \begin{equation*}
@@ -705,7 +776,7 @@ The same definition of almost sure convergence, without allowing the existance o
 
 \section{Independent identically distributed random variables}
 \label{\detokenize{ch/prob/iid:independent-identically-distributed-random-variables}}\label{\detokenize{ch/prob/iid:prob-iid}}\label{\detokenize{ch/prob/iid::doc}}\label{ch/prob/iid:definition-0}
-\begin{sphinxadmonition}{note}{Definition 2.8.1 (Independent identically distributed (iid) random variables)}
+\begin{sphinxadmonition}{note}{Definition 3.8.1 (Independent identically distributed (iid) random variables)}
 
 
 \end{sphinxadmonition}
@@ -728,7 +799,7 @@ The same definition of almost sure convergence, without allowing the existance o
 
 \subsection{Central Limit Theorem}
 \label{\detokenize{ch/prob/iid:central-limit-theorem}}\label{\detokenize{ch/prob/iid:prob-iid-clt}}\label{ch/prob/iid:thm:clt}
-\begin{sphinxadmonition}{note}{Theorem 2.8.1 (CLT)}
+\begin{sphinxadmonition}{note}{Theorem 3.8.1 (CLT)}
 
 
 
@@ -755,7 +826,7 @@ Let \(\{ X_k \}_{k=1:n}\) the sequence of iid random variables. Thus, \(\sum_{k=
 \end{equation*}
 \sphinxAtStartPar
 Expeceted value and variance of variables \(Y_k\) are respectively \(\mathbb{E}[Y_k] = 0\) and \(\mathbb{E}[Y_k^2] = 1\).
-The {\hyperref[\detokenize{ch/prob/characteristic-fun:prob-characteristic-fun}]{\sphinxcrossref{\DUrole{std,std-ref}{characteristic function}}}} of \(Z_n\), see {\hyperref[\detokenize{ch/prob/characteristic-fun:ex:char-fun:independent}]{\sphinxcrossref{Example 2.6.2}}} for the linear combination of independent variables, reads
+The {\hyperref[\detokenize{ch/prob/characteristic-fun:prob-characteristic-fun}]{\sphinxcrossref{\DUrole{std,std-ref}{characteristic function}}}} of \(Z_n\), see {\hyperref[\detokenize{ch/prob/characteristic-fun:ex:char-fun:independent}]{\sphinxcrossref{Example 3.6.2}}} for the linear combination of independent variables, reads
 \begin{equation*}
 \begin{split}\begin{aligned}
   \varphi_{Z_n}(t) 
@@ -764,7 +835,7 @@ The {\hyperref[\detokenize{ch/prob/characteristic-fun:prob-characteristic-fun}]{
 \end{aligned}\end{split}
 \end{equation*}
 \sphinxAtStartPar
-as \((1)\) the variables are not only independent but identically distributed: as they have the same pdf, they also have the same characteristic function. Expanding in Taylor series, see example {\hyperref[\detokenize{ch/prob/characteristic-fun:ex:char-fun:taylor}]{\sphinxcrossref{Example 2.6.3}}} for \(\frac{t}{\sqrt{n}} \rightarrow 0\), the approximation of the characteristic function reads (remembering that \(Y_n\) have zero expected value and unit variance),
+as \((1)\) the variables are not only independent but identically distributed: as they have the same pdf, they also have the same characteristic function. Expanding in Taylor series, see example {\hyperref[\detokenize{ch/prob/characteristic-fun:ex:char-fun:taylor}]{\sphinxcrossref{Example 3.6.3}}} for \(\frac{t}{\sqrt{n}} \rightarrow 0\), the approximation of the characteristic function reads (remembering that \(Y_n\) have zero expected value and unit variance),
 \begin{equation*}
 \begin{split}\varphi_{Y_1}\left( \dfrac{t}{\sqrt{n}} \right) \sim 1 - \dfrac{t^2}{2 n} \ ,\end{split}
 \end{equation*}
@@ -774,7 +845,7 @@ while
 \begin{split}\varphi_{Z_n}(t) = \left[ \varphi_{Y_1} \left( \dfrac{t}{\sqrt{n}} \right) \right]^n \sim \left[  1 - \dfrac{t^2}{2 n}  \right]^n \sim e^{- \frac{t^2}{2}} \ ,\end{split}
 \end{equation*}
 \sphinxAtStartPar
-i.e. it converges to the characteristic function of a normal distribution \(\mathscr{N}(0,1)\), see {\hyperref[\detokenize{ch/prob/characteristic-fun:ex:char-fun:normal}]{\sphinxcrossref{Example 2.6.4}}}.
+i.e. it converges to the characteristic function of a normal distribution \(\mathscr{N}(0,1)\), see {\hyperref[\detokenize{ch/prob/characteristic-fun:ex:char-fun:normal}]{\sphinxcrossref{Example 3.6.4}}}.
 
 \sphinxAtStartPar
 \sphinxstylestrong{Levy’s continuity theorem} completes the proof. \sphinxstylestrong{todo}
@@ -900,7 +971,7 @@ Simulation of Wiener process, demonstration of properties shown in theory sectio
 
 \subsection{Definition}
 \label{\detokenize{ch/prob/wiener:definition}}\label{\detokenize{ch/prob/wiener:prob-processes-wiener-def}}\label{ch/prob/wiener:wiener:def}
-\begin{sphinxadmonition}{note}{Definition 3.1.1 (Wiener process \sphinxhyphen{} Brownian motion)}
+\begin{sphinxadmonition}{note}{Definition 4.1.1 (Wiener process \sphinxhyphen{} Brownian motion)}
 
 
 
@@ -950,7 +1021,7 @@ in \(W(t)\) is almost surely continuous in \(t\)
 
 \subsection{Properties}
 \label{\detokenize{ch/prob/wiener:properties}}\label{ch/prob/wiener:property-1}
-\begin{sphinxadmonition}{note}{Property 3.1.1 (Covariance of increments)}
+\begin{sphinxadmonition}{note}{Property 4.1.1 (Covariance of increments)}
 
 
 
@@ -960,7 +1031,7 @@ Covariance of an increment follows the definition of Wiener process and the defi
 \begin{split}\mathbb{E}\left[ \left( W(t) - W(s) \right)^2  \right] = \mathbb{E}\left[ \mathscr{N}(0, |t-s|) \right] =  |t - s| \ .\end{split}
 \end{equation}
 \sphinxAtStartPar
-Covariance of independent increments \sphinxhyphen{} on non\sphinxhyphen{}overlapping ranges \sphinxhyphen{} is zero, as {\hyperref[\detokenize{ch/prob/rv-multi-dimensional:prob-multidim-independence-no-correlation}]{\sphinxcrossref{\DUrole{std,std-ref}{independence implies no correlation}}}}, i.e. zero covariance. Thus, if \(a \le b \le c \le d\), \(W(b)-W(a)\) and \(W(d)-W(c)\) are independent by property \((3)\) in {\hyperref[\detokenize{ch/prob/wiener:wiener:def}]{\sphinxcrossref{Definition 3.1.1}}} of Wiener process, and thus their covariance \sphinxhyphen{} and correlation \sphinxhyphen{} is zero,
+Covariance of independent increments \sphinxhyphen{} on non\sphinxhyphen{}overlapping ranges \sphinxhyphen{} is zero, as {\hyperref[\detokenize{ch/prob/rv-multi-dimensional:prob-multidim-independence-no-correlation}]{\sphinxcrossref{\DUrole{std,std-ref}{independence implies no correlation}}}}, i.e. zero covariance. Thus, if \(a \le b \le c \le d\), \(W(b)-W(a)\) and \(W(d)-W(c)\) are independent by property \((3)\) in {\hyperref[\detokenize{ch/prob/wiener:wiener:def}]{\sphinxcrossref{Definition 4.1.1}}} of Wiener process, and thus their covariance \sphinxhyphen{} and correlation \sphinxhyphen{} is zero,
 \begin{equation}\label{equation:ch/prob/wiener:eq:wiener:cov:2}
 \begin{split}\mathbb{E}\left[ ( W(b) - W(a) ) ( W(d) - W(c) )  \right] = 0\end{split}
 \end{equation}
@@ -1002,7 +1073,7 @@ Similarly, if \(s_1 \le s_2 \le t_1 \le t_2 \),
 \sphinxAtStartPar
 All the other situations can be proved in the same way.
 \label{ch/prob/wiener:property-2}
-\begin{sphinxadmonition}{note}{Property 3.1.2 (Statistics of maximum)}
+\begin{sphinxadmonition}{note}{Property 4.1.2 (Statistics of maximum)}
 
 
 
@@ -1068,7 +1139,7 @@ Thus, it follows the requied relation
 \end{equation*}
 
 \label{ch/prob/wiener:property-3}
-\begin{sphinxadmonition}{note}{Property 3.1.3 (\protect\(W(t)\protect\) is almost surely not differentiable)}
+\begin{sphinxadmonition}{note}{Property 4.1.3 (\protect\(W(t)\protect\) is almost surely not differentiable)}
 
 
 
@@ -1123,7 +1194,7 @@ Now, being \(\varepsilon \le \Delta t\), it follows that \(\frac{\varepsilon}{\s
 
 \section{White noise}
 \label{\detokenize{ch/prob/white-noise:white-noise}}\label{\detokenize{ch/prob/white-noise:prob-processes-wn}}\label{\detokenize{ch/prob/white-noise::doc}}\label{ch/prob/white-noise:wn:def:properties}
-\begin{sphinxadmonition}{note}{Definition 3.2.1 (White noise \sphinxhyphen{} properties)}
+\begin{sphinxadmonition}{note}{Definition 4.2.1 (White noise \sphinxhyphen{} properties)}
 
 
 
@@ -1148,7 +1219,7 @@ Dirac delta correlation
 \sphinxAtStartPar
 \sphinxstylestrong{todo} \sphinxstyleemphasis{link to math:functional\sphinxhyphen{}analysis:distributions}
 \label{ch/prob/white-noise:wn:def:derivative}
-\begin{sphinxadmonition}{note}{Definition 3.2.2 (White noise \sphinxhyphen{} time derivative of Wiener process \protect\(W(t)\protect\) in the sense of distributions)}
+\begin{sphinxadmonition}{note}{Definition 4.2.2 (White noise \sphinxhyphen{} time derivative of Wiener process \protect\(W(t)\protect\) in the sense of distributions)}
 
 
 \end{sphinxadmonition}
@@ -1212,7 +1283,7 @@ Integegration w.r.t. Browinan motion produces a random variable that can be defi
 \sphinxAtStartPar
 being \(\pi_n\) a partition of interval \([0,t]\), and \(H\) a random proces \sphinxstylestrong{todo} \sphinxstyleemphasis{with some characteristics…}
 \label{ch/prob/processes-calculus:example-0}
-\begin{sphinxadmonition}{note}{Example 3.3.1 (Integral of a Brownian motion w.r.t. itself)}
+\begin{sphinxadmonition}{note}{Example 4.3.1 (Integral of a Brownian motion w.r.t. itself)}
 
 
 \begin{equation*}
@@ -1286,13 +1357,21 @@ Term \(\sigma W_t\) represents a scaling of a Wiener process \(W_t \sim \mathscr
 \end{sphinxadmonition}
 
 
-\subsubsection{Geometric Brownian Motion}
-\label{\detokenize{ch/prob/processes-calculus:geometric-brownian-motion}}
+\subsubsection{Geometric Brownian Motion, GBM}
+\label{\detokenize{ch/prob/processes-calculus:geometric-brownian-motion-gbm}}\label{\detokenize{ch/prob/processes-calculus:prob-processes-calculus-ito-process-gbm}}
 \sphinxAtStartPar
 A geometric Brownian motion is a stochastic process satisfying the SDE
 \begin{equation*}
 \begin{split}d X_t = \mu X_t \, dt + \sigma X_t \, dW_t \ .\end{split}
-\end{equation*}
+\end{equation*}\label{ch/prob/processes-calculus:example:gbm:finance}
+\begin{sphinxadmonition}{note}{Example 4.3.2 (GBM in Finance)}
+
+
+
+\sphinxAtStartPar
+GBM can be used as a model of the price of an asset with constant expected return and variance of returns with normal distribution.
+\end{sphinxadmonition}
+
 \sphinxAtStartPar
 Let \(f(x) = \ln x\) be evaluated for \(x = X_t\). Ito’s lemma, with \(\partial_t f \equiv 0\), provides the expression of the differential
 \begin{equation*}
@@ -1313,6 +1392,110 @@ whose solution after integration reads
 or
 \begin{equation*}
 \begin{split}X_t = X_0 \, e^{\left( \mu - \frac{\sigma^2}{2} \right) \, t + \sigma W_t} \ .\end{split}
+\end{equation*}
+
+\subsubsection{Geometric Brownian Motion with drift}
+\label{\detokenize{ch/prob/processes-calculus:geometric-brownian-motion-with-drift}}\label{\detokenize{ch/prob/processes-calculus:prob-processes-calculus-ito-process-gbm-drift}}
+\sphinxAtStartPar
+A geometric Brownian motion is a stochastic process satisfying the SDE
+\begin{equation*}
+\begin{split}d X_t = \mu X_t \, dt - C \, dt + \sigma X_t \, dW_t \ .\end{split}
+\end{equation*}\label{ch/prob/processes-calculus:example:gbm-drift:finance}
+\begin{sphinxadmonition}{note}{Example 4.3.3 (GBM with constant withdrawal in finance)}
+
+
+
+\sphinxAtStartPar
+GBM with drift can be used in finance as a model to represent DCA strategy and pension withdrawal, and to show and discuss \sphinxstylestrong{sequence risk}.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+The solution reads
+\begin{equation*}
+\begin{split}X_t = X_0 e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-t_0) + \sigma ( W_t - W_0)} + \int_{s=0}^{t} C e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-s) + \sigma ( W_t - W_s)} \, ds \ .\end{split}
+\end{equation*}\subsubsection*{Integration factor method for linear SDEs}
+
+\sphinxAtStartPar
+Integration factor method for linear SDEs
+\begin{equation*}
+\begin{split}d X_t = a \, dt + b \, dW_t \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+with \(a(X_t, t, W_t)\), \(b(X_t, t, W_t)\)
+
+\sphinxAtStartPar
+aims at finding an exponential factor \(e^{\alpha t + \beta W_t}\) that allows to get an integrable expression of the differential
+\begin{equation*}
+\begin{split}d \left( e^{\alpha t + \beta W_t} X_t \right) = d \, f\left( t, W_t, X_t \right) \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Taylor expansion of this expression up to terms of order \(dt \sim dW_t^2\) reads
+\begin{equation*}
+\begin{split}\begin{aligned}
+  d \, f(t,W_t,X_t)
+  & = \partial_t f \, dt + \partial_w f \, d W_t + \partial_x f \, \underbrace{dX_t}_{a dt + b dW_t} + \\
+  & + \dfrac{1}{2} \left( \underbrace{\partial_{tt} f \, dt^2}_{o(dt)} + \partial_{ww} f \, \underbrace{dW_t^2}_{dt} + \partial_{xx}  f\, \underbrace{dX_t^2}_{b^2 \, dW_t^2 = b^2 \, dt} + \underbrace{2 \partial_{tw} f \, dt \, dW_t + 2 \partial_{tx} f \, dt \, dX_t}_{o(dt)} + 2 \partial_{xw} f \, \underbrace{dW_t \, dX_t}_{b dW_t^2 = b dt}  \right) = \\
+  & = dt \left[ \partial_t f + a \partial_x f + \dfrac{1}{2} \partial_{ww} f + \dfrac{1}{2} b^2 \partial_{xx} f + 2 b \partial_{xw} f \right] + d W_t \left[ \partial_w f + b \partial_x f \right] \\
+\end{aligned}\end{split}
+\end{equation*}\subsubsection*{Proof (with integration factor method, for linear SDEs)}
+
+\sphinxAtStartPar
+GBM motion with drift and constant coefficients is governed by SDE
+\begin{equation*}
+\begin{split}d X_t = \mu X_t \, dt - C \, dt + \sigma X_t \, dW_t \ .\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Referring to the general expression of SDEs, coefficients \(a\), \(b\) of the GBM with drift read
+\begin{equation*}
+\begin{split}\begin{aligned}
+  a & = \mu \, X_t + C \\
+  b & = \sigma \, X_t \ .
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Partial derivatives of function \(f = e^{\alpha t + \beta w} \, x\) appearing in the solution of SDEs through integration factor method read
+\begin{equation*}
+\begin{split}\begin{aligned}
+  \partial_t    f & = e^{\alpha t + \beta w} \, x \, \alpha   \\
+  \partial_w    f & = e^{\alpha t + \beta w} \, x \, \beta    \\
+  \partial_x    f & = e^{\alpha t + \beta w}                  \\
+  \partial_{xx} f & = 0                                       \\
+  \partial_{wx} f & = e^{\alpha t + \beta w}      \, \beta    \\
+  \partial_{ww} f & = e^{\alpha t + \beta w} \, x \, \beta^2  \\
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+It’s now possible to simplify the RHS of the the expression of the differential \(df\). Namely, it’s possible to choose values of \(\alpha\), \(\beta\) in order to get simpler expressions of the factors of the differentials \(dt\)  and \(d W_t\)
+\begin{equation*}
+\begin{split}\begin{aligned}
+  dW_t: \quad  \partial_{W_t} f 
+  & = \left.\left( \partial_w f + b \partial_x f \right)\right|_{t,W_t,X_t} = \\
+  & = e^{\alpha t + \beta W_t} \, \left( X_t \beta + b \right) = \\
+  & = e^{\alpha t + \beta W_t} \, X_t \left( \beta + \sigma \right) \\
+  dt  : \quad  \partial_{  t} f  \quad 
+  & = \left.\left[ \partial_t f + a \partial_x f + \dfrac{1}{2} \partial_{ww} f + \dfrac{1}{2} b^2 \partial_{xx} f + b \partial_{xw} f \right]\right|_{t,W_t,X_t} \\
+  & = e^{\alpha t + \beta W_t} \left[ X_t \alpha + a + \dfrac{1}{2} X_t \beta^2 + 0 + b \beta \right] = \\
+  & = e^{\alpha t + \beta W_t} \left[ X_t \alpha + \mu X_t + C + \dfrac{1}{2} X_t \beta^2 + \sigma X_t \beta \right] = \\
+  & = e^{\alpha t + \beta W_t} \left[ X_t \left( \alpha + \mu + \dfrac{1}{2} \beta^2 + \sigma \beta \right) + C \right] \ .
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Setting
+\begin{equation*}
+\begin{split}\begin{aligned}
+  \beta  & = - \sigma \\ 
+  \alpha & = - \mu - \dfrac{1}{2} \beta^2 - \sigma \beta = - \mu + \dfrac{\sigma^2}{2} \ , 
+\end{aligned}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+the differential \(d f\) becomes
+\begin{equation*}
+\begin{split}d\left( e^{\left( -\mu + \frac{\sigma^2}{2} \right) t - \sigma W_t} \, X_t \right) = C e^{\left( -\mu + \frac{\sigma^2}{2} \right) t - \sigma W_t}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+and integration gives
+\begin{equation*}
+\begin{split}X_t = X_0 e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-t_0) + \sigma ( W_t - W_0)} + \int_{s=0}^{t} C e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-s) + \sigma ( W_t - W_s)} \, ds \ .\end{split}
 \end{equation*}
 \sphinxstepscope
 
@@ -1507,6 +1690,21 @@ test set: to evaluate model performance
 \renewcommand{\indexname}{Proof Index}
 \begin{sphinxtheindex}
 \let\bigletter\sphinxstyleindexlettergroup
+\bigletter{def:measurable\sphinxhyphen{}space}
+\item\relax\sphinxstyleindexentry{def:measurable\sphinxhyphen{}space}\sphinxstyleindexextra{ch/prob/rv\sphinxhyphen{}def}\sphinxstyleindexpageref{ch/prob/rv-def:\detokenize{def:measurable-space}}
+\indexspace
+\bigletter{def:prob\sphinxhyphen{}measure}
+\item\relax\sphinxstyleindexentry{def:prob\sphinxhyphen{}measure}\sphinxstyleindexextra{ch/prob/rv\sphinxhyphen{}def}\sphinxstyleindexpageref{ch/prob/rv-def:\detokenize{def:prob-measure}}
+\indexspace
+\bigletter{def:prob\sphinxhyphen{}space}
+\item\relax\sphinxstyleindexentry{def:prob\sphinxhyphen{}space}\sphinxstyleindexextra{ch/prob/rv\sphinxhyphen{}def}\sphinxstyleindexpageref{ch/prob/rv-def:\detokenize{def:prob-space}}
+\indexspace
+\bigletter{def:rv}
+\item\relax\sphinxstyleindexentry{def:rv}\sphinxstyleindexextra{ch/prob/rv\sphinxhyphen{}def}\sphinxstyleindexpageref{ch/prob/rv-def:\detokenize{def:rv}}
+\indexspace
+\bigletter{def:sigma\sphinxhyphen{}algebra}
+\item\relax\sphinxstyleindexentry{def:sigma\sphinxhyphen{}algebra}\sphinxstyleindexextra{ch/prob/rv\sphinxhyphen{}def}\sphinxstyleindexpageref{ch/prob/rv-def:\detokenize{def:sigma-algebra}}
+\indexspace
 \bigletter{definition\sphinxhyphen{}0}
 \item\relax\sphinxstyleindexentry{definition\sphinxhyphen{}0}\sphinxstyleindexextra{ch/prob/iid}\sphinxstyleindexpageref{ch/prob/iid:\detokenize{definition-0}}
 \indexspace
@@ -1527,6 +1725,12 @@ test set: to evaluate model performance
 \indexspace
 \bigletter{example\sphinxhyphen{}0}
 \item\relax\sphinxstyleindexentry{example\sphinxhyphen{}0}\sphinxstyleindexextra{ch/prob/processes\sphinxhyphen{}calculus}\sphinxstyleindexpageref{ch/prob/processes-calculus:\detokenize{example-0}}
+\indexspace
+\bigletter{example:gbm\sphinxhyphen{}drift:finance}
+\item\relax\sphinxstyleindexentry{example:gbm\sphinxhyphen{}drift:finance}\sphinxstyleindexextra{ch/prob/processes\sphinxhyphen{}calculus}\sphinxstyleindexpageref{ch/prob/processes-calculus:\detokenize{example:gbm-drift:finance}}
+\indexspace
+\bigletter{example:gbm:finance}
+\item\relax\sphinxstyleindexentry{example:gbm:finance}\sphinxstyleindexextra{ch/prob/processes\sphinxhyphen{}calculus}\sphinxstyleindexpageref{ch/prob/processes-calculus:\detokenize{example:gbm:finance}}
 \indexspace
 \bigletter{property\sphinxhyphen{}0}
 \item\relax\sphinxstyleindexentry{property\sphinxhyphen{}0}\sphinxstyleindexextra{ch/prob/rv\sphinxhyphen{}multi\sphinxhyphen{}dimensional}\sphinxstyleindexpageref{ch/prob/rv-multi-dimensional:\detokenize{property-0}}

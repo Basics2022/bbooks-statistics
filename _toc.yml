@@ -8,6 +8,7 @@ parts:
   numbered: true
   chapters:
   - file: ch/intro/intro
+  - file: ch/intro/descriptive
 - caption: Probability Theory
   numbered: true
   chapters:

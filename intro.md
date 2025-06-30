@@ -1,20 +1,20 @@
 (book:statistics)=
 # Statistics - basics
 
-This material is part of the [**basics-books project**](https://basics2022.github.io/bbooks). 
+This material is part of the [**basics-books project**](https://basics2022.github.io/bbooks). It is also available as a [.pdf document](_build/latex/book.pdf). 
 
 **Contents.**
-```{dropdown} Introduction to statistics
+```{dropdown} [Introduction to statistics](intro:intro)
 :open:
 
 Different approaches to statistics and **descriptive statistics**
 
 ```
-```{dropdown} Probability theory
+```{dropdown} [Probability theory](prob:intro)
 :open:
 ```
 
-```{dropdown} Inferential statistics
+```{dropdown} [Inferential statistics](infer:intro)
 :open:
 
 Inferential and Bayesian statistics

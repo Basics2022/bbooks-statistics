@@ -1,4 +1,4 @@
-(prob)=
+(prob:intro)=
 # Introduction to probability theory
 
 Probability theory is an axiomatic approach to probability, assigning 

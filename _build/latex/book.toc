@@ -1,54 +1,56 @@
 \selectlanguage *{english}
 \contentsline {part}{I\hspace {1em}Introduction to Statistics}{3}{part.1}%
 \contentsline {chapter}{\numberline {1}Introduction to Statistics}{5}{chapter.1}%
-\contentsline {part}{II\hspace {1em}Probability Theory}{7}{part.2}%
-\contentsline {chapter}{\numberline {2}Introduction to probability theory}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Definition of stochastic variable}{10}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Discrete stochastic variables}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Continuous stochastic variables}{10}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Examples}{10}{subsection.2.3.1}%
-\contentsline {subsubsection}{Normal distribution, \(\symscr {N}(\mitmu , \mitsigma ^2)\)}{10}{subsubsection*.3}%
-\contentsline {subsubsection}{Chi\sphinxhyphen {}square, \(\mitchi _N^2\)}{11}{subsubsection*.4}%
-\contentsline {subsubsection}{Student\sphinxhyphen {}\(t\) distribution, \(t_{\mitnu }\)}{11}{subsubsection*.5}%
-\contentsline {section}{\numberline {2.4}Multi\sphinxhyphen {}dimensional stochastic variables}{11}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Moments}{12}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Bayes’ theorem}{13}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Statistical independence}{13}{subsection.2.4.3}%
-\contentsline {subsubsection}{Independence implies no correlation}{13}{subsubsection*.6}%
-\contentsline {section}{\numberline {2.5}Transformations of probability functions}{14}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Characteristic functions}{14}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Convergence in statistics}{15}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Convergence in distribution \sphinxhyphen {} weak convergence}{15}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Convergence in probability}{16}{subsection.2.7.2}%
-\contentsline {subsection}{\numberline {2.7.3}Almost sure convergence \sphinxhyphen {} strong convergence}{16}{subsection.2.7.3}%
-\contentsline {subsection}{\numberline {2.7.4}Sure convergence \sphinxhyphen {} pointwise convergence}{16}{subsection.2.7.4}%
-\contentsline {subsection}{\numberline {2.7.5}Convergence in absolute moments: mean,…}{16}{subsection.2.7.5}%
-\contentsline {section}{\numberline {2.8}Independent identically distributed random variables}{16}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Law of the large numbers}{16}{subsection.2.8.1}%
-\contentsline {subsubsection}{Weak form}{16}{subsubsection*.7}%
-\contentsline {subsubsection}{Strong form}{17}{subsubsection*.8}%
-\contentsline {subsection}{\numberline {2.8.2}Central Limit Theorem}{17}{subsection.2.8.2}%
-\contentsline {section}{\numberline {2.9}Heavy\sphinxhyphen {}tailed distributions}{18}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}References}{18}{subsection.2.9.1}%
-\contentsline {chapter}{\numberline {3}Stochastic processes}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Wiener process \sphinxhyphen {} Brownian motion}{20}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Definition}{20}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Properties}{20}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}White noise}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Stochastic calculus}{23}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Ito’s lemma}{23}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Ito’s calculus}{24}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Ito processes}{25}{subsection.3.3.3}%
-\contentsline {subsubsection}{Ito drift\sphinxhyphen {}diffusion process}{25}{subsubsection*.10}%
-\contentsline {subsubsection}{Geometric Brownian Motion}{25}{subsubsection*.11}%
-\contentsline {part}{III\hspace {1em}Statistical Inference}{27}{part.3}%
-\contentsline {chapter}{\numberline {4}Introduction to Statistical Inference}{29}{chapter.4}%
-\contentsline {part}{IV\hspace {1em}Introduction to Machine Learning}{31}{part.4}%
-\contentsline {chapter}{\numberline {5}Introduction to Machine Learning}{33}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Models in Machine Learning}{34}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Good Practices in Machine Learning}{34}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Supervised Learning}{35}{chapter.6}%
-\contentsline {section}{\numberline {6.1}SL: theory}{35}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Unsupervised Learning}{37}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Reinforcement Learning}{39}{chapter.8}%
-\contentsline {chapter}{Proof Index}{41}{section*.14}%
+\contentsline {chapter}{\numberline {2}Descriptive Statistics}{7}{chapter.2}%
+\contentsline {part}{II\hspace {1em}Probability Theory}{9}{part.2}%
+\contentsline {chapter}{\numberline {3}Introduction to probability theory}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Definition of stochastic variable}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Discrete stochastic variables}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Continuous stochastic variables}{13}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Examples}{13}{subsection.3.3.1}%
+\contentsline {subsubsection}{Normal distribution, \(\symscr {N}(\mitmu , \mitsigma ^2)\)}{13}{subsubsection*.3}%
+\contentsline {subsubsection}{Chi\sphinxhyphen {}square, \(\mitchi _N^2\)}{13}{subsubsection*.4}%
+\contentsline {subsubsection}{Student\sphinxhyphen {}\(t\) distribution, \(t_{\mitnu }\)}{14}{subsubsection*.5}%
+\contentsline {section}{\numberline {3.4}Multi\sphinxhyphen {}dimensional stochastic variables}{14}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Moments}{15}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Bayes’ theorem}{16}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Statistical independence}{16}{subsection.3.4.3}%
+\contentsline {subsubsection}{Independence implies no correlation}{16}{subsubsection*.6}%
+\contentsline {section}{\numberline {3.5}Transformations of probability functions}{17}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Characteristic functions}{17}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Convergence in statistics}{18}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Convergence in distribution \sphinxhyphen {} weak convergence}{18}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Convergence in probability}{18}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Almost sure convergence \sphinxhyphen {} strong convergence}{19}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}Sure convergence \sphinxhyphen {} pointwise convergence}{19}{subsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.7.5}Convergence in absolute moments: mean,…}{19}{subsection.3.7.5}%
+\contentsline {section}{\numberline {3.8}Independent identically distributed random variables}{19}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Law of the large numbers}{19}{subsection.3.8.1}%
+\contentsline {subsubsection}{Weak form}{19}{subsubsection*.7}%
+\contentsline {subsubsection}{Strong form}{20}{subsubsection*.8}%
+\contentsline {subsection}{\numberline {3.8.2}Central Limit Theorem}{20}{subsection.3.8.2}%
+\contentsline {section}{\numberline {3.9}Heavy\sphinxhyphen {}tailed distributions}{21}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}References}{21}{subsection.3.9.1}%
+\contentsline {chapter}{\numberline {4}Stochastic processes}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Wiener process \sphinxhyphen {} Brownian motion}{24}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Definition}{24}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Properties}{24}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}White noise}{27}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Stochastic calculus}{27}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Ito’s lemma}{27}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Ito’s calculus}{28}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Ito processes}{29}{subsection.4.3.3}%
+\contentsline {subsubsection}{Ito drift\sphinxhyphen {}diffusion process}{29}{subsubsection*.10}%
+\contentsline {subsubsection}{Geometric Brownian Motion, GBM}{29}{subsubsection*.11}%
+\contentsline {subsubsection}{Geometric Brownian Motion with drift}{30}{subsubsection*.12}%
+\contentsline {part}{III\hspace {1em}Statistical Inference}{33}{part.3}%
+\contentsline {chapter}{\numberline {5}Introduction to Statistical Inference}{35}{chapter.5}%
+\contentsline {part}{IV\hspace {1em}Introduction to Machine Learning}{37}{part.4}%
+\contentsline {chapter}{\numberline {6}Introduction to Machine Learning}{39}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Models in Machine Learning}{40}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Good Practices in Machine Learning}{40}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Supervised Learning}{41}{chapter.7}%
+\contentsline {section}{\numberline {7.1}SL: theory}{41}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Unsupervised Learning}{43}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Reinforcement Learning}{45}{chapter.9}%
+\contentsline {chapter}{Proof Index}{47}{section*.15}%

@@ -1,4 +1,4 @@
-(intro)=
+(intro:intro)=
 # Introduction to Statistics
 
 
