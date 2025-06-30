@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.3. Stochastic calculus &#8212; basics blog</title>
+    <title>4.3. Stochastic calculus &#8212; basics blog</title>
   
   
   
@@ -70,11 +70,20 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Introduction to Statistical Inference" href="../infer/intro.html" />
-    <link rel="prev" title="3.2. White noise" href="white-noise.html" />
+    <link rel="next" title="5. Introduction to Statistical Inference" href="../infer/intro.html" />
+    <link rel="prev" title="4.2. White noise" href="white-noise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9HKRV72TBJ');
+</script>
+
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -168,45 +177,46 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Statistics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">1. Introduction to Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/descriptive.html">2. Descriptive Statistics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability Theory</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">2. Introduction to probability theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="rv-def.html">2.1. Definition of stochastic variable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rv-discrete.html">2.2. Discrete stochastic variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rv-continuous.html">2.3. Continuous stochastic variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rv-multi-dimensional.html">2.4. Multi-dimensional stochastic variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transformations.html">2.5. Transformations of probability functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="characteristic-fun.html">2.6. Characteristic functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="convergence.html">2.7. Convergence in statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iid.html">2.8. Independent identically distributed random variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="heavy-tailed.html">2.9. Heavy-tailed distributions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">3. Introduction to probability theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="rv-def.html">3.1. Definition of stochastic variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rv-discrete.html">3.2. Discrete stochastic variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rv-continuous.html">3.3. Continuous stochastic variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rv-multi-dimensional.html">3.4. Multi-dimensional stochastic variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transformations.html">3.5. Transformations of probability functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="characteristic-fun.html">3.6. Characteristic functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="convergence.html">3.7. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iid.html">3.8. Independent identically distributed random variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heavy-tailed.html">3.9. Heavy-tailed distributions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="processes.html">3. Stochastic processes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="wiener.html">3.1. Wiener process - Brownian motion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="white-noise.html">3.2. White noise</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Stochastic calculus</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="processes.html">4. Stochastic processes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="wiener.html">4.1. Wiener process - Brownian motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="white-noise.html">4.2. White noise</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. Stochastic calculus</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Inference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../infer/intro.html">4. Introduction to Statistical Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../infer/intro.html">5. Introduction to Statistical Inference</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/intro.html">5. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml/models.html">5.1. Models in Machine Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml/good-practice.html">5.2. Good Practices in Machine Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/intro.html">6. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ml/models.html">6.1. Models in Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml/good-practice.html">6.2. Good Practices in Machine Learning</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/sl.html">6. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml/sl-theory.html">6.1. SL: theory</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/sl.html">7. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ml/sl-theory.html">7.1. SL: theory</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/ul.html">7. Unsupervised Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/rl.html">8. Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/ul.html">8. Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/rl.html">9. Reinforcement Learning</a></li>
 </ul>
 
     </div>
@@ -419,11 +429,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-lemma">3.3.1. Ito’s lemma</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-calculus">3.3.2. Ito’s calculus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-processes">3.3.3. Ito processes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-drift-diffusion-process">3.3.3.1. Ito drift-diffusion process</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-brownian-motion">3.3.3.2. Geometric Brownian Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-lemma">4.3.1. Ito’s lemma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-calculus">4.3.2. Ito’s calculus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-processes">4.3.3. Ito processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-drift-diffusion-process">4.3.3.1. Ito drift-diffusion process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-brownian-motion-gbm">4.3.3.2. Geometric Brownian Motion, GBM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-brownian-motion-with-drift">4.3.3.3. Geometric Brownian Motion with drift</a></li>
 </ul>
 </li>
 </ul>
@@ -438,9 +449,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="stochastic-calculus">
-<span id="prob-processes-calculus"></span><h1><span class="section-number">3.3. </span>Stochastic calculus<a class="headerlink" href="#stochastic-calculus" title="Permalink to this heading">#</a></h1>
+<span id="prob-processes-calculus"></span><h1><span class="section-number">4.3. </span>Stochastic calculus<a class="headerlink" href="#stochastic-calculus" title="Permalink to this heading">#</a></h1>
 <div class="section" id="ito-s-lemma">
-<span id="prob-processes-calculus-ito-lemma"></span><h2><span class="section-number">3.3.1. </span>Ito’s lemma<a class="headerlink" href="#ito-s-lemma" title="Permalink to this heading">#</a></h2>
+<span id="prob-processes-calculus-ito-lemma"></span><h2><span class="section-number">4.3.1. </span>Ito’s lemma<a class="headerlink" href="#ito-s-lemma" title="Permalink to this heading">#</a></h2>
 <p>It allows to find the differential of a time-dependent function of a stochastic process. Let <span class="math notranslate nohighlight">\(f(t,x)\)</span> be a twice-differentiable scalar function. Its Taylor series gives</p>
 <div class="math notranslate nohighlight">
 \[
@@ -473,13 +484,13 @@ document.write(`
 \end{aligned}\end{split}\]</div>
 </div>
 <div class="section" id="ito-s-calculus">
-<span id="prob-processes-calculus-ito-calculus"></span><h2><span class="section-number">3.3.2. </span>Ito’s calculus<a class="headerlink" href="#ito-s-calculus" title="Permalink to this heading">#</a></h2>
+<span id="prob-processes-calculus-ito-calculus"></span><h2><span class="section-number">4.3.2. </span>Ito’s calculus<a class="headerlink" href="#ito-s-calculus" title="Permalink to this heading">#</a></h2>
 <p>Integegration w.r.t. Browinan motion produces a random variable that can be defined as</p>
 <div class="math notranslate nohighlight">
 \[\int_{0}^{t} F \, dW := \lim_{n \rightarrow +\infty} \sum_{[t_{i-1},t_i] \in \pi_n} F_{t_{i-1}} \left( W_{t_i} - W_{t_{i-1}} \right) \ ,\]</div>
 <p>being <span class="math notranslate nohighlight">\(\pi_n\)</span> a partition of interval <span class="math notranslate nohighlight">\([0,t]\)</span>, and <span class="math notranslate nohighlight">\(H\)</span> a random proces <strong>todo</strong> <em>with some characteristics…</em></p>
 <div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 3.1 </span> (Integral of a Brownian motion w.r.t. itself)</p>
+<p class="admonition-title"><span class="caption-number">Example 4.1 </span> (Integral of a Brownian motion w.r.t. itself)</p>
 <div class="example-content section" id="proof-content">
 <div class="math notranslate nohighlight">
 \[Y(t) = \int_{s=0}^t W_s \, dW_s = \dfrac{1}{2} W_t^2 - \dfrac{t}{2} \ .\]</div>
@@ -518,13 +529,13 @@ Evaluation of the integral<div class="sd-summary-down docutils">
 </details></div>
 </div></div>
 <div class="section" id="ito-processes">
-<span id="prob-processes-calculus-ito-process"></span><h2><span class="section-number">3.3.3. </span>Ito processes<a class="headerlink" href="#ito-processes" title="Permalink to this heading">#</a></h2>
+<span id="prob-processes-calculus-ito-process"></span><h2><span class="section-number">4.3.3. </span>Ito processes<a class="headerlink" href="#ito-processes" title="Permalink to this heading">#</a></h2>
 <div class="section" id="ito-drift-diffusion-process">
-<span id="prob-processes-calculus-ito-process-drift-diffusion"></span><h3><span class="section-number">3.3.3.1. </span>Ito drift-diffusion process<a class="headerlink" href="#ito-drift-diffusion-process" title="Permalink to this heading">#</a></h3>
+<span id="prob-processes-calculus-ito-process-drift-diffusion"></span><h3><span class="section-number">4.3.3.1. </span>Ito drift-diffusion process<a class="headerlink" href="#ito-drift-diffusion-process" title="Permalink to this heading">#</a></h3>
 <p>An Ito drift-diffusion process is a stochastic process satisfying the stochastic differential equation (SDE)</p>
 <div class="math notranslate nohighlight" id="equation-eq-ito-drift-diff">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-eq-ito-drift-diff" title="Permalink to this equation">#</a></span>\[dX_t = \mu_t \, dt + \sigma_t \, dW_t \ ,\]</div>
-<p>with <span class="math notranslate nohighlight">\(W_t\)</span> a Wiener process. If <span class="math notranslate nohighlight">\(\mu_t = \mu\)</span>, <span class="math notranslate nohighlight">\(\sigma_t = \sigma\)</span> are constant a closed-form solution can be found using <a class="reference internal" href="#prob-processes-calculus-ito-lemma"><span class="std std-ref">Ito’s lemma</span></a>, for <span class="math notranslate nohighlight">\(f(t,x) = x\)</span>, or by direct (stochastic) integration of the SDE <a class="reference internal" href="#equation-eq-ito-drift-diff">(3.4)</a>, as</p>
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-eq-ito-drift-diff" title="Permalink to this equation">#</a></span>\[dX_t = \mu_t \, dt + \sigma_t \, dW_t \ ,\]</div>
+<p>with <span class="math notranslate nohighlight">\(W_t\)</span> a Wiener process. If <span class="math notranslate nohighlight">\(\mu_t = \mu\)</span>, <span class="math notranslate nohighlight">\(\sigma_t = \sigma\)</span> are constant a closed-form solution can be found using <a class="reference internal" href="#prob-processes-calculus-ito-lemma"><span class="std std-ref">Ito’s lemma</span></a>, for <span class="math notranslate nohighlight">\(f(t,x) = x\)</span>, or by direct (stochastic) integration of the SDE <a class="reference internal" href="#equation-eq-ito-drift-diff">(4.4)</a>, as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \int_{s=0}^t dX_s &amp; = \int_{s=0}^t \mu \, ds + \int_{s=0}^t \sigma \, dW_s \\
@@ -539,12 +550,17 @@ Evaluation of the integral<div class="sd-summary-down docutils">
 <p>Term <span class="math notranslate nohighlight">\(\sigma W_t\)</span> represents a scaling of a Wiener process <span class="math notranslate nohighlight">\(W_t \sim \mathscr{N}(0, t)\)</span> with zero expected value and variance <span class="math notranslate nohighlight">\(t\)</span>. Multiplication by factor <span class="math notranslate nohighlight">\(\sigma\)</span> results in a multiplication of the expected value by <span class="math notranslate nohighlight">\(\sigma\)</span> and variance by <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>
 </div>
 </div>
-<div class="section" id="geometric-brownian-motion">
-<h3><span class="section-number">3.3.3.2. </span>Geometric Brownian Motion<a class="headerlink" href="#geometric-brownian-motion" title="Permalink to this heading">#</a></h3>
+<div class="section" id="geometric-brownian-motion-gbm">
+<span id="prob-processes-calculus-ito-process-gbm"></span><h3><span class="section-number">4.3.3.2. </span>Geometric Brownian Motion, GBM<a class="headerlink" href="#geometric-brownian-motion-gbm" title="Permalink to this heading">#</a></h3>
 <p>A geometric Brownian motion is a stochastic process satisfying the SDE</p>
 <div class="math notranslate nohighlight">
 \[d X_t = \mu X_t \, dt + \sigma X_t \, dW_t \ .\]</div>
-<p>Let <span class="math notranslate nohighlight">\(f(x) = \ln x\)</span> be evaluated for <span class="math notranslate nohighlight">\(x = X_t\)</span>. Ito’s lemma, with <span class="math notranslate nohighlight">\(\partial_t f \equiv 0\)</span>, provides the expression of the differential</p>
+<div class="proof example admonition" id="example:gbm:finance">
+<p class="admonition-title"><span class="caption-number">Example 4.2 </span> (GBM in Finance)</p>
+<div class="example-content section" id="proof-content">
+<p>GBM can be used as a model of the price of an asset with constant expected return and variance of returns with normal distribution.</p>
+</div>
+</div><p>Let <span class="math notranslate nohighlight">\(f(x) = \ln x\)</span> be evaluated for <span class="math notranslate nohighlight">\(x = X_t\)</span>. Ito’s lemma, with <span class="math notranslate nohighlight">\(\partial_t f \equiv 0\)</span>, provides the expression of the differential</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   d f
@@ -560,6 +576,95 @@ Evaluation of the integral<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[X_t = X_0 \, e^{\left( \mu - \frac{\sigma^2}{2} \right) \, t + \sigma W_t} \ .\]</div>
 </div>
+<div class="section" id="geometric-brownian-motion-with-drift">
+<span id="prob-processes-calculus-ito-process-gbm-drift"></span><h3><span class="section-number">4.3.3.3. </span>Geometric Brownian Motion with drift<a class="headerlink" href="#geometric-brownian-motion-with-drift" title="Permalink to this heading">#</a></h3>
+<p>A geometric Brownian motion is a stochastic process satisfying the SDE</p>
+<div class="math notranslate nohighlight">
+\[d X_t = \mu X_t \, dt - C \, dt + \sigma X_t \, dW_t \ .\]</div>
+<div class="proof example admonition" id="example:gbm-drift:finance">
+<p class="admonition-title"><span class="caption-number">Example 4.3 </span> (GBM with constant withdrawal in finance)</p>
+<div class="example-content section" id="proof-content">
+<p>GBM with drift can be used in finance as a model to represent DCA strategy and pension withdrawal, and to show and discuss <strong>sequence risk</strong>.</p>
+</div>
+</div><p>The solution reads</p>
+<div class="math notranslate nohighlight">
+\[X_t = X_0 e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-t_0) + \sigma ( W_t - W_0)} + \int_{s=0}^{t} C e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-s) + \sigma ( W_t - W_s)} \, ds \ .\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Integration factor method for linear SDEs<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Integration factor method for linear SDEs</p>
+<div class="math notranslate nohighlight">
+\[d X_t = a \, dt + b \, dW_t \ ,\]</div>
+<p class="sd-card-text">with <span class="math notranslate nohighlight">\(a(X_t, t, W_t)\)</span>, <span class="math notranslate nohighlight">\(b(X_t, t, W_t)\)</span></p>
+<p class="sd-card-text">aims at finding an exponential factor <span class="math notranslate nohighlight">\(e^{\alpha t + \beta W_t}\)</span> that allows to get an integrable expression of the differential</p>
+<div class="math notranslate nohighlight">
+\[d \left( e^{\alpha t + \beta W_t} X_t \right) = d \, f\left( t, W_t, X_t \right) \ .\]</div>
+<p class="sd-card-text">Taylor expansion of this expression up to terms of order <span class="math notranslate nohighlight">\(dt \sim dW_t^2\)</span> reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  d \, f(t,W_t,X_t)
+  &amp; = \partial_t f \, dt + \partial_w f \, d W_t + \partial_x f \, \underbrace{dX_t}_{a dt + b dW_t} + \\
+  &amp; + \dfrac{1}{2} \left( \underbrace{\partial_{tt} f \, dt^2}_{o(dt)} + \partial_{ww} f \, \underbrace{dW_t^2}_{dt} + \partial_{xx}  f\, \underbrace{dX_t^2}_{b^2 \, dW_t^2 = b^2 \, dt} + \underbrace{2 \partial_{tw} f \, dt \, dW_t + 2 \partial_{tx} f \, dt \, dX_t}_{o(dt)} + 2 \partial_{xw} f \, \underbrace{dW_t \, dX_t}_{b dW_t^2 = b dt}  \right) = \\
+  &amp; = dt \left[ \partial_t f + a \partial_x f + \dfrac{1}{2} \partial_{ww} f + \dfrac{1}{2} b^2 \partial_{xx} f + 2 b \partial_{xw} f \right] + d W_t \left[ \partial_w f + b \partial_x f \right] \\
+\end{aligned}\end{split}\]</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Proof (with integration factor method, for linear SDEs)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">GBM motion with drift and constant coefficients is governed by SDE</p>
+<div class="math notranslate nohighlight">
+\[d X_t = \mu X_t \, dt - C \, dt + \sigma X_t \, dW_t \ .\]</div>
+<p class="sd-card-text">Referring to the general expression of SDEs, coefficients <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> of the GBM with drift read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  a &amp; = \mu \, X_t + C \\
+  b &amp; = \sigma \, X_t \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Partial derivatives of function <span class="math notranslate nohighlight">\(f = e^{\alpha t + \beta w} \, x\)</span> appearing in the solution of SDEs through integration factor method read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \partial_t    f &amp; = e^{\alpha t + \beta w} \, x \, \alpha   \\
+  \partial_w    f &amp; = e^{\alpha t + \beta w} \, x \, \beta    \\
+  \partial_x    f &amp; = e^{\alpha t + \beta w}                  \\
+  \partial_{xx} f &amp; = 0                                       \\
+  \partial_{wx} f &amp; = e^{\alpha t + \beta w}      \, \beta    \\
+  \partial_{ww} f &amp; = e^{\alpha t + \beta w} \, x \, \beta^2  \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">It’s now possible to simplify the RHS of the the expression of the differential <span class="math notranslate nohighlight">\(df\)</span>. Namely, it’s possible to choose values of <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span> in order to get simpler expressions of the factors of the differentials <span class="math notranslate nohighlight">\(dt\)</span>  and <span class="math notranslate nohighlight">\(d W_t\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  dW_t: \quad  \partial_{W_t} f 
+  &amp; = \left.\left( \partial_w f + b \partial_x f \right)\right|_{t,W_t,X_t} = \\
+  &amp; = e^{\alpha t + \beta W_t} \, \left( X_t \beta + b \right) = \\
+  &amp; = e^{\alpha t + \beta W_t} \, X_t \left( \beta + \sigma \right) \\
+  dt  : \quad  \partial_{  t} f  \quad 
+  &amp; = \left.\left[ \partial_t f + a \partial_x f + \dfrac{1}{2} \partial_{ww} f + \dfrac{1}{2} b^2 \partial_{xx} f + b \partial_{xw} f \right]\right|_{t,W_t,X_t} \\
+  &amp; = e^{\alpha t + \beta W_t} \left[ X_t \alpha + a + \dfrac{1}{2} X_t \beta^2 + 0 + b \beta \right] = \\
+  &amp; = e^{\alpha t + \beta W_t} \left[ X_t \alpha + \mu X_t + C + \dfrac{1}{2} X_t \beta^2 + \sigma X_t \beta \right] = \\
+  &amp; = e^{\alpha t + \beta W_t} \left[ X_t \left( \alpha + \mu + \dfrac{1}{2} \beta^2 + \sigma \beta \right) + C \right] \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Setting</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \beta  &amp; = - \sigma \\ 
+  \alpha &amp; = - \mu - \dfrac{1}{2} \beta^2 - \sigma \beta = - \mu + \dfrac{\sigma^2}{2} \ , 
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">the differential <span class="math notranslate nohighlight">\(d f\)</span> becomes</p>
+<div class="math notranslate nohighlight">
+\[d\left( e^{\left( -\mu + \frac{\sigma^2}{2} \right) t - \sigma W_t} \, X_t \right) = C e^{\left( -\mu + \frac{\sigma^2}{2} \right) t - \sigma W_t}\]</div>
+<p class="sd-card-text">and integration gives</p>
+<div class="math notranslate nohighlight">
+\[X_t = X_0 e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-t_0) + \sigma ( W_t - W_0)} + \int_{s=0}^{t} C e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-s) + \sigma ( W_t - W_s)} \, ds \ .\]</div>
+</div>
+</details></div>
 </div>
 </div>
 
@@ -599,7 +704,7 @@ Evaluation of the integral<div class="sd-summary-down docutils">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.2. </span>White noise</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>White noise</p>
       </div>
     </a>
     <a class="right-next"
@@ -607,7 +712,7 @@ Evaluation of the integral<div class="sd-summary-down docutils">
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Introduction to Statistical Inference</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Introduction to Statistical Inference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -626,11 +731,12 @@ Evaluation of the integral<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-lemma">3.3.1. Ito’s lemma</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-calculus">3.3.2. Ito’s calculus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-processes">3.3.3. Ito processes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-drift-diffusion-process">3.3.3.1. Ito drift-diffusion process</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-brownian-motion">3.3.3.2. Geometric Brownian Motion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-lemma">4.3.1. Ito’s lemma</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-s-calculus">4.3.2. Ito’s calculus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-processes">4.3.3. Ito processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ito-drift-diffusion-process">4.3.3.1. Ito drift-diffusion process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-brownian-motion-gbm">4.3.3.2. Geometric Brownian Motion, GBM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-brownian-motion-with-drift">4.3.3.3. Geometric Brownian Motion with drift</a></li>
 </ul>
 </li>
 </ul>
