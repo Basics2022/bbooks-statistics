@@ -1,0 +1,820 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>“Correlation is Not Causation” &#8212; basics blog</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'code/notebooks/correlation_vs_causation';</script>
+    <link rel="shortcut icon" href="../../_static/favicon-sugar.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9HKRV72TBJ');
+</script>
+
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="basics blog - Home"/>
+    <script>document.write(`<img src="../../_static/logo-dark.svg" class="logo__image only-dark" alt="basics blog - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Statistics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../ch/intro/intro.html">1. Introduction to Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/intro/descriptive.html">2. Descriptive Statistics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Probability Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ch/prob/intro.html">3. Introduction to probability theory</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/rv-def.html">3.1. Definition of stochastic variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/rv-discrete.html">3.2. Discrete stochastic variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/rv-continuous.html">3.3. Continuous stochastic variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/rv-multi-dimensional.html">3.4. Multi-dimensional stochastic variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/transformations.html">3.5. Transformations of probability functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/characteristic-fun.html">3.6. Characteristic functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/convergence.html">3.7. Convergence in statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/iid.html">3.8. Independent identically distributed random variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/heavy-tailed.html">3.9. Heavy-tailed distributions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ch/prob/processes.html">4. Stochastic processes</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/wiener.html">4.1. Wiener process - Brownian motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/white-noise.html">4.2. White noise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/prob/processes-calculus.html">4.3. Stochastic calculus</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Inference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../ch/infer/intro.html">5. Introduction to Statistical Inference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ch/ml/intro.html">6. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/ml/models.html">6.1. Models in Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/ml/good-practice.html">6.2. Good Practices in Machine Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ch/ml/sl.html">7. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ch/ml/sl-theory.html">7.1. SL: theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/ml/ul.html">8. Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/ml/rl.html">9. Reinforcement Learning</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Basics2022/bbooks-statistics/blob/master/code/notebooks/correlation_vs_causation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Basics2022/bbooks-statistics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/edit/master/code/notebooks/correlation_vs_causation.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Basics2022/bbooks-statistics/issues/new?title=Issue%20on%20page%20%2Fcode/notebooks/correlation_vs_causation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/code/notebooks/correlation_vs_causation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>“Correlation is Not Causation”</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence">Statistical independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence-implies-no-correlation">Statistical independence implies no correlation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-samples-drawn-from-independent-random-variables">Correlation of samples drawn from independent random variables</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causality">Causality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-sufficient-and-contributory-causes">Necessary, sufficient and contributory causes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearl-s-work-causal-inference-in-statistics-a-primer">Pearl’s work, <em>Causal Inference in Statistics: A Primer</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ladder-of-causation">Ladder of causation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#associations">Associations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interventions">Interventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactuals">Counterfactuals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-explore-causation">Your Turn: Explore Causation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="correlation-is-not-causation">
+<h1>“Correlation is Not Causation”<a class="headerlink" href="#correlation-is-not-causation" title="Permalink to this heading">#</a></h1>
+<p>In this article, some details about one of the most common sentence in statistics are given. Starting from the sentence “Correlation is not causation”, the definitions of <strong>correlation</strong>, <strong>independence</strong>, and <strong>causation</strong> are discussed.</p>
+<!--
+Understanding these concepts is essential for data analysis, scientific research, and informed decision-making.
+-->
+<div class="section" id="definitions">
+<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
+<!--
+**Correlation** measures the statistical association between two variables. A high correlation indicates that the variables move together, but not necessarily that one causes the other.
+
+**Independence** means that knowing the value of one variable gives no information about the other.
+
+**Causation** implies that changes in one variable bring about changes in another.
+
+We will explore these using data, visualizations, and tests.
+--><div class="section" id="correlation">
+<h3>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h3>
+<p>Correlation measures any statistical relationship between two random variables, wheter it is statistically dependent or not, causal or not.</p>
+<p>The most common measure of correlation is <strong>Pearson correlation</strong>. Pearson correlation between two random variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> is defined as the ratio</p>
+<div class="math notranslate nohighlight">
+\[\rho_{XY} := \dfrac{\text{cov}(X,Y)}{\sigma_X \sigma_Y} \ ,\]</div>
+<p>of the covariance <span class="math notranslate nohighlight">\(\text{cov}(X,Y) = \mathbb{E}\left[ (X-\mu_X) (Y-\mu_Y) \right]\)</span>, being <span class="math notranslate nohighlight">\(\mu_Z\)</span> the expected value of variable <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(\mu_Z = \mathbb{E}\left[ Z \right]\)</span>, and <span class="math notranslate nohighlight">\(\sigma_{Z}\)</span> its standard deviation, <span class="math notranslate nohighlight">\(\sigma_{Z} = \sqrt{\mathbb{E}\left[ \left( Z - \mu_Z \right)^2 \right]}\)</span>.</p>
+</div>
+<div class="section" id="statistical-independence">
+<h3>Statistical independence<a class="headerlink" href="#statistical-independence" title="Permalink to this heading">#</a></h3>
+<p>Two random variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> are <strong>statistically independent</strong> if the conditional probability <span class="math notranslate nohighlight">\(p(X|Y)\)</span> is equal to the unconditional probability <span class="math notranslate nohighlight">\(p(X)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[p(X|Y) = p(X)\]</div>
+<p>Thus, joint probability reads</p>
+<div class="math notranslate nohighlight">
+\[p(X,Y) = p(X|Y) p(Y) = p(X) p(Y) \ , \]</div>
+<p>i.e. joint probability is the product of unconditional probabilities of independent random variables.</p>
+<p>As <span class="math notranslate nohighlight">\(p(X,Y) = p(Y|X) p(X)\)</span>, it also follows that <span class="math notranslate nohighlight">\(p(Y|X) = p(Y)\)</span>.</p>
+<div class="section" id="statistical-independence-implies-no-correlation">
+<h4>Statistical independence implies no correlation<a class="headerlink" href="#statistical-independence-implies-no-correlation" title="Permalink to this heading">#</a></h4>
+<p>As statistical independence  of variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> implies <span class="math notranslate nohighlight">\(p(X,Y) = p(X) p(Y)\)</span>, direct computation of the covariance <span class="math notranslate nohighlight">\(\text{cov}(X,Y)\)</span> reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \text{cov}(X,Y)
+  &amp; = \mathbb{E}\left[ \left( X - \mu_X \right) \left( Y - \mu_Y \right) \right] = \\
+  &amp; = \mathbb{E}\left[ X - \mu_X \right] \mathbb{E} \left[ Y - \mu_Y \right] = 0 \ .
+\end{aligned}\end{split}\]</div>
+</div>
+<div class="section" id="correlation-of-samples-drawn-from-independent-random-variables">
+<h4>Correlation of samples drawn from independent random variables<a class="headerlink" href="#correlation-of-samples-drawn-from-independent-random-variables" title="Permalink to this heading">#</a></h4>
+<p>Sample covariance <span class="math notranslate nohighlight">\(\hat{S}_N\)</span> of <span class="math notranslate nohighlight">\(N\)</span> samples <span class="math notranslate nohighlight">\(\{ (X_n, Y_n) \}_{n=1:N}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\hat{S}_N := \dfrac{1}{N-1} \sum_{n=1}^{N} \left(X_n - \overline{X}_N \right) \left(Y_n - \overline{Y}_N \right) \ ,\]</div>
+<p>drawn from random variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> is a random variable with zero expected value, but its realizations are non-zero in general.</p>
+<p>In other words, samples of independent (and thus uncorrelated) variables have non-zero covariance and then non-zero correlation, in general.</p>
+</div>
+</div>
+<div class="section" id="causality">
+<h3>Causality<a class="headerlink" href="#causality" title="Permalink to this heading">#</a></h3>
+<p>Causality is the relation between two events, in which one (the <strong>cause</strong>) is - at least partly - responsible for the other event (the <strong>effect</strong>), and the effect is - at least partly - dependent on the cause.</p>
+<p>Principle of causality relation implies that the cause comes before the effect.</p>
+<p>In general, an event may have multiple causes (that lie in its past) or have multiple effects.</p>
+<div class="section" id="necessary-sufficient-and-contributory-causes">
+<h4>Necessary, sufficient and contributory causes<a class="headerlink" href="#necessary-sufficient-and-contributory-causes" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is necessary for <span class="math notranslate nohighlight">\(y\)</span> is the occurence of <span class="math notranslate nohighlight">\(y\)</span> implies a prior occurrence of <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is sufficient for <span class="math notranslate nohighlight">\(y\)</span> if the occurrence of <span class="math notranslate nohighlight">\(x\)</span> implies the subsequent occurrence of <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is contributory for <span class="math notranslate nohighlight">\(y\)</span> if it’s one among several co-occurrent causes.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="pearl-s-work-causal-inference-in-statistics-a-primer">
+<h2>Pearl’s work, <em>Causal Inference in Statistics: A Primer</em><a class="headerlink" href="#pearl-s-work-causal-inference-in-statistics-a-primer" title="Permalink to this heading">#</a></h2>
+<div class="section" id="ladder-of-causation">
+<h3>Ladder of causation<a class="headerlink" href="#ladder-of-causation" title="Permalink to this heading">#</a></h3>
+<p>Three levels of causation:</p>
+<ul>
+<li><p><strong>Association</strong> is defined as the conditional probability,</p>
+<div class="math notranslate nohighlight">
+\[P(A|B) \ ,\]</div>
+<p>and has no causal implication: there’s no cause-effect directionality, or both can be caused by a third event</p>
+</li>
+<li><p><strong>Intervention</strong> needs for an event to be performed (and not just observed), in the <em>minimal way</em>, with minimum intrusivity and unintended effects on the world. This action is represented mathematically using the <em>do-calculus</em> formalism. In order to quantify the effect of performing action <span class="math notranslate nohighlight">\(B\)</span> on <span class="math notranslate nohighlight">\(A\)</span>, the probability</p>
+<div class="math notranslate nohighlight">
+\[P(A| \text{do}(B)) \ ,\]</div>
+<p>is required, being <span class="math notranslate nohighlight">\(\text{do}(\cdot)\)</span> the operator representing the intervention</p>
+</li>
+<li><p><strong>Counterfactuals</strong> involves the consideration of an alternate version of the cause (past event), and the analysis of the effects for the same experimental unit/system of interest. …</p>
+<div class="math notranslate nohighlight">
+\[P(A| B, C)\]</div>
+</li>
+</ul>
+</div>
+<div class="section" id="model">
+<h3>Model<a class="headerlink" href="#model" title="Permalink to this heading">#</a></h3>
+<p><strong>Causal diagram</strong>: directed graph showing causal relationship, built with nodes (set of variables) connected with arrows representing causal influence.</p>
+<p><strong>Elements.</strong></p>
+<ul class="simple">
+<li><p><strong>Junction</strong> patterns:</p>
+<ul>
+<li><p>chain, <span class="math notranslate nohighlight">\(A \rightarrow B \rightarrow C\)</span></p></li>
+<li><p>fork at <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(A \leftarrow B \rightarrow C\)</span></p></li>
+<li><p>collider at <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(A \rightarrow B \leftarrow C\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Node</strong> types:</p>
+<ul>
+<li><p>mediator</p></li>
+<li><p>confounder: affects multiple outcomes, creating a positive correlation among them</p></li>
+<li><p>instrumental variable…</p></li>
+<li><p>…</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="associations">
+<h3>Associations<a class="headerlink" href="#associations" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="interventions">
+<h3>Interventions<a class="headerlink" href="#interventions" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="counterfactuals">
+<h3>Counterfactuals<a class="headerlink" href="#counterfactuals" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import pearsonr, spearmanr, chi2_contingency
+
+sns.set(style=&#39;whitegrid&#39;)
+np.random.seed(42)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# Simulate correlated data
+x = np.random.normal(0, 1, 100)
+y = 2 * x + np.random.normal(0, 1, 100)
+
+df = pd.DataFrame({&#39;x&#39;: x, &#39;y&#39;: y})
+sns.scatterplot(data=df, x=&#39;x&#39;, y=&#39;y&#39;)
+plt.title(&#39;Scatter Plot of Correlated Variables&#39;)
+plt.show()
+
+# Pearson correlation coefficient
+corr, p_value = pearsonr(df[&#39;x&#39;], df[&#39;y&#39;])
+print(f&quot;Pearson correlation: {corr:.2f}, p-value: {p_value:.3f}&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# Simulate independent variables
+a = np.random.normal(0, 1, 100)
+b = np.random.normal(0, 1, 100)
+
+df_indep = pd.DataFrame({&#39;a&#39;: a, &#39;b&#39;: b})
+sns.scatterplot(data=df_indep, x=&#39;a&#39;, y=&#39;b&#39;)
+plt.title(&#39;Scatter Plot of Independent Variables&#39;)
+plt.show()
+
+# Correlation test
+corr, p_value = pearsonr(df_indep[&#39;a&#39;], df_indep[&#39;b&#39;])
+print(f&quot;Pearson correlation: {corr:.2f}, p-value: {p_value:.3f}&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+# Simulate a confounding variable
+z = np.random.normal(0, 1, 100)
+x = 2 * z + np.random.normal(0, 1, 100)
+y = -3 * z + np.random.normal(0, 1, 100)
+
+df_spurious = pd.DataFrame({&#39;x&#39;: x, &#39;y&#39;: y, &#39;z&#39;: z})
+sns.scatterplot(data=df_spurious, x=&#39;x&#39;, y=&#39;y&#39;)
+plt.title(&#39;Spurious Correlation via a Confounding Variable&#39;)
+plt.show()
+
+corr, _ = pearsonr(df_spurious[&#39;x&#39;], df_spurious[&#39;y&#39;])
+print(f&quot;Correlation between x and y: {corr:.2f} (spurious)&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="your-turn-explore-causation">
+<h2>Your Turn: Explore Causation<a class="headerlink" href="#your-turn-explore-causation" title="Permalink to this heading">#</a></h2>
+<p>Try changing the relationships between variables and test for correlation. Does correlation imply causation? Try creating a scenario where there is causation but low correlation.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./code/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">Definitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence">Statistical independence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-independence-implies-no-correlation">Statistical independence implies no correlation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-of-samples-drawn-from-independent-random-variables">Correlation of samples drawn from independent random variables</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causality">Causality</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#necessary-sufficient-and-contributory-causes">Necessary, sufficient and contributory causes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearl-s-work-causal-inference-in-statistics-a-primer">Pearl’s work, <em>Causal Inference in Statistics: A Primer</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ladder-of-causation">Ladder of causation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model">Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#associations">Associations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interventions">Interventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactuals">Counterfactuals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-explore-causation">Your Turn: Explore Causation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
