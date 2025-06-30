@@ -168,7 +168,6 @@ $$X_t = X_0 e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-t_0) + \sigma ( W_t - 
 
 ```{dropdown} Integration factor method for linear SDEs
 :open:
-
 Integration factor method for linear SDEs
 
 $$d X_t = a \, dt + b \, dW_t \ ,$$
@@ -191,7 +190,6 @@ $$\begin{aligned}
 ```
 
 ```{dropdown} Proof (with integration factor method, for linear SDEs)
-:open:
 
 GBM motion with drift and constant coefficients is governed by SDE
 
