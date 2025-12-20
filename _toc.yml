@@ -22,7 +22,10 @@ parts:
     - file: ch/prob/characteristic-fun
     - file: ch/prob/convergence
     - file: ch/prob/iid
-    - file: ch/prob/heavy-tailed
+    - file: ch/prob/rare-events
+      sections:
+      - file: ch/prob/heavy-tailed
+      - file: ch/prob/power-law
   - file: ch/prob/processes
     sections:
     - file: ch/prob/wiener

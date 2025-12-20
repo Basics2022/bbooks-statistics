@@ -85,7 +85,7 @@
         
 
 \title{basics blog}
-\date{Jun 30, 2025}
+\date{Jul 03, 2025}
 \release{}
 \author{basics}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -102,7 +102,7 @@
 
 
 \sphinxAtStartPar
-This material is part of the \sphinxhref{https://basics2022.github.io/bbooks}{\sphinxstylestrong{basics\sphinxhyphen{}books project}}.
+This material is part of the \sphinxhref{https://basics2022.github.io/bbooks}{\sphinxstylestrong{basics\sphinxhyphen{}books project}}. It is also available as a \DUrole{xref,download,myst}{.pdf document}.
 
 \sphinxAtStartPar
 \sphinxstylestrong{Contents.}
@@ -1497,6 +1497,297 @@ and integration gives
 \begin{equation*}
 \begin{split}X_t = X_0 e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-t_0) + \sigma ( W_t - W_0)} + \int_{s=0}^{t} C e^{\left( \mu - \frac{\sigma^2}{2} \right) (t-s) + \sigma ( W_t - W_s)} \, ds \ .\end{split}
 \end{equation*}
+\sphinxstepscope
+
+
+\chapter{“Correlation is Not Causation”}
+\label{\detokenize{code/notebooks/correlation_vs_causation:correlation-is-not-causation}}\label{\detokenize{code/notebooks/correlation_vs_causation::doc}}
+\sphinxAtStartPar
+In this article, some details about one of the most common sentence in statistics are given. Starting from the sentence “Correlation is not causation”, the definitions of \sphinxstylestrong{correlation}, \sphinxstylestrong{independence}, and \sphinxstylestrong{causation} are discussed.
+
+
+
+
+\section{Definitions}
+\label{\detokenize{code/notebooks/correlation_vs_causation:definitions}}
+
+
+
+\subsection{Correlation}
+\label{\detokenize{code/notebooks/correlation_vs_causation:correlation}}
+\sphinxAtStartPar
+Correlation measures any statistical relationship between two random variables, wheter it is statistically dependent or not, causal or not.
+
+\sphinxAtStartPar
+The most common measure of correlation is \sphinxstylestrong{Pearson correlation}. Pearson correlation between two random variables \(X\), \(Y\) is defined as the ratio
+\begin{equation*}
+\begin{split}\rho_{XY} := \dfrac{\text{cov}(X,Y)}{\sigma_X \sigma_Y} \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+of the covariance \(\text{cov}(X,Y) = \mathbb{E}\left[ (X-\mu_X) (Y-\mu_Y) \right]\), being \(\mu_Z\) the expected value of variable \(Z\), \(\mu_Z = \mathbb{E}\left[ Z \right]\), and \(\sigma_{Z}\) its standard deviation, \(\sigma_{Z} = \sqrt{\mathbb{E}\left[ \left( Z - \mu_Z \right)^2 \right]}\).
+
+
+\subsection{Statistical independence}
+\label{\detokenize{code/notebooks/correlation_vs_causation:statistical-independence}}
+\sphinxAtStartPar
+Two random variables \(X\), \(Y\) are \sphinxstylestrong{statistically independent} if the conditional probability \(p(X|Y)\) is equal to the unconditional probability \(p(X)\),
+\begin{equation*}
+\begin{split}p(X|Y) = p(X)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Thus, joint probability reads
+\begin{equation*}
+\begin{split}p(X,Y) = p(X|Y) p(Y) = p(X) p(Y) \ , \end{split}
+\end{equation*}
+\sphinxAtStartPar
+i.e. joint probability is the product of unconditional probabilities of independent random variables.
+
+\sphinxAtStartPar
+As \(p(X,Y) = p(Y|X) p(X)\), it also follows that \(p(Y|X) = p(Y)\).
+
+
+\subsubsection{Statistical independence implies no correlation}
+\label{\detokenize{code/notebooks/correlation_vs_causation:statistical-independence-implies-no-correlation}}
+\sphinxAtStartPar
+As statistical independence  of variables \(X\), \(Y\) implies \(p(X,Y) = p(X) p(Y)\), direct computation of the covariance \(\text{cov}(X,Y)\) reads
+\begin{equation*}
+\begin{split}\begin{aligned}
+  \text{cov}(X,Y)
+  & = \mathbb{E}\left[ \left( X - \mu_X \right) \left( Y - \mu_Y \right) \right] = \\
+  & = \mathbb{E}\left[ X - \mu_X \right] \mathbb{E} \left[ Y - \mu_Y \right] = 0 \ .
+\end{aligned}\end{split}
+\end{equation*}
+
+\subsubsection{Correlation of samples drawn from independent random variables}
+\label{\detokenize{code/notebooks/correlation_vs_causation:correlation-of-samples-drawn-from-independent-random-variables}}
+\sphinxAtStartPar
+Sample covariance \(\hat{S}_N\) of \(N\) samples \(\{ (X_n, Y_n) \}_{n=1:N}\),
+\begin{equation*}
+\begin{split}\hat{S}_N := \dfrac{1}{N-1} \sum_{n=1}^{N} \left(X_n - \overline{X}_N \right) \left(Y_n - \overline{Y}_N \right) \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+drawn from random variables \(X\), \(Y\) is a random variable with zero expected value, but its realizations are non\sphinxhyphen{}zero in general.
+
+\sphinxAtStartPar
+In other words, samples of independent (and thus uncorrelated) variables have non\sphinxhyphen{}zero covariance and then non\sphinxhyphen{}zero correlation, in general.
+
+
+\subsection{Causality}
+\label{\detokenize{code/notebooks/correlation_vs_causation:causality}}
+\sphinxAtStartPar
+Causality is the relation between two events, in which one (the \sphinxstylestrong{cause}) is \sphinxhyphen{} at least partly \sphinxhyphen{} responsible for the other event (the \sphinxstylestrong{effect}), and the effect is \sphinxhyphen{} at least partly \sphinxhyphen{} dependent on the cause.
+
+\sphinxAtStartPar
+Principle of causality relation implies that the cause comes before the effect.
+
+\sphinxAtStartPar
+In general, an event may have multiple causes (that lie in its past) or have multiple effects.
+
+
+\subsubsection{Necessary, sufficient and contributory causes}
+\label{\detokenize{code/notebooks/correlation_vs_causation:necessary-sufficient-and-contributory-causes}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\(x\) is necessary for \(y\) is the occurence of \(y\) implies a prior occurrence of \(x\)
+
+\item {} 
+\sphinxAtStartPar
+\(x\) is sufficient for \(y\) if the occurrence of \(x\) implies the subsequent occurrence of \(y\)
+
+\item {} 
+\sphinxAtStartPar
+\(x\) is contributory for \(y\) if it’s one among several co\sphinxhyphen{}occurrent causes.
+
+\end{itemize}
+
+
+\section{Pearl’s work, \sphinxstyleemphasis{Causal Inference in Statistics: A Primer}}
+\label{\detokenize{code/notebooks/correlation_vs_causation:pearl-s-work-causal-inference-in-statistics-a-primer}}
+
+\subsection{Ladder of causation}
+\label{\detokenize{code/notebooks/correlation_vs_causation:ladder-of-causation}}
+\sphinxAtStartPar
+Three levels of causation:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Association} is defined as the conditional probability,
+\begin{equation*}
+\begin{split}P(A|B) \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+and has no causal implication: there’s no cause\sphinxhyphen{}effect directionality, or both can be caused by a third event
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Intervention} needs for an event to be performed (and not just observed), in the \sphinxstyleemphasis{minimal way}, with minimum intrusivity and unintended effects on the world. This action is represented mathematically using the \sphinxstyleemphasis{do\sphinxhyphen{}calculus} formalism. In order to quantify the effect of performing action \(B\) on \(A\), the probability
+\begin{equation*}
+\begin{split}P(A| \text{do}(B)) \ ,\end{split}
+\end{equation*}
+\sphinxAtStartPar
+is required, being \(\text{do}(\cdot)\) the operator representing the intervention
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Counterfactuals} involves the consideration of an alternate version of the cause (past event), and the analysis of the effects for the same experimental unit/system of interest. …
+\begin{equation*}
+\begin{split}P(A| B, C)\end{split}
+\end{equation*}
+\end{itemize}
+
+
+\subsection{Model}
+\label{\detokenize{code/notebooks/correlation_vs_causation:model}}
+\sphinxAtStartPar
+\sphinxstylestrong{Causal diagram}: directed graph showing causal relationship, built with nodes (set of variables) connected with arrows representing causal influence.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Elements.}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Junction} patterns:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+chain, \(A \rightarrow B \rightarrow C\)
+
+\item {} 
+\sphinxAtStartPar
+fork at \(B\), \(A \leftarrow B \rightarrow C\)
+
+\item {} 
+\sphinxAtStartPar
+collider at \(B\), \(A \rightarrow B \leftarrow C\)
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{Node} types:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+mediator
+
+\item {} 
+\sphinxAtStartPar
+confounder: affects multiple outcomes, creating a positive correlation among them
+
+\item {} 
+\sphinxAtStartPar
+instrumental variable…
+
+\item {} 
+\sphinxAtStartPar
+…
+
+\end{itemize}
+
+\end{itemize}
+
+
+\subsection{Associations}
+\label{\detokenize{code/notebooks/correlation_vs_causation:associations}}
+
+\subsection{Interventions}
+\label{\detokenize{code/notebooks/correlation_vs_causation:interventions}}
+
+\subsection{Counterfactuals}
+\label{\detokenize{code/notebooks/correlation_vs_causation:counterfactuals}}
+
+\section{Examples}
+\label{\detokenize{code/notebooks/correlation_vs_causation:examples}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import pearsonr, spearmanr, chi2\PYGZus{}contingency
+
+sns.set(style=\PYGZsq{}whitegrid\PYGZsq{})
+np.random.seed(42)
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+
+\PYGZsh{} Simulate correlated data
+x = np.random.normal(0, 1, 100)
+y = 2 * x + np.random.normal(0, 1, 100)
+
+df = pd.DataFrame(\PYGZob{}\PYGZsq{}x\PYGZsq{}: x, \PYGZsq{}y\PYGZsq{}: y\PYGZcb{})
+sns.scatterplot(data=df, x=\PYGZsq{}x\PYGZsq{}, y=\PYGZsq{}y\PYGZsq{})
+plt.title(\PYGZsq{}Scatter Plot of Correlated Variables\PYGZsq{})
+plt.show()
+
+\PYGZsh{} Pearson correlation coefficient
+corr, p\PYGZus{}value = pearsonr(df[\PYGZsq{}x\PYGZsq{}], df[\PYGZsq{}y\PYGZsq{}])
+print(f\PYGZdq{}Pearson correlation: \PYGZob{}corr:.2f\PYGZcb{}, p\PYGZhy{}value: \PYGZob{}p\PYGZus{}value:.3f\PYGZcb{}\PYGZdq{})
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+
+\PYGZsh{} Simulate independent variables
+a = np.random.normal(0, 1, 100)
+b = np.random.normal(0, 1, 100)
+
+df\PYGZus{}indep = pd.DataFrame(\PYGZob{}\PYGZsq{}a\PYGZsq{}: a, \PYGZsq{}b\PYGZsq{}: b\PYGZcb{})
+sns.scatterplot(data=df\PYGZus{}indep, x=\PYGZsq{}a\PYGZsq{}, y=\PYGZsq{}b\PYGZsq{})
+plt.title(\PYGZsq{}Scatter Plot of Independent Variables\PYGZsq{})
+plt.show()
+
+\PYGZsh{} Correlation test
+corr, p\PYGZus{}value = pearsonr(df\PYGZus{}indep[\PYGZsq{}a\PYGZsq{}], df\PYGZus{}indep[\PYGZsq{}b\PYGZsq{}])
+print(f\PYGZdq{}Pearson correlation: \PYGZob{}corr:.2f\PYGZcb{}, p\PYGZhy{}value: \PYGZob{}p\PYGZus{}value:.3f\PYGZcb{}\PYGZdq{})
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+
+\PYGZsh{} Simulate a confounding variable
+z = np.random.normal(0, 1, 100)
+x = 2 * z + np.random.normal(0, 1, 100)
+y = \PYGZhy{}3 * z + np.random.normal(0, 1, 100)
+
+df\PYGZus{}spurious = pd.DataFrame(\PYGZob{}\PYGZsq{}x\PYGZsq{}: x, \PYGZsq{}y\PYGZsq{}: y, \PYGZsq{}z\PYGZsq{}: z\PYGZcb{})
+sns.scatterplot(data=df\PYGZus{}spurious, x=\PYGZsq{}x\PYGZsq{}, y=\PYGZsq{}y\PYGZsq{})
+plt.title(\PYGZsq{}Spurious Correlation via a Confounding Variable\PYGZsq{})
+plt.show()
+
+corr, \PYGZus{} = pearsonr(df\PYGZus{}spurious[\PYGZsq{}x\PYGZsq{}], df\PYGZus{}spurious[\PYGZsq{}y\PYGZsq{}])
+print(f\PYGZdq{}Correlation between x and y: \PYGZob{}corr:.2f\PYGZcb{} (spurious)\PYGZdq{})
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+
+\section{Your Turn: Explore Causation}
+\label{\detokenize{code/notebooks/correlation_vs_causation:your-turn-explore-causation}}
+\sphinxAtStartPar
+Try changing the relationships between variables and test for correlation. Does correlation imply causation? Try creating a scenario where there is causation but low correlation.
+
 \sphinxstepscope
 
 

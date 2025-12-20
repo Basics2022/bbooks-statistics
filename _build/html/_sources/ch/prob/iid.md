@@ -35,7 +35,7 @@ $$\overline{X}_n \quad \rightarrow^d \quad \mathscr{N}\left(\mu, \frac{\sigma^2}
 
 ```
 
-[^clt-heavy-tails]: Does the CLT hold for [**heavy-tailed** distributions](prob:heavy-tailed)?
+[^clt-heavy-tails]: Does the CLT hold for [**heavy-tailed** distributions](prob:heavy-tailed)? See section about [Rare Events](prob:rare-events). **work-in-progress**
 
 ```{dropdown} Proof of CLT
 :open:
