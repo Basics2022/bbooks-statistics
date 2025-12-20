@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.9.2. Power-law distribution &#8212; basics blog</title>
+    <title>3.9.2. Power-law distributions &#8212; basics blog</title>
   
   
   
@@ -192,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="iid.html">3.8. Independent identically distributed random variables</a></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="rare-events.html">3.9. Rare Events</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="heavy-tailed.html">3.9.1. Heavy-tailed distributions</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">3.9.2. Power-law distribution</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">3.9.2. Power-law distributions</a></li>
 </ul>
 </li>
 </ul>
@@ -442,7 +442,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -453,11 +455,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Power-law distribution</h1>
+    <h1>Power-law distributions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-three-different-coin-flip-games">3.9.2.1. Example: three different coin-flip games</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrability-of-tails-existence-of-moments">3.9.2.2. Integrability of tails, existence of moments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-of-clt">3.9.2.3. Failure of CLT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-law-with-alpha-1-5">3.9.2.3.1. Power-law with <span class="math notranslate nohighlight">\(\alpha = 1.5\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-law-with-alpha-2-5">3.9.2.3.2. Power-law with <span class="math notranslate nohighlight">\(\alpha = 2.5\)</span></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -467,9 +483,359 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="power-law-distribution">
-<span id="prob-rare-events-power-law"></span><h1><span class="section-number">3.9.2. </span>Power-law distribution<a class="headerlink" href="#power-law-distribution" title="Permalink to this heading">#</a></h1>
-<p>Power-law distributions are an extreme case of heavy-tailed distribution. As an example, the tail of a power-law distribution decays as <span class="math notranslate nohighlight">\(x^\alpha\)</span>, with <span class="math notranslate nohighlight">\(\alpha &lt; 0\)</span>, for <span class="math notranslate nohighlight">\(x \rightarrow +\infty\)</span>.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="power-law-distributions">
+<span id="prob-rare-events-power-law"></span><h1><span class="section-number">3.9.2. </span>Power-law distributions<a class="headerlink" href="#power-law-distributions" title="Permalink to this heading">#</a></h1>
+<p>Power-law distributions are an extreme case of <a class="reference internal" href="heavy-tailed.html#prob-rare-events-heavy-tailed"><span class="std std-ref">heavy-tailed distributions</span></a>. As an example, the right tail of a power-law distribution decays as <span class="math notranslate nohighlight">\(x^\alpha\)</span>, with <span class="math notranslate nohighlight">\(\alpha &lt; 0\)</span>, for <span class="math notranslate nohighlight">\(x \rightarrow +\infty\)</span>.</p>
+<div class="section" id="example-three-different-coin-flip-games">
+<h2><span class="section-number">3.9.2.1. </span>Example: three different coin-flip games<a class="headerlink" href="#example-three-different-coin-flip-games" title="Permalink to this heading">#</a></h2>
+<p><em>Head or Tail</em> with a fair coin, with different returns and termination events:</p>
+<ol class="arabic">
+<li><p><span class="math notranslate nohighlight">\(100\)</span> tosses of a coin, every <span class="math notranslate nohighlight">\(H\)</span> gives you <span class="math notranslate nohighlight">\(1\$\)</span>. The probability distribution of the total return is the <span class="xref myst">binomial distribution</span>. With the definition of a Bernoulli random variable <span class="math notranslate nohighlight">\(X_i = 1\)</span> for <span class="math notranslate nohighlight">\(H\)</span>, <span class="math notranslate nohighlight">\(X_i = 0\)</span> for <span class="math notranslate nohighlight">\(T\)</span> with even probability, the amount at the end of the game, after <span class="math notranslate nohighlight">\(n=100\)</span> tosses, reads</p>
+<div class="math notranslate nohighlight">
+\[w_{end} = \sum_{i=1}^n X_i \cdot 1\$ \ .\]</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(100\)</span> tosses, an <span class="math notranslate nohighlight">\(H\)</span> gives you <span class="math notranslate nohighlight">\(g=+10\%\)</span> gain a <span class="math notranslate nohighlight">\(T\)</span> produces a <span class="math notranslate nohighlight">\(\ell=-10\%\)</span> loss of the amount you have. At any coin toss, you bet eveything you have. This problem looks like <span class="xref myst">compounding in investing</span><a class="footnote-reference brackets" href="#kelly-criterion" id="id1">1</a>. Starting with <span class="math notranslate nohighlight">\(r_0 = 1\$\)</span>, the amount at the end of the game, after <span class="math notranslate nohighlight">\(n\)</span> tosses, reads</p>
+<div class="math notranslate nohighlight">
+\[w_{end} = w_0 \prod_{i=1}^n ( 1 + g )^{X_i} ( 1 + \ell )^{1 - X_i}  \ . \]</div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p><span class="math notranslate nohighlight">\(100\)</span> tosses, getting <span class="math notranslate nohighlight">\(H\)</span> you win <span class="math notranslate nohighlight">\(g=+10\%\)</span>, getting <span class="math notranslate nohighlight">\(T\)</span> you win nothing and the game stops: first <span class="math notranslate nohighlight">\(T\)</span> is the termination event; starting with <span class="math notranslate nohighlight">\(1\$\)</span>, after the <span class="math notranslate nohighlight">\(n^{th}\)</span> <span class="math notranslate nohighlight">\(H\)</span> in a row, you have <span class="math notranslate nohighlight">\(1\$ \cdot 1.1^n\)</span>. The amount at the end of the game reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}w_{end} = 
+   \begin{cases}
+      w_0 \cdot (1+g)^{n_H}  &amp; \text{with probability $2^{-1-n_H}$ for $n_H &lt; n_{tosses}$} \\
+      w_0 \cdot (1+g)^{n_H}  &amp; \text{with probability $2^{-n_{tosses}}$ for $n_H = n_{tosses}$}
+   \end{cases}\end{split}\]</div>
+<p>being <span class="math notranslate nohighlight">\(n_H\)</span> the number of <span class="math notranslate nohighlight">\(H\)</span> in a row. If <span class="math notranslate nohighlight">\(n_H\)</span> is constrained to be <span class="math notranslate nohighlight">\(\le n_{tosses} = 100\)</span>, the probability of getting exactly <span class="math notranslate nohighlight">\(99\)</span> or <span class="math notranslate nohighlight">\(100\)</span> <span class="math notranslate nohighlight">\(H\)</span> in a row is the same; if <span class="math notranslate nohighlight">\(n_H\)</span> is not constrained, <span class="math notranslate nohighlight">\(w_{end} = w_0 \cdot (1+g)^{n_H}\)</span>, for all <span class="math notranslate nohighlight">\(n_H \ge 0\)</span>, with <span class="math notranslate nohighlight">\(p(n_H) = \frac{1}{2^{1+n_H}}\)</span>.</p>
+</li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">n_tosses</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">p_head</span> <span class="o">=</span> <span class="mf">.5</span>
+
+<span class="c1">#&gt; 1.Binomial distribution</span>
+<span class="n">lb</span><span class="p">,</span> <span class="n">ub</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">support</span><span class="p">(</span><span class="n">n_tosses</span><span class="p">,</span> <span class="n">p_head</span><span class="p">)</span>
+<span class="n">xv_binom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">p_binom</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">xv_binom</span><span class="p">,</span> <span class="n">n_tosses</span><span class="p">,</span> <span class="n">p_head</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">)</span>
+
+<span class="c1">#&gt; 2. Compounding</span>
+<span class="n">gain</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="mf">.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">.15</span>
+<span class="n">nv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_tosses</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">xv_comp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">(</span><span class="mf">1.</span><span class="o">+</span><span class="n">gain</span><span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span><span class="o">+</span><span class="n">loss</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">n_tosses</span><span class="o">-</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nv</span><span class="p">])</span>
+<span class="c1"># p_binom = sp.stats.binom.pmf(xv_binom, n_tosses, p_head)</span>
+
+
+<span class="c1">#&gt; 3. Power-law distibution</span>
+<span class="n">xv_power</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">gain</span><span class="p">)</span><span class="o">**</span><span class="n">nv</span>
+<span class="n">p_power</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="o">-</span><span class="n">nv</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xv_binom</span><span class="p">,</span> <span class="n">p_binom</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xv_comp</span> <span class="p">,</span> <span class="n">p_binom</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xv_power</span><span class="p">,</span> <span class="n">p_power</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">xv_binom</span><span class="p">,</span> <span class="n">p_binom</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">xv_comp</span> <span class="p">,</span> <span class="n">p_binom</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">xv_power</span><span class="p">,</span> <span class="n">p_power</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">xv_binom</span><span class="p">,</span> <span class="n">p_binom</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">xv_comp</span> <span class="p">,</span> <span class="n">p_binom</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">xv_power</span><span class="p">,</span> <span class="n">p_power</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">xv_binom</span><span class="p">,</span> <span class="n">p_binom</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Binomial&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">xv_comp</span> <span class="p">,</span> <span class="n">p_binom</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Compounding&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">xv_power</span><span class="p">,</span> <span class="n">p_power</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Power-law&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 30
+</pre></div>
+</div>
+<img alt="../../_images/9645693173da892cdc04cd79c63283cf932d533ef2232c9b6e104aa2b2cf4f58.png" src="../../_images/9645693173da892cdc04cd79c63283cf932d533ef2232c9b6e104aa2b2cf4f58.png" />
+</div>
+</div>
+<ul>
+<li><p>Binomial distribution becomes approximately normal as <span class="math notranslate nohighlight">\(n\)</span> increases,</p>
+<div class="math notranslate nohighlight">
+\[p_1(x) \sim \mathscr{N}(\mu_n, \sigma_n) \sim \text{exp} \left[ -\frac{(x-\mu_n)^2}{2 \sigma^2_n} \right]\]</div>
+</li>
+<li><p>Compounding produces a distribution that becomes approximately log-normal as <span class="math notranslate nohighlight">\(n\)</span> increases…</p></li>
+<li><p>Power-law has probability <span class="math notranslate nohighlight">\(p_3(n)\)</span> and outcome <span class="math notranslate nohighlight">\(x_3(n)\)</span></p>
+<div class="math notranslate nohighlight">
+\[p_3(n) = 2^{-1-n} \quad , \quad x_3(n) = 2^n \ ,\]</div>
+<p>and thus <span class="math notranslate nohighlight">\(p_3(x) = \frac{1}{2} x^{-1} \ .\)</span> Taking the logarithm of this expression, a 1-degree polynomial relation between logarithms of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span> is obtained, <span class="math notranslate nohighlight">\(\ln p_3 = - \ln 2 - \ln x\)</span>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="integrability-of-tails-existence-of-moments">
+<h2><span class="section-number">3.9.2.2. </span>Integrability of tails, existence of moments<a class="headerlink" href="#integrability-of-tails-existence-of-moments" title="Permalink to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Power-law <em>pdf</em> and existence of moments.</p>
+<p>A power-law density <span class="math notranslate nohighlight">\(p(x) \propto x^{\alpha}\)</span> defined on an unbounded domain is normalizable only for <span class="math notranslate nohighlight">\(\alpha &lt; -1\)</span>. For <span class="math notranslate nohighlight">\(\alpha \ge -1\)</span>, normalization requires the introduction of an upper cutoff.</p>
+<p>On unbounded domains, the first <span class="math notranslate nohighlight">\(n\)</span> moments exist if <span class="math notranslate nohighlight">\(\alpha &gt; -n\)</span>.</p>
+</div>
+<p>Let the tail of the distribution follow a power law <span class="math notranslate nohighlight">\(p(x) \sim x^\alpha\)</span> for <span class="math notranslate nohighlight">\(x &gt; x_0\)</span>. On finite domains, no problem exists. On <strong>infinite domains</strong>, in order for <span class="math notranslate nohighlight">\(p(x)\)</span> to represent a probability density function, <span class="math notranslate nohighlight">\(\alpha &lt; -1\)</span>, as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_{x = x_0}^{+\infty} p(x) \, dx = \int_{x = x_0}^{+\infty} x^{\alpha} \, dx = \left.\frac{1}{1+\alpha} x^{1+\alpha} \right|_{x_0}^{+\infty} = 
+\begin{cases} 
+  -\frac{1}{1+\alpha} x_0 \ \text{ finite } &amp; , \ \alpha &lt; -1 \\
+   \infty &amp; , \ \alpha \ge -1 
+\end{cases}
+\end{split}\]</div>
+<p>Even if the function <span class="math notranslate nohighlight">\(p(x)\)</span> is a <em>pdf</em>, <span class="math notranslate nohighlight">\(\alpha &lt; -1\)</span>, moments may diverge.</p>
+<p><strong>Expected value.</strong></p>
+<div class="math notranslate nohighlight">
+\[\mu = \int_{\Omega} x \, p(x) \, dx\]</div>
+<p>if <span class="math notranslate nohighlight">\(\Omega\)</span> has no upper limit, the integral converges only if</p>
+<div class="math notranslate nohighlight">
+\[\int_{x_0}^{+\infty} x \, p(x) \, dx \sim \int_{x_0}^{+\infty} x \cdot x^{\alpha} \, dx = \int_{x_0}^{+\infty} x^{\alpha+1} \, dx \ ,\]</div>
+<p>converges, i.e. for <span class="math notranslate nohighlight">\(\alpha &lt; -2\)</span></p>
+<p><strong>Variance.</strong> Analogously, the distribution has finite variance if <span class="math notranslate nohighlight">\(\alpha &lt; -3\)</span>.</p>
+</div>
+<div class="section" id="failure-of-clt">
+<h2><span class="section-number">3.9.2.3. </span>Failure of CLT<a class="headerlink" href="#failure-of-clt" title="Permalink to this heading">#</a></h2>
+<p>Using transformation of probability functions to sample a r.v. with power-law distribution <span class="math notranslate nohighlight">\(p(x) = c x^{-\alpha}\)</span>, <span class="math notranslate nohighlight">\(x \in [x_0, +\infty)\)</span>, starting from sampling of a r.v. with uniform distribution <span class="math notranslate nohighlight">\(u(x)=1\)</span>, <span class="math notranslate nohighlight">\(x \in [0,1]\)</span>.</p>
+<p><strong>Normalization.</strong> For <span class="math notranslate nohighlight">\(\alpha &gt; 1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[1 = \int_{t=x_0}^{+\infty} p(x) \, dx = \int_{t=x_0}^{+\infty} c x^{-\alpha} \, dx = \frac{c}{1-\alpha} \left.\left[ x^{1-\alpha} \right]\right|_{x_0}^{+\infty} = \frac{c}{\alpha - 1} x_0^{-(\alpha-1)}  \ , \]</div>
+<p>and thus <span class="math notranslate nohighlight">\(c = (\alpha - 1 ) x_0^{\alpha-1}\)</span>, and the probability density function reads</p>
+<div class="math notranslate nohighlight">
+\[p(x) = (\alpha - 1)x_0^{\alpha-1} x^{-\alpha} \ , \quad x \ge x_0 \ .\]</div>
+<p><strong>Expected value.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mu 
+  &amp; = \int_{x=x_0}^{+\infty} x \, p(x) \, dx =  \\
+  &amp; = \int_{x=x_0}^{+\infty} (\alpha-1) x_0^{\alpha-1} x \cdot x^{-\alpha} \, dx = \\
+  &amp; =  \left. (\alpha-1) x_0^{\alpha-1} \frac{1}{-\alpha+2} x^{-\alpha+2} \right|_{x_0}^{+\infty}
+\end{aligned}\end{split}\]</div>
+<p>converges for <span class="math notranslate nohighlight">\(\alpha &gt; 2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mu = \frac{\alpha-1}{\alpha-2} x_0 \  .\]</div>
+<p>As an example, with <span class="math notranslate nohighlight">\(\alpha = 1.5\)</span> the expected value is not defined; with <span class="math notranslate nohighlight">\(\alpha = 2.5\)</span>, <span class="math notranslate nohighlight">\(\mu_{\alpha=2.5} = \frac{1.5}{0.5} x_0 = 3 x_0\)</span>.</p>
+<p><strong>Cumulative probability function.</strong></p>
+<div class="math notranslate nohighlight">
+\[P(x) = \int_{t=x_0}^{x} p(t) \, dt = \int_{t=x_0}^{x} c t^{-\alpha} \, dt = (\alpha - 1) x_0^{\alpha-1} \left. \frac{t^{1-\alpha}}{1-\alpha} \right|_{x_0}^{x} = 1 - \left( \frac{x_0}{x} \right)^{\alpha-1}\]</div>
+<p>As sampling from a uniform distribution requires the equality of the cumulative probability densities, and <span class="math notranslate nohighlight">\(U(x) = x\)</span>, <strong>todo</strong> <em>quite bad notation</em> it follows</p>
+<div class="math notranslate nohighlight">
+\[P(X) = U \sim \text{Uniform}(0,1)\]</div>
+<p>and thus</p>
+<div class="math notranslate nohighlight">
+\[U = 1 - \left( \frac{x_0}{X} \right)^{\alpha-1}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[X = x_0 \, \left( 1 - U \right)^{-\frac{1}{\alpha - 1}}\]</div>
+<div class="section" id="power-law-with-alpha-1-5">
+<h3><span class="section-number">3.9.2.3.1. </span>Power-law with <span class="math notranslate nohighlight">\(\alpha = 1.5\)</span><a class="headerlink" href="#power-law-with-alpha-1-5" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#&gt; Power-law</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="c1">#&gt; N.samples</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e+4</span><span class="p">)</span>
+<span class="n">n_reals</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="c1">#&gt; Uniform random number generator</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+<span class="n">rng_uniform_fun</span> <span class="o">=</span>  <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">.0</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">um</span><span class="p">,</span> <span class="n">xm</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i_real</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_reals</span><span class="p">):</span>
+    <span class="c1">#&gt; Samples from the r.v. with the uniform distribution</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">rng_uniform_fun</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span>
+
+    <span class="c1">#&gt; Samples from the r.v. with power-law distribution</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">*</span> <span class="p">(</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">u</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">alpha</span><span class="o">-</span><span class="mf">1.</span><span class="p">))</span>
+
+    <span class="n">um</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">u</span> <span class="p">]</span>
+    <span class="n">xm</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">x</span> <span class="p">]</span>
+
+<span class="n">xm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(xm)</span>
+<span class="c1"># print(np.shape(np.cumsum(xm, axis=0)))</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="c1"># ax.plot( np.cumsum(xm.T, axis=0) / np.arange(1,n_samples+1)[:, np.newaxis], color=plt.cm.tab10.colors[0], lw=.5 )</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+           <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">xm</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_samples</span><span class="o">+</span><span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> 
+           <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="o">.</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+           <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
+           <span class="n">lw</span><span class="o">=</span><span class="mf">.2</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/28db04c612f4594c9001487344594e051ca27ddbff8cd05786f60e367bab0614.png" src="../../_images/28db04c612f4594c9001487344594e051ca27ddbff8cd05786f60e367bab0614.png" />
+</div>
+</div>
+</div>
+<div class="section" id="power-law-with-alpha-2-5">
+<h3><span class="section-number">3.9.2.3.2. </span>Power-law with <span class="math notranslate nohighlight">\(\alpha = 2.5\)</span><a class="headerlink" href="#power-law-with-alpha-2-5" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reset</span> -f
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#&gt; Power-law</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">2.5</span>
+
+<span class="c1">#&gt; N.samples</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e+5</span><span class="p">)</span>
+<span class="n">n_reals</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="c1">#&gt; Uniform random number generator</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+<span class="n">rng_uniform_fun</span> <span class="o">=</span>  <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">.0</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">um</span><span class="p">,</span> <span class="n">xm</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i_real</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_reals</span><span class="p">):</span>
+    <span class="c1">#&gt; Samples from the r.v. with the uniform distribution</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">rng_uniform_fun</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span>
+
+    <span class="c1">#&gt; Samples from the r.v. with power-law distribution</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">*</span> <span class="p">(</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">u</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">alpha</span><span class="o">-</span><span class="mf">1.</span><span class="p">))</span>
+
+    <span class="n">um</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">u</span> <span class="p">]</span>
+    <span class="n">xm</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">x</span> <span class="p">]</span>
+
+<span class="n">xm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="c1"># ax.plot( np.cumsum(xm.T, axis=0) / np.arange(1,n_samples+1)[:, np.newaxis], color=plt.cm.tab10.colors[0], lw=.5 )</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+           <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">xm</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n_samples</span><span class="o">+</span><span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> 
+           <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="o">.</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+           <span class="n">alpha</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span>
+           <span class="n">lw</span><span class="o">=</span><span class="mf">.2</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/dafb71fc6ce73998b03113b62f8a8397ae68f4670d1761198cc0c8b9669702c6.png" src="../../_images/dafb71fc6ce73998b03113b62f8a8397ae68f4670d1761198cc0c8b9669702c6.png" />
+</div>
+</div>
+<p><strong>todo</strong> Plot</p>
+<ul class="simple">
+<li><p>max <span class="math notranslate nohighlight">\(M_n\)</span> vs. sum <span class="math notranslate nohighlight">\(S_n\)</span>, as the ratio <span class="math notranslate nohighlight">\(\frac{M_n}{S_n}\)</span> as max dominates sum for heavy-tailed distributions</p></li>
+<li><p>quantile trajectories</p></li>
+</ul>
+<p><strong>todo</strong> Let’s check the following results, with Law of Large Numbers (LLN) and Central Limit Theorem (CLT)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>(\alpha)</p></th>
+<th class="head"><p>Mean</p></th>
+<th class="head"><p>Variance</p></th>
+<th class="head"><p>Sample mean behavior</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\alpha&gt;3\)</span></p></td>
+<td><p>Finite</p></td>
+<td><p>Finite</p></td>
+<td><p><strong>Classical LLN &amp; CLT</strong> (Gaussian)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(2&lt;\alpha \le 3\)</span></p></td>
+<td><p>Finite</p></td>
+<td><p>Infinite</p></td>
+<td><p><strong>LLN holds</strong>, but <strong>CLT replaced by stable law</strong> (non-Gaussian fluctuations)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\alpha \le 2\)</span></p></td>
+<td><p>Infinite</p></td>
+<td><p>Infinite</p></td>
+<td><p><strong>LLN fails</strong>, sample mean diverges; dominated by extreme events</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="kelly-criterion"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The probability distribution of the total return can be easily derived withminor modifications from the derivation of the <a class="reference external" href="https://basics2022.github.io/bbooks-financial-edu/code/notebooks/rebalancing_intro.html">Kelly criterion</a>, Example 10.3, an optimality criterion for this game, if you can choose the fraction of the amount you have for betting, given the gain and loss.</p>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -526,6 +892,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-three-different-coin-flip-games">3.9.2.1. Example: three different coin-flip games</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrability-of-tails-existence-of-moments">3.9.2.2. Integrability of tails, existence of moments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-of-clt">3.9.2.3. Failure of CLT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-law-with-alpha-1-5">3.9.2.3.1. Power-law with <span class="math notranslate nohighlight">\(\alpha = 1.5\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-law-with-alpha-2-5">3.9.2.3.2. Power-law with <span class="math notranslate nohighlight">\(\alpha = 2.5\)</span></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
