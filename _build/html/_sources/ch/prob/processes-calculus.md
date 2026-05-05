@@ -125,7 +125,9 @@ $$d X_t = \mu X_t \, dt + \sigma X_t \, dW_t \ .$$
 ```{prf:example} GBM in Finance
 :label: example:gbm:finance
 
-GBM can be used as a model of the price of an asset with constant expected return and variance of returns with normal distribution.
+GBM can be used as a model of the price of an asset with constant expected return and variance of returns with normal distribution. GBM is the time-continuous counterpart of a time-discrete process, with the 1-period return $\frac{\Delta X_n}{X_n} = \frac{X_{n+1} - X_n}{X_n}$ with expected value $\mu$ and variance $\sigma^2$,
+
+$$\frac{\Delta X_n}{X_n} = \mathscr{N}\left( \mu, \sigma^2 \right) \ .$$
 
 ```
 
