@@ -30,7 +30,7 @@ It is likely that this section will also draw inspiration from the podcast [*La 
 :open:
 
 - [You've (Likely) Been Playing The Game of Life Wrong](https://www.youtube.com/watch?v=HBluLfX2F_k&t=1555s), Veritasium, YouTube video.
-- [La logica del rischio](https://www.pasqualecirillo.eu/ldr/), P.~Cirillo.
-- [Estimating the probability of rare events] (https://aaronclauset.github.io/rareevents/), A.~Clauset adn R.~Woodard.
+- [La logica del rischio](https://www.pasqualecirillo.eu/ldr/), P.Cirillo.
+- [Estimating the probability of rare events](https://aaronclauset.github.io/rareevents/), A.Clauset and R.Woodard.
 
 ```

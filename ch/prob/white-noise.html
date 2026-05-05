@@ -75,15 +75,6 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9HKRV72TBJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-9HKRV72TBJ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -190,10 +181,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="characteristic-fun.html">3.6. Characteristic functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="convergence.html">3.7. Convergence in statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="iid.html">3.8. Independent identically distributed random variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="heavy-tailed.html">3.9. Heavy-tailed distributions</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="rare-events.html">3.9. Rare Events</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="heavy-tailed.html">3.9.1. Heavy-tailed distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="power-law.html">3.9.2. Power-law distributions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="processes.html">4. Stochastic processes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="processes.html">4. Stochastic processes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="wiener.html">4.1. Wiener process - Brownian motion</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. White noise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="processes-calculus.html">4.3. Stochastic calculus</a></li>
@@ -207,12 +202,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/intro.html">7. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/intro.html">7. Introduction to Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml/models.html">7.1. Models in Machine Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml/good-practice.html">7.2. Good Practices in Machine Learning</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/sl.html">8. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/sl.html">8. Supervised Learning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ml/sl-theory.html">8.1. SL: theory</a></li>
 </ul>
 </li>
@@ -407,7 +402,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -423,6 +420,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.2.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-links">4.2.2. External links</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -434,6 +440,8 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="white-noise">
 <span id="prob-processes-wn"></span><h1><span class="section-number">4.2. </span>White noise<a class="headerlink" href="#white-noise" title="Permalink to this heading">#</a></h1>
+<div class="section" id="definition">
+<span id="prob-processes-wn-def"></span><h2><span class="section-number">4.2.1. </span>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
 <div class="proof definition admonition" id="wn:def:properties">
 <p class="admonition-title"><span class="caption-number">Definition 4.2 </span> (White noise - properties)</p>
 <div class="definition-content section" id="proof-content">
@@ -453,8 +461,17 @@ document.write(`
 <div class="proof definition admonition" id="wn:def:derivative">
 <p class="admonition-title"><span class="caption-number">Definition 4.3 </span> (White noise - time derivative of <a class="reference internal" href="wiener.html#prob-processes-wiener"><span class="std std-ref">Wiener process</span></a> <span class="math notranslate nohighlight">\(W(t)\)</span> in the sense of distributions)</p>
 <div class="definition-content section" id="proof-content">
+<p><strong>todo</strong></p>
 </div>
 </div></div>
+<div class="section" id="external-links">
+<span id="prob-processes-wn-external-links"></span><h2><span class="section-number">4.2.2. </span>External links<a class="headerlink" href="#external-links" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>White noise in <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/system-theory/shape-filter.html">shape filters</a> for shaping non-Gaussian processes.</p></li>
+<li><p>…</p></li>
+</ul>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -510,6 +527,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">4.2.1. Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-links">4.2.2. External links</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
